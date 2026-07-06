@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Swift Games &amp; Ares Interactive — 2026 Business Review</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAFBFD; --surface:#FFFFFF;
+  --ink:#0F1117; --body:#4B515D; --muted:#888F9E; --faint:#B3B9C6;
+  --line:#EBEDF3; --lineSoft:#F2F4F8;
+  --demand:#4F46E5; --demandSoft:#EEEDFC; --demandInk:#3F37C9;
+  --supply:#0D9488; --supplySoft:#E1F4F1; --supplyInk:#0B7B71;
+  --pos:#0E9E6E; --posSoft:#E4F5EE; --neg:#DC5B44; --negSoft:#FBEBE7; --accent:#F59E0B;
+  --font:'Inter',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --sh1:0 1px 2px rgba(15,17,23,.05);
+  --sh2:0 1px 3px rgba(15,17,23,.04),0 12px 28px -14px rgba(15,17,23,.16);
+  --sh3:0 2px 4px rgba(15,17,23,.05),0 30px 60px -30px rgba(15,17,23,.28);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);color:var(--body);background:var(--bg);line-height:1.7;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;font-feature-settings:"cv02","cv03","cv04","ss01"}
+body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
+  background:
+    radial-gradient(660px 520px at -4% -6%, rgba(99,102,241,.34), transparent 56%),
+    radial-gradient(640px 500px at 104% -4%, rgba(13,148,136,.30), transparent 54%),
+    radial-gradient(620px 540px at 90% 30%, rgba(168,85,247,.22), transparent 56%),
+    radial-gradient(700px 560px at 1% 66%, rgba(236,72,153,.17), transparent 55%),
+    radial-gradient(720px 600px at 52% 112%, rgba(245,158,11,.22), transparent 55%),
+    radial-gradient(560px 480px at 103% 92%, rgba(34,211,238,.20), transparent 55%);}
+body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background-image:radial-gradient(rgba(40,40,80,.06) 1px, transparent 1.5px);background-size:23px 23px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 32px}
+
+/* dark theme */
+#theme{position:fixed;left:20px;top:50%;transform:translateY(-50%);z-index:200;width:46px;height:46px;border-radius:50%;
+  border:1px solid var(--line);background:var(--surface);box-shadow:var(--sh2);cursor:pointer;font-size:19px;line-height:1;
+  display:flex;align-items:center;justify-content:center;transition:transform .2s,box-shadow .2s}
+#theme:hover{transform:translateY(-50%) scale(1.09);box-shadow:var(--sh3)}
+body.dark{
+  --bg:#0E1017; --surface:#161A23; --ink:#F1F3F7; --body:#BBC1CD; --muted:#868D9C; --faint:#5A6272;
+  --line:#272C37; --lineSoft:#1F232D;
+  --demand:#8188F4; --demandSoft:#212439; --demandInk:#AAAFF8;
+  --supply:#2FC2AE; --supplySoft:#123029; --supplyInk:#63D8C8;
+  --pos:#3FD08A; --posSoft:#123128; --neg:#F0705A; --negSoft:#3A2019; --accent:#F5A93B;
+}
+body.dark::before{background:
+  radial-gradient(660px 520px at -4% -6%, rgba(120,120,255,.42), transparent 56%),
+  radial-gradient(640px 500px at 104% -4%, rgba(20,190,170,.36), transparent 54%),
+  radial-gradient(620px 540px at 90% 30%, rgba(180,110,255,.30), transparent 56%),
+  radial-gradient(700px 560px at 1% 66%, rgba(240,90,170,.22), transparent 55%),
+  radial-gradient(720px 600px at 52% 112%, rgba(245,158,11,.16), transparent 55%),
+  radial-gradient(560px 480px at 103% 92%, rgba(45,215,240,.24), transparent 55%);}
+body.dark::after{background-image:radial-gradient(rgba(255,255,255,.05) 1px, transparent 1.5px);background-size:23px 23px}
+body.dark header{background:rgba(14,16,23,.82)}
+body.dark .hero{background:linear-gradient(135deg,#1E2140 0%,#141824 46%,#0F2C29 100%);border-color:#272C37}
+body.dark .statband{background:#12151D;border-color:#242935}
+body.dark .callbox{background:linear-gradient(135deg,#14182450,#1B2130);border:1px solid #2A303C}
+body.dark .focus{background:#1C2029}
+body.dark .badge.dem{background:linear-gradient(135deg,#7C74F4,#4B44D6)} body.dark .badge.sup{background:linear-gradient(135deg,#25C4B2,#0E8C7E)}
+
+header{background:rgba(255,255,255,.85);backdrop-filter:saturate(160%) blur(12px);position:sticky;top:0;z-index:100;box-shadow:0 1px 0 var(--line)}
+header::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:linear-gradient(90deg,var(--demand),var(--supply))}
+.hbar{display:flex;align-items:center;gap:16px;padding:17px 32px;max-width:1080px;margin:0 auto;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:9px;font-weight:800;font-size:16px;color:var(--ink);letter-spacing:-.02em}
+.brand .dot{width:11px;height:11px;background:linear-gradient(135deg,var(--demand),var(--supply));transform:rotate(45deg);border-radius:2px}
+.htitle{font-size:12.5px;color:var(--muted);font-weight:500;border-left:1px solid var(--line);padding-left:16px}
+.htitle b{color:var(--ink);font-weight:700}
+.hper{margin-left:auto;font-size:12px;color:var(--faint);white-space:nowrap;font-weight:500}
+nav.tabs{display:flex;gap:2px;max-width:1080px;margin:0 auto;padding:0 24px;overflow-x:auto}
+nav.tabs button{background:none;border:0;color:var(--muted);font-family:var(--font);font-size:13px;font-weight:600;
+  padding:13px 15px;cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:.15s}
+nav.tabs button:hover{color:var(--ink)}
+nav.tabs button.on{color:var(--ink);border-bottom-color:var(--supply)}
+nav.tabs button .pip{display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:7px;vertical-align:middle}
+
+#main{padding-top:44px;padding-bottom:120px}
+.tab{display:none;animation:fade .3s ease}
+.tab.on{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* hero */
+.hero{position:relative;border-radius:24px;padding:46px 46px 40px;overflow:hidden;
+  background:linear-gradient(135deg,#EEEEFE 0%,#FBFCFE 42%,#E4F5F2 100%);border:1px solid var(--line);box-shadow:var(--sh2)}
+.hero::before{content:"";position:absolute;right:-80px;top:-90px;width:280px;height:280px;border-radius:50%;
+  background:radial-gradient(circle,rgba(79,70,229,.18),transparent 70%)}
+.hero::after{content:"";position:absolute;right:60px;bottom:-120px;width:260px;height:260px;border-radius:50%;
+  background:radial-gradient(circle,rgba(13,148,136,.16),transparent 70%)}
+.hero .ey{position:relative}
+.hero h1{position:relative;font-size:46px;font-weight:800;letter-spacing:-.035em;color:var(--ink);line-height:1.04;margin-bottom:16px}
+.hero .hsub{position:relative;font-size:15.5px;color:var(--body);max-width:640px;line-height:1.65}
+.statband{position:relative;display:grid;grid-template-columns:repeat(4,1fr);margin-top:34px;background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:var(--sh1);overflow:hidden}
+.statband .st{padding:22px 24px;border-right:1px solid var(--lineSoft)}
+.statband .st:last-child{border-right:none}
+.st .lab{font-size:10.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+.st .val{font-size:30px;font-weight:800;letter-spacing:-.03em;color:var(--ink);margin:10px 0 8px;line-height:1;font-variant-numeric:tabular-nums}
+.st .val.dem{color:var(--demand)} .st .val.sup{color:var(--supply)}
+.trend{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;padding:3px 9px;border-radius:20px}
+.trend.good{background:var(--posSoft);color:var(--pos)} .trend.bad{background:var(--negSoft);color:var(--neg)}
+.trend.flat{background:var(--lineSoft);color:var(--muted)}
+
+.ey{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--demandInk);margin-bottom:16px}
+.lead{font-size:32px;font-weight:800;color:var(--ink);letter-spacing:-.03em;line-height:1.1;margin-bottom:16px}
+.sublead{font-size:15px;color:var(--body);max-width:720px;line-height:1.65}
+
+.sec{display:flex;align-items:center;gap:14px;margin:76px 0 28px}
+.sec .ic{width:30px;height:30px;border-radius:9px;flex:none;display:flex;align-items:center;justify-content:center;
+  background:var(--demandSoft);color:var(--demandInk)}
+.sec.s .ic{background:var(--supplySoft);color:var(--supplyInk)}
+.sec.n .ic{background:linear-gradient(135deg,var(--demand),var(--supply));color:#fff}
+.sec .ic svg{width:16px;height:16px}
+.sec h3{font-size:20px;font-weight:800;color:var(--ink);letter-spacing:-.02em;white-space:nowrap}
+.sec .rule{flex:1;height:1px;background:var(--line)}
+.sec .pill{flex:none}
+
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:10.5px;font-weight:700;letter-spacing:.05em;padding:5px 12px;border-radius:20px;text-transform:uppercase}
+.pill.dem{background:var(--demandSoft);color:var(--demandInk)}
+.pill.sup{background:var(--supplySoft);color:var(--supplyInk)}
+.pill .pip{width:6px;height:6px;border-radius:50%}
+.pill.dem .pip{background:var(--demand)} .pill.sup .pip{background:var(--supply)}
+
+.grid{display:grid;gap:22px}
+.g2{grid-template-columns:1fr 1fr}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:30px;box-shadow:var(--sh2);transition:transform .2s ease,box-shadow .2s ease}
+.card:hover{transform:translateY(-2px);box-shadow:var(--sh3)}
+
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.kpis.five{grid-template-columns:repeat(5,1fr)}
+.k{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 20px 22px;box-shadow:var(--sh1);transition:transform .2s,box-shadow .2s}
+.k:hover{transform:translateY(-2px);box-shadow:var(--sh2)}
+.k .khead{display:flex;align-items:center;gap:9px;color:var(--muted)}
+.k .kic{width:26px;height:26px;border-radius:8px;display:flex;align-items:center;justify-content:center;background:var(--lineSoft);color:var(--muted);flex:none}
+.k.dem .kic{background:var(--demandSoft);color:var(--demandInk)} .k.sup .kic{background:var(--supplySoft);color:var(--supplyInk)}
+.k .kic svg{width:14px;height:14px}
+.k .lab{font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.k .val{font-size:29px;font-weight:800;letter-spacing:-.03em;color:var(--ink);margin-top:14px;line-height:1;font-variant-numeric:tabular-nums}
+.k .val.dem{color:var(--demand)} .k .val.sup{color:var(--supply)}
+.k .note{font-size:11.5px;color:var(--muted);margin-top:12px;line-height:1.5}
+
+.intro{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.intro .half{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px;box-shadow:var(--sh2);transition:transform .2s,box-shadow .2s}
+.intro .half:hover{transform:translateY(-2px);box-shadow:var(--sh3)}
+.badge{width:46px;height:46px;border-radius:13px;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.badge svg{width:23px;height:23px;color:#fff}
+.badge.dem{background:linear-gradient(135deg,#6A62F0,#4038C7)} .badge.sup{background:linear-gradient(135deg,#17B3A4,#0B7B71)}
+.intro h4{font-size:18px;color:var(--ink);margin-bottom:8px;font-weight:800;letter-spacing:-.01em}
+.intro p{font-size:13.5px;color:var(--body);line-height:1.7}
+.intro .ch{font-size:12.5px;color:var(--muted);margin-top:18px;padding-top:16px;border-top:1px solid var(--lineSoft)}
+.intro .ch b{color:var(--ink);font-weight:700}
+.note-row{font-size:11.5px;color:var(--faint);margin-top:16px;font-style:italic}
+
+table.t{width:100%;border-collapse:collapse;font-size:13.5px}
+table.t th{text-align:left;font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:0 18px 12px;border-bottom:1px solid var(--line)}
+table.t td{padding:16px 18px;border-bottom:1px solid var(--lineSoft);color:var(--body);line-height:1.5}
+table.t tr:last-child td{border-bottom:none}
+table.t td.n{text-align:right;font-variant-numeric:tabular-nums;font-weight:700;color:var(--ink)}
+table.t td.lead2{font-weight:700;color:var(--ink)}
+tr.tot td{border-top:2px solid var(--ink);font-weight:800}
+.bigtable table.t td{font-size:15.5px;padding:20px 18px}
+.bigtable .netbig{font-size:21px;font-weight:800;font-variant-numeric:tabular-nums}
+.teal{color:var(--supply);font-weight:700}.indigo{color:var(--demand);font-weight:700}
+.up{color:var(--pos);font-weight:700}.down{color:var(--neg);font-weight:700}
+.focus{background:#FAFAFF}
+
+.bl{list-style:none;display:grid;gap:4px}
+.bl li{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--lineSoft);font-size:14px;color:var(--body);line-height:1.65}
+.bl li:last-child{border-bottom:none}
+.bl .num{flex:none;width:26px;height:26px;border-radius:8px;background:var(--demandSoft);color:var(--demandInk);font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.bl li b{color:var(--ink);font-weight:700}
+
+.chart{width:100%;height:auto;display:block}
+.cap{font-size:11.5px;color:var(--muted);margin-top:14px;line-height:1.6}
+.legend{display:flex;gap:20px;font-size:12px;color:var(--muted);margin:0 0 14px;font-weight:500}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:7px;vertical-align:-1px}
+
+.callbox{border-radius:18px;padding:32px 34px;background:linear-gradient(135deg,#171A2B,#20263C);box-shadow:var(--sh3);position:relative;overflow:hidden}
+.callbox::before{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(79,70,229,.35),transparent 70%)}
+.callbox h4{color:#fff;font-size:16px;margin-bottom:14px;font-weight:800;letter-spacing:-.01em;position:relative}
+.callbox p{font-size:13.5px;color:#CBD0DC;margin-bottom:14px;line-height:1.75;position:relative}
+.callbox p:last-child{margin-bottom:0}
+.callbox b{color:#fff}
+
+.gloss{margin-top:44px;border-top:1px solid var(--line)}
+.gloss details{border-bottom:1px solid var(--lineSoft)}
+.gloss summary{cursor:pointer;font-weight:700;color:var(--ink);font-size:13.5px;padding:16px 2px;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.gloss summary::-webkit-details-marker{display:none}
+.gloss summary::after{content:"+";color:var(--faint);font-weight:400;font-size:20px}
+.gloss details[open] summary::after{content:"–"}
+.gloss .gd{font-size:13px;color:var(--body);padding:0 2px 18px;max-width:720px;line-height:1.7}
+.foot{font-size:11.5px;color:var(--faint);margin-top:48px;padding-top:22px;border-top:1px solid var(--line);text-align:center;line-height:1.9}
+.prose{font-size:13.5px;color:var(--body);line-height:1.75} .prose b{color:var(--ink);font-weight:700}
+
+@media (max-width:820px){ .g2,.kpis,.kpis.five,.intro,.statband{grid-template-columns:1fr} .statband .st{border-right:none;border-bottom:1px solid var(--lineSoft)} .hero h1{font-size:34px} .hper{display:none} }
+@media print{ header{position:static} nav.tabs{display:none} .tab{display:block!important} .card:hover,.k:hover,.intro .half:hover{transform:none} }
+</style>
+</head>
+<body>
+<button id="theme" aria-label="Toggle dark mode">🌙</button>
+<header>
+  <div class="hbar">
+    <span class="brand"><span class="dot"></span>Unity</span>
+    <span class="htitle"><b>2026 Business Review</b> — Swift Games &amp; Ares Interactive</span>
+    <span class="hper">Trailing 3 months · Mar 30 – Jun 30, 2026</span>
+  </div>
+  <nav class="tabs" id="tabs"></nav>
+</header>
+<main class="wrap" id="main"></main>
+
+<script>
+const C={demand:'#4F46E5',supply:'#0D9488',demandL:'#B3AEF3',supplyL:'#8ED0C8',ink:'#0F1117',body:'#4B515D',muted:'#888F9E',line:'#EBEDF3',accent:'#F59E0B',neg:'#DC5B44',pos:'#0E9E6E'};
+const GR={'#4F46E5':['#6A62F0','#4038C7'],'#B3AEF3':['#C4BFF7','#A199EE'],'#0D9488':['#17B3A4','#0B7B71'],'#8ED0C8':['#A6DDD6','#79C5BC']};
+let SN=0;
+function defs(cols,p){let d='';[...new Set(cols)].forEach(c=>{const g=GR[c];if(g)d+=`<linearGradient id="${p}${c.slice(1)}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${g[0]}"/><stop offset="1" stop-color="${g[1]}"/></linearGradient>`;});return `<defs>${d}</defs>`}
+function gf(c,p){return GR[c]?`url(#${p}${c.slice(1)})`:c}
+const ICON={
+  demand:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg>',
+  supply:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/><path d="M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg>',
+  flow:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h11"/><path d="M12 4l3 3-3 3"/><path d="M20 17H9"/><path d="M12 14l-3 3 3 3"/></svg>',
+  star:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.3 5.8.8-4.2 4.1 1 5.8L12 16.9 6.8 19l1-5.8L3.6 9.1l5.8-.8z"/></svg>',
+  chart:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V4"/><path d="M4 20h16"/><rect x="7" y="11" width="3" height="6"/><rect x="13" y="7" width="3" height="10"/></svg>',
+  plan:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg>',
+  target:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.4"/></svg>',
+  users:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 5a3 3 0 0 1 0 6"/><path d="M18.5 20c0-2.3-1-4.3-2.5-5.4"/></svg>',
+  coin:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v10M9.5 9.2a2.4 2 0 0 1 5 0c0 2.6-5 1.4-5 4a2.4 2 0 0 0 5 0"/></svg>',
+  gauge:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18a8 8 0 1 1 16 0"/><path d="M12 18l4-4"/></svg>',
+};
+
+function money(v){return v>=1000? '$'+(v/1000).toFixed(v>=100000?0:1)+'k' : '$'+v}
+function vbars(labels, series, opts={}){
+  const W=560,H=280, pad={l:8,r:8,t:32,b:42}, p='v'+(SN++)+'_';
+  const max=opts.max||Math.max(...series.flatMap(s=>s.v))*1.12;
+  const n=labels.length, gw=(W-pad.l-pad.r)/n; let g=defs(series.map(s=>s.c),p);
+  {let lx=W/2-84;series.forEach(s=>{g+=`<rect x="${lx}" y="6" width="11" height="11" rx="3" fill="${gf(s.c,p)}"/><text x="${lx+17}" y="15.5" font-size="12.5" fill="${C.muted}">${s.name}</text>`;lx+=100;});}
+  labels.forEach((lb,i)=>{
+    const gx=pad.l+i*gw, bw=Math.min(56,(gw*0.62)/series.length);
+    const groupW=bw*series.length+(series.length-1)*10, startX=gx+(gw-groupW)/2;
+    series.forEach((s,si)=>{const v=s.v[i], bh=(H-pad.t-pad.b)*v/max, bx=startX+si*(bw+10), by=H-pad.b-bh;
+      g+=`<rect x="${bx}" y="${by}" width="${bw}" height="${bh}" rx="5" fill="${gf(s.c,p)}"/>`;});
+    g+=`<text x="${gx+gw/2}" y="${H-pad.b+22}" font-size="12.5" fill="${C.muted}" text-anchor="middle">${lb}</text>`;
+  });
+  g+=`<line x1="${pad.l}" y1="${H-pad.b}" x2="${W-pad.r}" y2="${H-pad.b}" stroke="${C.line}"/>`;
+  return `<svg class="chart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet">${g}</svg>`;
+}
+function hbars(rows, opts={}){
+  const W=560, rh=opts.rh||48, padT=6, padB=6, lblW=opts.lblW||166, valW=68, p='h'+(SN++)+'_';
+  const H=padT+padB+rows.length*rh; const max=opts.max||Math.max(...rows.map(r=>r.v))*1.08;
+  let g=defs(rows.map(r=>r.c||C.supply),p);
+  rows.forEach((r,i)=>{const cy=padT+i*rh+rh/2, bw=(W-lblW-valW)*r.v/max, bh=Math.min(22,rh*0.46), c=r.c||C.supply;
+    g+=`<text x="${lblW-12}" y="${cy+4}" font-size="12.5" font-weight="500" fill="${C.ink}" text-anchor="end">${r.label}</text>`;
+    g+=`<rect x="${lblW}" y="${cy-bh/2}" width="${Math.max(bw,2)}" height="${bh}" rx="4" fill="${gf(c,p)}"/>`;
+    g+=`<text x="${lblW+Math.max(bw,2)+9}" y="${cy+4}" font-size="12.5" font-weight="700" fill="${C.ink}">${opts.fmt?opts.fmt(r.v):r.v}</text>`;});
+  return `<svg class="chart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet">${g}</svg>`;
+}
+function combo(labels, spend, roas){
+  const W=560,H=280, pad={l:8,r:8,t:34,b:40}, p='c'+(SN++)+'_';
+  const maxS=Math.max(...spend)*1.32, maxR=Math.max(...roas.filter(x=>x!=null))*1.28;
+  const n=labels.length, gw=(W-pad.l-pad.r)/n, plotH=H-pad.t-pad.b; let g=defs([C.demand],p), pts=[];
+  labels.forEach((lb,i)=>{
+    const gx=pad.l+i*gw, bw=Math.min(60,gw*0.42), bx=gx+(gw-bw)/2;
+    const bh=plotH*spend[i]/maxS, by=H-pad.b-bh;
+    g+=`<rect x="${bx}" y="${by}" width="${bw}" height="${bh}" rx="5" fill="${gf(C.demand,p)}"/>`;
+    const inside=bh>44, ly=inside?by+19:by-8, lc=inside?'#fff':C.ink;
+    g+=`<text x="${bx+bw/2}" y="${ly}" font-size="11.5" font-weight="700" fill="${lc}" text-anchor="middle">$${(spend[i]/1000).toFixed(1)}k</text>`;
+    g+=`<text x="${gx+gw/2}" y="${H-pad.b+22}" font-size="12.5" fill="${C.muted}" text-anchor="middle">${lb}</text>`;
+    pts.push(roas[i]==null?null:[gx+gw/2, pad.t+plotH*(1-roas[i]/maxR)]);
+  });
+  const solid=pts.filter(x=>x);
+  if(solid.length>1) g+=`<polyline fill="none" stroke="${C.accent}" stroke-width="2.5" stroke-linejoin="round" points="${solid.map(x=>x.join(',')).join(' ')}"/>`;
+  pts.forEach((pt,i)=>{ if(!pt) return;
+    g+=`<circle cx="${pt[0]}" cy="${pt[1]}" r="4.5" fill="#fff" stroke="${C.accent}" stroke-width="2.5"/>`;
+    g+=`<rect x="${pt[0]-17}" y="${pt[1]-24}" width="34" height="16" rx="8" fill="#fff" stroke="${C.line}"/>`;
+    g+=`<text x="${pt[0]}" y="${pt[1]-12.5}" font-size="11" font-weight="700" fill="${C.accent}" text-anchor="middle">${roas[i]}%</text>`;});
+  g+=`<rect x="${pad.l}" y="6" width="11" height="11" rx="3" fill="${gf(C.demand,p)}"/><text x="${pad.l+17}" y="15.5" font-size="12" fill="${C.muted}">Spend</text>`;
+  g+=`<rect x="${pad.l+84}" y="6" width="11" height="11" rx="3" fill="${C.accent}"/><text x="${pad.l+101}" y="15.5" font-size="12" fill="${C.muted}">D7 ROAS %</text>`;
+  return `<svg class="chart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet">${g}</svg>`;
+}
+function flowBar(title, total, parts){
+  const W=940,H=92, barH=48, y=36, p='f'+(SN++)+'_';
+  let g=defs(parts.map(x=>x.c),p);
+  g+=`<text x="0" y="18" font-size="15" font-weight="700" fill="${C.body}">${title}</text>`;
+  g+=`<text x="${W}" y="18" font-size="18" font-weight="800" fill="${C.ink}" text-anchor="end">${money(total)}</text>`;
+  let cx=0; const scale=W/total;
+  parts.forEach(pt=>{const pw=pt.v*scale;
+    g+=`<rect x="${cx}" y="${y}" width="${Math.max(pw-3,1)}" height="${barH}" rx="8" fill="${gf(pt.c,p)}"/>`;
+    if(pw>150) g+=`<text x="${cx+pw/2}" y="${y+barH/2+5}" font-size="14.5" font-weight="700" fill="#fff" text-anchor="middle">${pt.label} · ${money(pt.v)}</text>`;
+    cx+=pw;});
+  return `<svg class="chart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet">${g}</svg>`;
+}
+
+function pill(t){return t==='dem'?`<span class="pill dem"><span class="pip"></span>Demand · buying</span>`:`<span class="pill sup"><span class="pip"></span>Supply · selling</span>`}
+function sec(title,ic,cls){return `<div class="sec ${cls||''}"><div class="ic">${ICON[ic]||ICON.star}</div><h3>${title}</h3><div class="rule"></div></div>`}
+function trend(txt,kind){return `<span class="trend ${kind}">${txt}</span>`}
+function nlist(items){return `<ul class="bl">${items.map((it,i)=>`<li><span class="num">${i+1}</span><span>${Array.isArray(it)?`<b>${it[0]}</b> ${it[1]}`:it}</span></li>`).join('')}</ul>`}
+function sbar(pct,max,w,color){return `<span style="display:inline-block;height:8px;border-radius:4px;background:${color};width:${Math.max(pct/max*w,5)}px;vertical-align:middle;margin-right:10px"></span>`}
+const SRC=[['VoodooAds',12.5,5.90],['Gamegou Ad',6.9,1.78],['advjy',6.0,7.76],['LEARNINGS CO.',5.4,8.53],['SAYGAMES',5.0,9.18],['Electronic Arts',4.8,12.10],['MobilityWare Ads',4.5,5.50],['Easybrain',3.6,7.70],['Crazy Labs',3.3,7.27],['BoomBit Games',2.8,4.99],['Tripledot',2.4,9.56],['Gamebasics',2.3,13.70]];
+const CRE=[['Overhaul Slugfest · Mid/Next HR — P-CID-1-16',42.7],['Overhaul Slugfest · Easy — P-CID-1-18',9.8],['Cal Raleigh · Base Single — P-CID-5-6',8.8],['Video 22 → P-CID-1-16',8.1],['Cal Raleigh · Multi-Replay — P-CID-5-4',3.1],['Video 37 (15s) — P-CID-1-16',1.7],['Video 29 — P-CID-1-18',1.4],['TWD · Farm Kill Count — P-CID-3-3',1.3]];
+
+const TABS=[
+  {id:'overview', label:'Overview', pip:null},
+  {id:'qoq', label:'Quarter-over-Quarter', pip:null},
+  {id:'ua', label:'User Acquisition', pip:C.demand},
+  {id:'owd', label:'TapJoy demand', pip:C.demand},
+  {id:'supply', label:'Monetization', pip:C.supply},
+  {id:'m2e', label:'M2E Offerwall ✦', pip:C.supply},
+  {id:'plan', label:'Q3 Plan', pip:null},
+];
+const V={};
+
+V.overview=`
+  <section class="hero">
+    <div class="ey" style="color:var(--demandInk)">2026 Business Review · Swift Games &amp; Ares Interactive</div>
+    <h1>The big picture</h1>
+    <p class="hsub">Two studios, four revenue streams across Unity Ads and TapJoy — split into demand (what you spend to grow) and supply (what you earn from ads). Trailing three months, Mar 30 – Jun 30, 2026.</p>
+    <div class="statband">
+      <div class="st"><div class="lab">UA spend</div><div class="val dem">$288.0k</div>${trend('▲ 193%','good')}</div>
+      <div class="st"><div class="lab">Installs</div><div class="val">44,990</div>${trend('▲ 305%','good')}</div>
+      <div class="st"><div class="lab">Blended CPI</div><div class="val">$6.40</div>${trend('▼ 28%','good')}</div>
+      <div class="st"><div class="lab">Monetization</div><div class="val sup">$576.7k</div>${trend('Publisher payout','flat')}</div>
+    </div>
+  </section>
+
+  ${sec('Where the money flows','flow','n')}
+  <div class="card" style="padding:38px">
+    <div style="margin-bottom:32px">
+      <div class="legend"><span><i style="background:${C.demand}"></i>Unity Ads</span><span><i style="background:${C.demandL}"></i>TapJoy</span></div>
+      ${flowBar('Demand — what you spend', 758249, [{label:'Unity Ads UA',v:287984,c:C.demand},{label:'TapJoy',v:470249,c:C.demandL}])}
+    </div>
+    <div>
+      <div class="legend"><span><i style="background:${C.supply}"></i>TapJoy Offerwall</span><span><i style="background:${C.supplyL}"></i>Unity Ads</span></div>
+      ${flowBar('Supply — what you earn', 576730, [{label:'Offerwall',v:512010,c:C.supply},{label:'Unity Ads',v:64720,c:C.supplyL}])}
+    </div>
+  </div>
+
+  ${sec('What stood out','star','n')}
+  <div class="card" style="padding:12px 30px">${nlist([
+    ["You scaled UA hard.","$288.0k this window (+193% vs prior) at a $6.40 CPI — down 28% — with installs up 305% to ~45,000."],
+    ["Ares monetization came online.","Baseball Hits offerwall supply ramped from ~$15k to $475.5k — now your single largest earning stream."],
+    ["Keep an eye on D7 ROAS.","It reads ~20% (from 25.7%) as you scaled, but matured Apr/May held 24–26% — late-June cohorts are still maturing."],
+    ["Swift monetization slipped −17%.","Its offerwall grew +15%, but Unity Ads fell −38% — idle inventory worth winning back."],
+  ])}</div>
+
+  <div class="gloss">
+    <details><summary>A note on D7 ROAS &amp; the reporting window</summary><div class="gd">All four streams run <b>Mar 30 – Jun 30, 2026</b>, compared with the prior period. <b>D7 ROAS</b> = revenue by day 7 ÷ spend; cohorts acquired in the last 7 days haven't reached day 7 yet, so the most recent weeks read low until they mature.</div></details>
+  </div>`;
+
+function delta(pct, good){const cls=good?'up':'down';const sign=pct>0?'+':'';return `<span class="${cls}">${sign}${pct}%</span>`}
+V.qoq=`
+  <div class="ey">Quarter over quarter</div>
+  <div class="lead">This period vs. the previous period</div>
+  <div class="sublead">Trailing 3 months (Mar 30 – Jun 30, 2026) compared with the prior period. Green is favorable, red is unfavorable.</div>
+
+  ${sec('User acquisition','users')}
+  <div class="card" style="padding:10px 0">
+    <table class="t" style="min-width:500px">
+      <thead><tr><th style="padding-left:30px">Metric</th><th class="focus" style="text-align:right">This period</th><th style="text-align:right">Previous</th><th style="text-align:right;padding-right:30px">Δ</th></tr></thead>
+      <tbody>
+        <tr><td class="lead2" style="padding-left:30px">Spend</td><td class="n focus">$288.0k</td><td class="n">$98.4k</td><td class="n" style="padding-right:30px">${delta(192.8,true)}</td></tr>
+        <tr><td class="lead2" style="padding-left:30px">Installs</td><td class="n focus">44,990</td><td class="n">11,123</td><td class="n" style="padding-right:30px">${delta(304.5,true)}</td></tr>
+        <tr><td class="lead2" style="padding-left:30px">Cost per install</td><td class="n focus">$6.40</td><td class="n">$8.84</td><td class="n" style="padding-right:30px">${delta(-27.6,true)}</td></tr>
+        <tr><td class="lead2" style="padding-left:30px">D7 ROAS</td><td class="n focus">19.95%</td><td class="n">25.67%</td><td class="n" style="padding-right:30px">${delta(-22.3,false)}</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  ${sec('TapJoy demand','target')}
+  <div class="card" style="padding:10px 0">
+    <table class="t" style="min-width:520px">
+      <thead><tr><th style="padding-left:30px">Title</th><th class="focus" style="text-align:right">This period</th><th style="text-align:right">Previous</th><th style="text-align:right;padding-right:30px">Δ</th></tr></thead>
+      <tbody>
+        <tr><td class="lead2" style="padding-left:30px">Heroes vs. Hordes · Swift</td><td class="n focus">$421.6k</td><td class="n">$120.7k</td><td class="n" style="padding-right:30px">${delta(249,true)}</td></tr>
+        <tr><td class="lead2" style="padding-left:30px">Baseball Hits 26 · Ares</td><td class="n focus">$48.7k</td><td class="n">$0</td><td class="n" style="padding-right:30px"><span class="up">new</span></td></tr>
+        <tr class="tot"><td class="lead2" style="padding-left:30px">Total TapJoy demand</td><td class="n focus">$470.3k</td><td class="n">$120.7k</td><td class="n" style="padding-right:30px">${delta(290,true)}</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  ${sec('Monetization','coin','s')}
+  <div class="card" style="padding:10px 0">
+    <table class="t" style="min-width:560px">
+      <thead><tr><th style="padding-left:30px">Stream</th><th class="focus" style="text-align:right">This period</th><th style="text-align:right">Previous</th><th style="text-align:right;padding-right:30px">Δ</th></tr></thead>
+      <tbody>
+        <tr><td class="lead2" style="padding-left:30px">Ares — Offerwall (Baseball Hits 26)</td><td class="n focus">$434.9k</td><td class="n">$10.3k</td><td class="n" style="padding-right:30px"><span class="up">new</span></td></tr>
+        <tr><td class="lead2" style="padding-left:30px">Ares — Unity Ads</td><td class="n focus">$40.6k</td><td class="n">$4.4k</td><td class="n" style="padding-right:30px">${delta(824,true)}</td></tr>
+        <tr><td class="lead2" style="padding-left:30px">Swift — Offerwall (Heroes vs. Hordes)</td><td class="n focus">$77.1k</td><td class="n">$67.2k</td><td class="n" style="padding-right:30px">${delta(14.7,true)}</td></tr>
+        <tr><td class="lead2" style="padding-left:30px">Swift — Unity Ads</td><td class="n focus">$22.1k</td><td class="n">$35.5k</td><td class="n" style="padding-right:30px">${delta(-37.9,false)}</td></tr>
+        <tr><td class="lead2" style="padding-left:30px">Swift — ironSource</td><td class="n focus">$2.1k</td><td class="n">$3.0k</td><td class="n" style="padding-right:30px">${delta(-32.0,false)}</td></tr>
+        <tr class="tot"><td class="lead2" style="padding-left:30px">Total supply</td><td class="n focus">$576.7k</td><td class="n">$136.3k</td><td class="n" style="padding-right:30px">${delta(323,true)}</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div style="margin-top:34px" class="callbox">
+    <h4>What's driving it</h4>
+    <p><b>Demand scaled hard.</b> We leaned into Baseball Hits across both platforms — spend +193% and installs +305% at a 28% lower CPI ($6.40). D7 ROAS reads ~20% (from 25.7%): partly the cost of scaling fast, partly because late-June cohorts haven't reached day 7. Matured Apr/May held 24–26%.</p>
+    <p><b>Supply tilted to Ares.</b> Baseball Hits monetization newly ramped from ~$15k to $475.5k — now the account's biggest earner. Swift slipped −17%: its offerwall grew +15%, but Unity Ads fell −38% — idle inventory we can reactivate.</p>
+  </div>
+  <div class="note-row">HvH TapJoy grew over the full window, but your team is watching a recent-weeks softening — see the TapJoy demand tab for the full read.</div>`;
+
+V.ua=`
+  <div class="ey">Demand · user acquisition</div>
+  <div class="lead">User acquisition — Unity Ads</div>
+  <div class="sublead">Installs we bought for your Ares titles (Baseball Hits 26 + TWD: Aftermath) · Mar 30 – Jun 30, 2026.</div>
+
+  <div class="kpis five" style="margin-top:34px">
+    <div class="k dem"><div class="khead"><div class="kic">${ICON.target}</div><div class="lab">Total spend</div></div><div class="val dem">$288.0k</div></div>
+    <div class="k"><div class="khead"><div class="kic">${ICON.users}</div><div class="lab">Installs</div></div><div class="val">44,990</div></div>
+    <div class="k"><div class="khead"><div class="kic">${ICON.coin}</div><div class="lab">Blended CPI</div></div><div class="val">$6.40</div></div>
+    <div class="k sup"><div class="khead"><div class="kic">${ICON.gauge}</div><div class="lab">D7 ROAS</div></div><div class="val sup">19.95%</div><div class="note">Maturing · see note</div></div>
+    <div class="k"><div class="khead"><div class="kic">${ICON.star}</div><div class="lab">Titles</div></div><div class="val">2</div></div>
+  </div>
+
+  ${sec('Spend by title &amp; platform','chart')}
+  <div class="grid g2">
+    <div class="card">
+      ${vbars(['Baseball Hits 26','TWD: Aftermath'],[{name:'iOS',c:C.demand,v:[190683,9268]},{name:'Android',c:C.supply,v:[76812,11221]}],{max:210000})}
+      <div class="cap">Baseball Hits 26 is 93% of UA spend ($267.5k); TWD is an early test (~$20.5k).</div>
+    </div>
+    <div class="card" style="padding:10px 0">
+      <table class="t"><thead><tr><th style="padding-left:30px">Top campaigns</th><th style="text-align:right;padding-right:30px">Spend</th></tr></thead><tbody>
+        <tr><td class="lead2" style="padding-left:30px">BH · iOS · US · D7-HYB</td><td class="n" style="padding-right:30px">$117.7k</td></tr>
+        <tr><td class="lead2" style="padding-left:30px">BH · iOS · US · D28-IAP</td><td class="n" style="padding-right:30px">$51.4k</td></tr>
+        <tr><td class="lead2" style="padding-left:30px">BH · Android · US · D7-HYB</td><td class="n" style="padding-right:30px">$49.5k</td></tr>
+        <tr><td class="lead2" style="padding-left:30px">BH · Android · US · D28-IAP</td><td class="n" style="padding-right:30px">$27.3k</td></tr>
+        <tr><td class="lead2" style="padding-left:30px">TWD · Android / iOS</td><td class="n" style="padding-right:30px">$20.5k</td></tr>
+      </tbody></table>
+    </div>
+  </div>
+
+  ${sec('Where we spent it — top sources','chart')}
+  <div class="card" style="padding:10px 0">
+    <table class="t"><thead><tr><th style="padding-left:30px">Source app / network</th><th>Share of UA spend</th><th style="text-align:right;padding-right:30px">CPI</th></tr></thead><tbody>
+      ${SRC.map(s=>`<tr><td class="lead2" style="padding-left:30px">${s[0]}</td><td>${sbar(s[1],12.5,130,C.demand)}<b style="color:var(--ink)">${s[1]}%</b></td><td class="n" style="padding-right:30px">$${s[2].toFixed(2)}</td></tr>`).join('')}
+    </tbody></table>
+    <p style="font-size:12px;color:var(--muted);padding:14px 30px 4px;line-height:1.7">55 sources in total; the top 12 shown are ~60% of spend. <b style="color:var(--ink)">Gamegou ($1.78 CPI)</b> and MobilityWare ($5.50) are the most efficient at scale, while Gamebasics ($13.70) and Electronic Arts ($12.10) run the priciest.</p>
+  </div>
+
+  ${sec('Top creatives by spend','chart')}
+  <div class="card" style="padding:10px 0">
+    <table class="t"><thead><tr><th style="padding-left:30px">Creative pack</th><th style="padding-right:30px">Share of UA spend</th></tr></thead><tbody>
+      ${CRE.map(c=>`<tr><td class="lead2" style="padding-left:30px">${c[0]}</td><td style="padding-right:30px">${sbar(c[1],42.7,150,C.demand)}<b style="color:var(--ink)">${c[1]}%</b></td></tr>`).join('')}
+    </tbody></table>
+    <p style="font-size:12px;color:var(--muted);padding:14px 30px 4px;line-height:1.7">One creative — <b style="color:var(--ink)">Overhaul Slugfest (P-CID-1-16)</b> — carries <b style="color:var(--ink)">43%</b> of all UA spend. Diversifying the winner protects against fatigue as we scale.</p>
+  </div>
+
+  ${sec('Monthly spend &amp; D7 ROAS','chart')}
+  <div class="grid g2">
+    <div class="card">${combo(['Apr','May','Jun'],[92234,67913,125643],[24,26,null])}<div class="cap">June spend hit $125.6k at a $4.76 CPI. June D7 ROAS is omitted — those cohorts are still maturing.</div></div>
+    <div class="card" style="padding:12px 30px">${nlist([
+      ["We scaled into June.","Spend Apr $92.2k → May $67.9k → Jun $125.6k as efficiency improved."],
+      ["CPI kept falling.","$10.12 → $7.48 → $4.76 — strong unit economics at scale."],
+      ["ROAS held where it's matured.","Apr 24% and May 26%, both above your 20% target."],
+      ["Read June with care.","9 of 30 June days haven't reached day 7, so the ~20% will firm up."],
+    ])}</div>
+  </div>
+
+  ${sec('TWD: Aftermath — early test','star')}
+  <div class="card"><p class="prose"><b>~$20.5k combined</b> (iOS $9.3k · Android $11.2k). A small, deliberate test alongside the Baseball Hits scale-up. We'll refresh creatives and recalibrate the ROAS goal before committing larger budget — worth a second test together, not a pause.</p></div>`;
+
+V.owd=`
+  <div class="ey">Demand · TapJoy · your focus area</div>
+  <div class="lead">TapJoy demand — the growth question</div>
+  <div class="sublead">Both studios as advertisers on the TapJoy offerwall · $470.3k this window vs. the prior period · Mar 30 – Jun 30, 2026. This is the channel your team asked us to dig into.</div>
+
+  <div class="kpis" style="margin-top:34px">
+    <div class="k dem"><div class="khead"><div class="kic">${ICON.target}</div><div class="lab">TapJoy demand</div></div><div class="val dem">$470.3k</div><div class="note">Prior period $120.7k</div></div>
+    <div class="k"><div class="khead"><div class="kic">${ICON.users}</div><div class="lab">Installs</div></div><div class="val">85,998</div><div class="note">68k HvH · 18k BH26</div></div>
+    <div class="k"><div class="khead"><div class="kic">${ICON.chart}</div><div class="lab">Conversions</div></div><div class="val">276,927</div></div>
+    <div class="k"><div class="khead"><div class="kic">${ICON.star}</div><div class="lab">HvH share</div></div><div class="val">90%</div><div class="note">of TapJoy spend</div></div>
+  </div>
+
+  ${sec('By title — this period vs. prior','chart')}
+  <div class="card" style="padding:10px 0;overflow-x:auto">
+    <table class="t" style="min-width:680px"><thead><tr><th style="padding-left:30px">Title</th><th class="focus" style="text-align:right">This period</th><th style="text-align:right">Previous</th><th style="text-align:right">Δ</th><th style="text-align:right">Installs</th><th style="text-align:right;padding-right:30px">CS-conv %</th></tr></thead><tbody>
+      <tr><td class="lead2" style="padding-left:30px">Heroes vs. Hordes <span style="color:var(--muted);font-weight:400">· Swift</span></td><td class="n focus">$421.6k</td><td class="n">$120.7k</td><td class="n"><span class="up">+249%</span></td><td class="n">68,058</td><td class="n" style="padding-right:30px">0.11%</td></tr>
+      <tr><td class="lead2" style="padding-left:30px">Baseball Hits 26 <span style="color:var(--muted);font-weight:400">· Ares</span></td><td class="n focus">$48.7k</td><td class="n">$0</td><td class="n"><span class="up">new</span></td><td class="n">17,940</td><td class="n" style="padding-right:30px">1.01%</td></tr>
+    </tbody></table>
+  </div>
+
+  ${sec('Heroes vs. Hordes — where the spend goes','chart')}
+  <div class="grid g2">
+    <div class="card">${hbars([
+      {label:'Classic Offerwall',v:413085,c:C.demand},
+      {label:'Web · SDK · QR · Discover',v:8471,c:C.demandL},
+    ],{max:430000,fmt:v=>money(v),lblW:210,rh:58})}
+    <div class="cap">98% of HvH TapJoy spend runs through the classic offerwall.</div></div>
+    <div class="card" style="padding:12px 30px">${nlist([
+      ["Almost all classic offerwall.","Web, in-SDK, QR and the new Offerwall Discover placements are ~$8.5k combined — barely switched on."],
+      ["Offerwall Discover is brand new.","A fresh placement ($130 so far) — incremental inventory we haven't yet leaned into."],
+      ["Room in placement mix.","Diversifying beyond the classic wall is a lever before concluding the channel is tapped out."],
+    ])}</div>
+  </div>
+
+  ${sec("What your team told us — and our read","star")}
+  <div class="callbox">
+    <h4>Heroes vs. Hordes: dig in before you reallocate</h4>
+    <p>You've flagged HvH's TapJoy performance as softening and are weighing a shift toward Almedia and other rewarded channels. Here's the fuller picture, and where we'd look together first:</p>
+    <p><b>It's still your largest rewarded source.</b> $421.6k on 68k installs across the trailing three months — up vs. the prior period, with CS-conversion holding ~0.11%. If what you're seeing is a recent-weeks dip, let's put the weekly ROAS and payer curves next to Almedia's before moving budget — a channel this size shouldn't be cut on a short-window read.</p>
+    <p><b>Baseball Hits is a live playbook.</b> On the same offerwall it converts ~9× better (1.01% vs 0.11%). Porting its offer/creative design, geo and event optimization to HvH is the most direct path to lifting performance.</p>
+    <p><b>TWD launches in ~2 weeks</b> with Unity in Jakub's TapJoy plan — let's optimize it from day one rather than retrofit, and use it to pressure-test the channel fresh.</p>
+  </div>`;
+
+V.supply=`
+  <div class="ey">Supply · monetization</div>
+  <div class="lead">Monetization — publisher earnings</div>
+  <div class="sublead">What you earned showing ads in your games · $576.7k total payout · ~31M impressions · Mar 30 – Jun 30, 2026.</div>
+
+  <div class="kpis" style="margin-top:34px">
+    <div class="k sup"><div class="khead"><div class="kic">${ICON.coin}</div><div class="lab">Total supply</div></div><div class="val sup">$576.7k</div><div class="note">Publisher payout</div></div>
+    <div class="k"><div class="khead"><div class="kic">${ICON.chart}</div><div class="lab">Offerwall</div></div><div class="val">$512.0k</div><div class="note">29.1M impressions</div></div>
+    <div class="k"><div class="khead"><div class="kic">${ICON.chart}</div><div class="lab">Unity Ads</div></div><div class="val">$64.7k</div><div class="note">2.0M impressions</div></div>
+    <div class="k"><div class="khead"><div class="kic">${ICON.gauge}</div><div class="lab">Blended eCPM</div></div><div class="val">$17.62</div><div class="note">Offerwall</div></div>
+  </div>
+
+  ${sec('Offerwall — payout by title','chart','s')}
+  <div class="grid g2">
+    <div class="card">${hbars([
+      {label:'Baseball Hits 26',v:434930,c:C.supply},
+      {label:'Heroes vs. Hordes',v:77080,c:C.supplyL},
+    ],{max:500000,fmt:v=>money(v),lblW:158})}
+    <div class="cap">eCPM: Baseball Hits $25.10 vs Heroes vs. Hordes $6.57.</div></div>
+    <div class="card" style="padding:12px 30px">${nlist([
+      ["Baseball Hits 26 is your engine","85% of offerwall supply on premium inventory ($25.10 eCPM) — newly ramped from ~$10k."],
+      ["Heroes vs. Hordes under-monetizes","2.7× the impressions but a fifth of the payout ($6.57 eCPM)."],
+      ["That eCPM gap is your opportunity","lifting HvH toward Baseball Hits' yield is the biggest supply lever."],
+    ])}</div>
+  </div>
+
+  ${sec('Unity Ads — payout by app','chart','s')}
+  <div class="grid g2">
+    <div class="card">${hbars([
+      {label:'HvH — rewarded',v:22060,c:C.supply},
+      {label:'MLB Content',v:19180,c:C.supply},
+      {label:'MLB Hits',v:12980,c:C.supply},
+      {label:'TWD: Aftermath',v:7990,c:C.supply},
+      {label:'HvH — ironSource',v:2060,c:C.supplyL},
+    ],{max:26000,fmt:v=>money(v),lblW:158,rh:40})}</div>
+    <div class="card"><p class="prose"><b>Ares — $40.6k.</b> Rewarded video across MLB Content, MLB Hits and TWD: Aftermath — 863k impressions, all rewarded. MLB Content leads at $19.2k.</p>
+      <hr style="border:none;border-top:1px solid var(--lineSoft);margin:18px 0">
+      <p class="prose"><b>Swift — $24.1k.</b> Heroes vs. Hordes earns $22.1k on Unity Ads plus $2.1k via ironSource — but both fell ~35% vs last period.</p>
+      <p style="font-size:12.5px;color:var(--supplyInk);font-style:italic;margin-top:14px">→ Swift's Unity Ads revenue is sliding while its offerwall grows — worth reactivating idle inventory.</p>
+    </div>
+  </div>`;
+
+V.m2e=`
+  <div class="ey">New · Unity Ads feature</div>
+  <div class="lead">M2E Dynamic Offerwall — a fresh lever for Heroes vs. Hordes</div>
+  <div class="sublead">Unity's new dynamic banner into the offerwall, live on Heroes vs. Hordes since Jun 8 (US). Early read: it's already ~60% of offerwall publisher revenue and net-profitable — a Unity-native way to grow the exact channel you're weighing a pullback on.</div>
+
+  <div class="kpis" style="margin-top:34px">
+    <div class="k sup"><div class="khead"><div class="kic">${ICON.coin}</div><div class="lab">M2E OW pub revenue</div></div><div class="val sup">$2,013</div><div class="note">US · since Jun 8</div></div>
+    <div class="k"><div class="khead"><div class="kic">${ICON.chart}</div><div class="lab">Share of offerwall rev</div></div><div class="val">60%</div><div class="note">vs 40% standard video</div></div>
+    <div class="k sup"><div class="khead"><div class="kic">${ICON.gauge}</div><div class="lab">Net profit</div></div><div class="val sup">+$256</div><div class="note">profitable in pilot</div></div>
+    <div class="k"><div class="khead"><div class="kic">${ICON.star}</div><div class="lab">Android net-profit eCPM</div></div><div class="val">+$10</div><div class="note">iOS −$7, optimizing</div></div>
+  </div>
+
+  ${sec('M2E offerwall vs. standard video — publisher revenue','chart','s')}
+  <div class="grid g2">
+    <div class="card">${vbars(['Android','iOS'],[{name:'M2E offerwall',c:C.supply,v:[1580,434]},{name:'Standard video',c:C.demandL,v:[906,420]}],{max:1800,val:true,fmt:v=>'$'+v.toLocaleString()})}
+      <div class="cap">On Android, M2E already out-earns standard video ($1,580 vs $906) in its first three weeks.</div></div>
+    <div class="card" style="padding:10px 0">
+      <table class="t"><thead><tr><th style="padding-left:30px">Platform</th><th style="text-align:right">M2E OW pub rev</th><th style="text-align:right">Net profit</th><th style="text-align:right;padding-right:30px">Net-profit eCPM</th></tr></thead><tbody>
+        <tr><td class="lead2" style="padding-left:30px">Android</td><td class="n">$1,580</td><td class="n"><span class="up">+$342</span></td><td class="n" style="padding-right:30px"><span class="up">+$10</span></td></tr>
+        <tr><td class="lead2" style="padding-left:30px">iOS</td><td class="n">$434</td><td class="n"><span class="down">−$86</span></td><td class="n" style="padding-right:30px"><span class="down">−$7</span></td></tr>
+        <tr class="tot"><td class="lead2" style="padding-left:30px">Total (US)</td><td class="n">$2,013</td><td class="n"><span class="up">+$256</span></td><td class="n" style="padding-right:30px"><span class="up">+$6</span></td></tr>
+      </tbody></table>
+      <p style="font-size:12px;color:var(--muted);padding:14px 30px 4px;line-height:1.7">Gross M2E offerwall eCPM is $44 (net cost eCPM $15) — healthy for a brand-new placement still in ramp.</p>
+    </div>
+  </div>
+
+  ${sec('Why it matters — before you reallocate','star')}
+  <div class="callbox">
+    <h4>Heroes vs. Hordes: a new offerwall path</h4>
+    <p>You're weighing shifting HvH budget toward Almedia and other rewarded channels. M2E dynamic offerwall — Unity's new dynamic banner into the offerwall — is already pulling its weight on HvH in its first ~3 weeks (US).</p>
+    <p><b>It drove $2,013 of publisher revenue</b> — 60% of HvH offerwall revenue — at a $256 net profit. <b>Android is the standout:</b> M2E out-earns standard video ($1,580 vs $906) at a +$10 net-profit eCPM.</p>
+    <p><b>iOS is still finding its feet</b> (−$7 net-profit eCPM) — an optimization target, not a reason to hold back on Android. <b>Our recommendation:</b> switch on the updated dynamic banner across HvH Android now and tune iOS — a Unity-native way to grow the very channel you were about to pull back from.</p>
+  </div>`;
+
+V.plan=`
+  <div class="ey">Looking ahead</div>
+  <div class="lead">Q3 growth plan</div>
+  <div class="sublead">Six opportunities we see across your demand and supply — with the channel, the uplift we'd expect, and why.</div>
+
+  ${sec('Growth opportunities','plan','n')}
+  <div class="card" style="padding:10px 0;overflow-x:auto">
+    <table class="t" style="min-width:780px"><thead><tr>
+      <th style="padding-left:30px">Opportunity</th><th>Channel</th><th>Details</th><th style="color:var(--supplyInk)">Potential uplift</th><th style="padding-right:30px">Why</th>
+    </tr></thead><tbody>
+      <tr><td class="lead2" style="padding-left:30px">Hold the June scale, defend ROAS</td><td class="indigo">Unity Ads</td><td>Keep Baseball Hits ~$125k/mo; watch D7 ROAS as cohorts mature</td><td class="teal">Sustain +193% scale</td><td style="padding-right:30px">Protect the $4.76 CPI as you grow</td></tr>
+      <tr><td class="lead2" style="padding-left:30px">Lift Heroes vs. Hordes yield</td><td class="teal">Offerwall</td><td>Demand-team eCPM review — HvH $6.57 vs BH $25.10</td><td class="teal">+30–50% supply revenue</td><td style="padding-right:30px">Largest single monetization gap</td></tr>
+      <tr><td class="lead2" style="padding-left:30px">Win back Swift Unity Ads supply</td><td class="teal">Unity Ads</td><td>Reactivate rewarded + interstitial on HvH (down 35%)</td><td class="teal">Recover ~$13k/period</td><td style="padding-right:30px">Unity Ads fell while offerwall grew</td></tr>
+      <tr><td class="lead2" style="padding-left:30px">Confirm Baseball Hits ROAS</td><td class="indigo">Unity Ads</td><td>Re-check D7 ROAS once late-June cohorts hit day 7</td><td class="teal">Validate the scale</td><td style="padding-right:30px">~20% understated by immature cohorts</td></tr>
+      <tr><td class="lead2" style="padding-left:30px">Iterate &amp; scale TWD</td><td class="indigo">Unity Ads</td><td>Refresh creatives, recalibrate goal, then scale past $20k</td><td class="teal">Unlocks a third title</td><td style="padding-right:30px">Early test promising but small</td></tr>
+      <tr><td class="lead2" style="padding-left:30px">Defend Heroes vs. Hordes on TapJoy</td><td class="teal">TapJoy</td><td>Weekly ROAS vs Almedia before any shift; port the Baseball Hits offer/creative playbook</td><td class="teal">Retain your largest rewarded channel</td><td style="padding-right:30px">Team is weighing a move to Almedia</td></tr>
+    </tbody></table>
+  </div>
+
+  ${sec('Action items &amp; owners','plan','n')}
+  <div class="card" style="padding:10px 0;overflow-x:auto">
+    <table class="t" style="min-width:640px"><thead><tr><th style="padding-left:30px;text-align:center;width:44px">#</th><th>Action</th><th>Owner</th><th style="padding-right:30px">Timing</th></tr></thead><tbody>
+      <tr><td class="n" style="text-align:center">1</td><td>Hold Baseball Hits UA ~$125k/mo; monitor D7 ROAS as cohorts mature</td><td class="teal">Unity + Ares</td><td style="padding-right:30px">Early Q3</td></tr>
+      <tr><td class="n" style="text-align:center">2</td><td>Demand-team review to lift Heroes vs. Hordes offerwall eCPM 30–50%</td><td class="teal">Unity</td><td style="padding-right:30px">Q3</td></tr>
+      <tr><td class="n" style="text-align:center">3</td><td>Reactivate Swift's rewarded + interstitial Unity Ads inventory on HvH</td><td class="teal">Swift</td><td style="padding-right:30px">Q3</td></tr>
+      <tr><td class="n" style="text-align:center">4</td><td>Re-pull Baseball Hits D7 ROAS once late-June cohorts mature</td><td class="teal">Unity</td><td style="padding-right:30px">Mid-July</td></tr>
+      <tr><td class="n" style="text-align:center">5</td><td>Refresh TWD creatives and recalibrate ROAS goal before scaling</td><td class="teal">Ares</td><td style="padding-right:30px">Q3</td></tr>
+      <tr><td class="n" style="text-align:center">6</td><td>Review weekly HvH TapJoy ROAS vs Almedia before any shift; optimize the TWD TapJoy launch (Jakub) from day one</td><td class="teal">Unity + Swift</td><td style="padding-right:30px">Next 2 weeks</td></tr>
+    </tbody></table>
+  </div>
+
+  <div class="foot">Prepared by Alon Haliva · Account Manager, Unity · Ad Monetization &amp; Growth<br>
+  Source: Unity Ads UA export (Mar 30–Jun 30, 2026, vs prior period), Ares &amp; Swift supply exports (vs prior period), TapJoy demand export (through May 28). Figures rounded.</div>`;
+
+const tabsEl=document.getElementById('tabs'), mainEl=document.getElementById('main');
+tabsEl.innerHTML=TABS.map((t,i)=>`<button data-id="${t.id}" class="${i===0?'on':''}">${t.pip?`<span class="pip" style="background:${t.pip}"></span>`:''}${t.label}</button>`).join('');
+let cur='overview';
+function go(id){
+  cur=id;
+  document.querySelectorAll('nav.tabs button').forEach(b=>b.classList.toggle('on',b.dataset.id===id));
+  mainEl.innerHTML=`<section class="tab on">${V[id]}</section>`;
+  window.scrollTo({top:0});
+}
+tabsEl.addEventListener('click',e=>{const b=e.target.closest('button');if(b)go(b.dataset.id)});
+
+const themeBtn=document.getElementById('theme');
+function applyTheme(dark){
+  document.body.classList.toggle('dark',dark);
+  themeBtn.textContent=dark?'☀️':'🌙';
+  if(dark){C.ink='#F1F3F7';C.body='#BBC1CD';C.muted='#868D9C';C.line='#2A303C';}
+  else{C.ink='#0F1117';C.body='#4B515D';C.muted='#888F9E';C.line='#EBEDF3';}
+  try{localStorage.setItem('qbrTheme',dark?'dark':'light')}catch(e){}
+  go(cur);
+}
+themeBtn.onclick=()=>applyTheme(!document.body.classList.contains('dark'));
+let saved='light'; try{saved=localStorage.getItem('qbrTheme')||'light'}catch(e){}
+applyTheme(saved==='dark');
+</script>
+</body>
+</html>

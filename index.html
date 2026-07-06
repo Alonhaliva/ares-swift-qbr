@@ -259,7 +259,12 @@ function hbars(rows, opts={}){
   const H=padT+padB+rows.length*rh; const max=opts.max||Math.max(...rows.map(r=>r.v))*1.08;
   let g=defs(rows.map(r=>r.c||C.supply),p);
   rows.forEach((r,i)=>{const cy=padT+i*rh+rh/2, bw=(W-lblW-valW)*r.v/max, bh=Math.min(22,rh*0.46), c=r.c||C.supply;
-    g+=`<text x="${lblW-12}" y="${cy+4}" font-size="12.5" font-weight="500" fill="${C.ink}" text-anchor="end">${r.label}</text>`;
+    let tx=lblW-12, anchor='end';
+    if(r.img){const s=22, iy=cy-s/2, cid=p+'c'+i;
+      g+=`<clipPath id="${cid}"><rect x="6" y="${iy}" width="${s}" height="${s}" rx="6"/></clipPath>`;
+      g+=`<image href="${r.img}" x="6" y="${iy}" width="${s}" height="${s}" clip-path="url(#${cid})" preserveAspectRatio="xMidYMid slice"/>`;
+      tx=6+s+9; anchor='start';}
+    g+=`<text x="${tx}" y="${cy+4}" font-size="12.5" font-weight="500" fill="${C.ink}" text-anchor="${anchor}">${r.label}</text>`;
     g+=`<rect x="${lblW}" y="${cy-bh/2}" width="${Math.max(bw,2)}" height="${bh}" rx="4" fill="${gf(c,p)}"/>`;
     g+=`<text x="${lblW+Math.max(bw,2)+9}" y="${cy+4}" font-size="12.5" font-weight="700" fill="${C.ink}">${opts.fmt?opts.fmt(r.v):r.v}</text>`;});
   return `<svg class="chart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet">${g}</svg>`;
@@ -381,8 +386,8 @@ V.qoq=`
     <table class="t" style="min-width:520px">
       <thead><tr><th style="padding-left:30px">Title</th><th class="focus" style="text-align:right">This period</th><th style="text-align:right">Previous</th><th style="text-align:right;padding-right:30px">Δ</th></tr></thead>
       <tbody>
-        <tr><td class="lead2" style="padding-left:30px">Heroes vs. Hordes · Swift</td><td class="n focus">$421.6k</td><td class="n">$120.7k</td><td class="n" style="padding-right:30px">${delta(249,true)}</td></tr>
-        <tr><td class="lead2" style="padding-left:30px">Baseball Hits 26 · Ares</td><td class="n focus">$48.7k</td><td class="n">$0</td><td class="n" style="padding-right:30px"><span class="up">new</span></td></tr>
+        <tr><td class="lead2" style="padding-left:30px">${gimg('hvh',20)}Heroes vs. Hordes · Swift</td><td class="n focus">$421.6k</td><td class="n">$120.7k</td><td class="n" style="padding-right:30px">${delta(249,true)}</td></tr>
+        <tr><td class="lead2" style="padding-left:30px">${gimg('bh',20)}Baseball Hits 26 · Ares</td><td class="n focus">$48.7k</td><td class="n">$0</td><td class="n" style="padding-right:30px"><span class="up">new</span></td></tr>
         <tr class="tot"><td class="lead2" style="padding-left:30px">Total TapJoy demand</td><td class="n focus">$470.3k</td><td class="n">$120.7k</td><td class="n" style="padding-right:30px">${delta(290,true)}</td></tr>
       </tbody>
     </table>
@@ -393,9 +398,9 @@ V.qoq=`
     <table class="t" style="min-width:560px">
       <thead><tr><th style="padding-left:30px">Stream</th><th class="focus" style="text-align:right">This period</th><th style="text-align:right">Previous</th><th style="text-align:right;padding-right:30px">Δ</th></tr></thead>
       <tbody>
-        <tr><td class="lead2" style="padding-left:30px">Ares — Offerwall (Baseball Hits 26)</td><td class="n focus">$434.9k</td><td class="n">$10.3k</td><td class="n" style="padding-right:30px"><span class="up">new</span></td></tr>
+        <tr><td class="lead2" style="padding-left:30px">${gimg('bh',20)}Ares — Offerwall (Baseball Hits 26)</td><td class="n focus">$434.9k</td><td class="n">$10.3k</td><td class="n" style="padding-right:30px"><span class="up">new</span></td></tr>
         <tr><td class="lead2" style="padding-left:30px">Ares — Unity Ads</td><td class="n focus">$40.6k</td><td class="n">$4.4k</td><td class="n" style="padding-right:30px">${delta(824,true)}</td></tr>
-        <tr><td class="lead2" style="padding-left:30px">Swift — Offerwall (Heroes vs. Hordes)</td><td class="n focus">$77.1k</td><td class="n">$67.2k</td><td class="n" style="padding-right:30px">${delta(14.7,true)}</td></tr>
+        <tr><td class="lead2" style="padding-left:30px">${gimg('hvh',20)}Swift — Offerwall (Heroes vs. Hordes)</td><td class="n focus">$77.1k</td><td class="n">$67.2k</td><td class="n" style="padding-right:30px">${delta(14.7,true)}</td></tr>
         <tr><td class="lead2" style="padding-left:30px">Swift — Unity Ads</td><td class="n focus">$22.1k</td><td class="n">$35.5k</td><td class="n" style="padding-right:30px">${delta(-37.9,false)}</td></tr>
         <tr><td class="lead2" style="padding-left:30px">Swift — ironSource</td><td class="n focus">$2.1k</td><td class="n">$3.0k</td><td class="n" style="padding-right:30px">${delta(-32.0,false)}</td></tr>
         <tr class="tot"><td class="lead2" style="padding-left:30px">Total supply</td><td class="n focus">$576.7k</td><td class="n">$136.3k</td><td class="n" style="padding-right:30px">${delta(323,true)}</td></tr>
@@ -528,9 +533,9 @@ V.supply=`
   ${sec('Offerwall — payout by title','chart','s')}
   <div class="grid g2">
     <div class="card">${hbars([
-      {label:'Baseball Hits 26',v:434930,c:C.supply},
-      {label:'Heroes vs. Hordes',v:77080,c:C.supplyL},
-    ],{max:500000,fmt:v=>money(v),lblW:158})}
+      {label:'Baseball Hits 26',v:434930,c:C.supply,img:IMG_bh},
+      {label:'Heroes vs. Hordes',v:77080,c:C.supplyL,img:IMG_hvh},
+    ],{max:500000,fmt:v=>money(v),lblW:186})}
     <div class="cap">eCPM: Baseball Hits $25.10 vs Heroes vs. Hordes $6.57.</div></div>
     <div class="card" style="padding:12px 30px">${nlist([
       ["Baseball Hits 26 is your engine","85% of offerwall supply on premium inventory ($25.10 eCPM) — newly ramped from ~$10k."],
@@ -559,8 +564,9 @@ V.m2e=`
   <div class="ey">New · Unity Ads feature</div>
   <div class="lead">M2E Dynamic Offerwall — a fresh lever for Heroes vs. Hordes</div>
   <div class="sublead">Unity's new dynamic banner into the offerwall, live on Heroes vs. Hordes since Jun 8 (US). Early read: it's already ~60% of offerwall publisher revenue and net-profitable — a Unity-native way to grow the exact channel you're weighing a pullback on.</div>
+  <div style="display:inline-flex;align-items:center;gap:0;background:var(--supplySoft);border:1px solid var(--line);border-radius:30px;padding:6px 16px 6px 6px;margin-top:18px;font-size:13px;font-weight:600;color:var(--supplyInk)">${gimg('hvh',24)}Heroes vs. Hordes · Swift Games</div>
 
-  <div class="kpis" style="margin-top:34px">
+  <div class="kpis" style="margin-top:26px">
     <div class="k sup"><div class="khead"><div class="kic">${ICON.coin}</div><div class="lab">M2E OW pub revenue</div></div><div class="val sup">$2,013</div><div class="note">US · since Jun 8</div></div>
     <div class="k"><div class="khead"><div class="kic">${ICON.chart}</div><div class="lab">Share of offerwall rev</div></div><div class="val">60%</div><div class="note">vs 40% standard video</div></div>
     <div class="k sup"><div class="khead"><div class="kic">${ICON.gauge}</div><div class="lab">Net profit</div></div><div class="val sup">+$256</div><div class="note">profitable in pilot</div></div>

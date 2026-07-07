@@ -334,7 +334,7 @@ V.overview=`
       <div class="st"><div class="lab">UA spend</div><div class="val dem">$288.0k</div>${trend('▲ 193%','good')}</div>
       <div class="st"><div class="lab">Installs</div><div class="val">44,990</div>${trend('▲ 305%','good')}</div>
       <div class="st"><div class="lab">Blended CPI</div><div class="val">$6.40</div>${trend('▼ 28%','good')}</div>
-      <div class="st"><div class="lab">Monetization</div><div class="val sup">$576.7k</div>${trend('Publisher payout','flat')}</div>
+      <div class="st"><div class="lab">Monetization</div><div class="val sup">$598.6k</div>${trend('Publisher payout','flat')}</div>
     </div>
   </section>
 
@@ -346,16 +346,16 @@ V.overview=`
     </div>
     <div>
       <div class="legend"><span><i style="background:${C.supply}"></i>TapJoy Offerwall</span><span><i style="background:${C.supplyL}"></i>Unity Ads</span></div>
-      ${flowBar('Supply — what you earn', 576730, [{label:'Offerwall',v:512010,c:C.supply},{label:'Unity Ads',v:64720,c:C.supplyL}])}
+      ${flowBar('Supply — what you earn', 598580, [{label:'Offerwall',v:530260,c:C.supply},{label:'Unity Ads',v:68310,c:C.supplyL}])}
     </div>
   </div>
 
   ${sec('What stood out','star','n')}
   <div class="card" style="padding:12px 30px">${nlist([
     ["You scaled UA hard.","$288.0k this window (+193% vs prior) at a $6.40 CPI — down 28% — with installs up 305% to ~45,000."],
-    ["Ares monetization came online.","Baseball Hits offerwall supply ramped from ~$15k to $475.5k — now your single largest earning stream."],
+    ["Ares monetization came online.","Baseball Hits offerwall supply ramped to $455.5k (from ~$39k last period) — now your single largest earning stream."],
     ["Keep an eye on D7 ROAS.","It reads ~20% (from 25.7%) as you scaled, but matured Apr/May held 24–26% — late-June cohorts are still maturing."],
-    ["Swift monetization slipped −17%.","Its offerwall grew +15%, but Unity Ads fell −38% — idle inventory worth winning back."],
+    ["Swift monetization slipped −9%.","Its offerwall held (+3%), but Unity Ads fell −34% — idle inventory worth winning back."],
   ])}</div>
 
   <div class="gloss">
@@ -398,12 +398,12 @@ V.qoq=`
     <table class="t" style="min-width:560px">
       <thead><tr><th style="padding-left:30px">Stream</th><th class="focus" style="text-align:right">This period</th><th style="text-align:right">Previous</th><th style="text-align:right;padding-right:30px">Δ</th></tr></thead>
       <tbody>
-        <tr><td class="lead2" style="padding-left:30px">${gimg('bh',20)}Ares — Offerwall (Baseball Hits 26)</td><td class="n focus">$434.9k</td><td class="n">$10.3k</td><td class="n" style="padding-right:30px"><span class="up">new</span></td></tr>
-        <tr><td class="lead2" style="padding-left:30px">Ares — Unity Ads</td><td class="n focus">$40.6k</td><td class="n">$4.4k</td><td class="n" style="padding-right:30px">${delta(824,true)}</td></tr>
-        <tr><td class="lead2" style="padding-left:30px">${gimg('hvh',20)}Swift — Offerwall (Heroes vs. Hordes)</td><td class="n focus">$77.1k</td><td class="n">$67.2k</td><td class="n" style="padding-right:30px">${delta(14.7,true)}</td></tr>
-        <tr><td class="lead2" style="padding-left:30px">Swift — Unity Ads</td><td class="n focus">$22.1k</td><td class="n">$35.5k</td><td class="n" style="padding-right:30px">${delta(-37.9,false)}</td></tr>
-        <tr><td class="lead2" style="padding-left:30px">Swift — ironSource</td><td class="n focus">$2.1k</td><td class="n">$3.0k</td><td class="n" style="padding-right:30px">${delta(-32.0,false)}</td></tr>
-        <tr class="tot"><td class="lead2" style="padding-left:30px">Total supply</td><td class="n focus">$576.7k</td><td class="n">$136.3k</td><td class="n" style="padding-right:30px">${delta(323,true)}</td></tr>
+        <tr><td class="lead2" style="padding-left:30px">${gimg('bh',20)}Ares — Offerwall (Baseball Hits 26)</td><td class="n focus">$455.5k</td><td class="n">$39.3k</td><td class="n" style="padding-right:30px">${delta(1058,true)}</td></tr>
+        <tr><td class="lead2" style="padding-left:30px">Ares — Unity Ads</td><td class="n focus">$44.3k</td><td class="n">$5.4k</td><td class="n" style="padding-right:30px">${delta(715,true)}</td></tr>
+        <tr><td class="lead2" style="padding-left:30px">${gimg('hvh',20)}Swift — Offerwall (Heroes vs. Hordes)</td><td class="n focus">$74.7k</td><td class="n">$72.5k</td><td class="n" style="padding-right:30px">${delta(3,true)}</td></tr>
+        <tr><td class="lead2" style="padding-left:30px">Swift — Unity Ads</td><td class="n focus">$22.0k</td><td class="n">$33.6k</td><td class="n" style="padding-right:30px">${delta(-34,false)}</td></tr>
+        <tr><td class="lead2" style="padding-left:30px">Swift — ironSource</td><td class="n focus">$2.0k</td><td class="n">$2.3k</td><td class="n" style="padding-right:30px">${delta(-15,false)}</td></tr>
+        <tr class="tot"><td class="lead2" style="padding-left:30px">Total supply</td><td class="n focus">$598.6k</td><td class="n">$167.3k</td><td class="n" style="padding-right:30px">${delta(258,true)}</td></tr>
       </tbody>
     </table>
   </div>
@@ -521,25 +521,25 @@ V.owd=`
 V.supply=`
   <div class="ey">Supply · monetization</div>
   <div class="lead">Monetization — publisher earnings</div>
-  <div class="sublead">What you earned showing ads in your games · $576.7k total payout · ~31M impressions · Mar 30 – Jun 30, 2026.</div>
+  <div class="sublead">What you earned showing ads in your games · $598.6k total payout · ~30M impressions · Mar 30 – Jun 30, 2026.</div>
 
   <div class="kpis" style="margin-top:34px">
-    <div class="k sup"><div class="khead"><div class="kic">${ICON.coin}</div><div class="lab">Total supply</div></div><div class="val sup">$576.7k</div><div class="note">Publisher payout</div></div>
-    <div class="k"><div class="khead"><div class="kic">${ICON.chart}</div><div class="lab">Offerwall</div></div><div class="val">$512.0k</div><div class="note">29.1M impressions</div></div>
-    <div class="k"><div class="khead"><div class="kic">${ICON.chart}</div><div class="lab">Unity Ads</div></div><div class="val">$64.7k</div><div class="note">2.0M impressions</div></div>
-    <div class="k"><div class="khead"><div class="kic">${ICON.gauge}</div><div class="lab">Blended eCPM</div></div><div class="val">$17.62</div><div class="note">Offerwall</div></div>
+    <div class="k sup"><div class="khead"><div class="kic">${ICON.coin}</div><div class="lab">Total supply</div></div><div class="val sup">$598.6k</div><div class="note">Publisher payout · +258% vs prior</div></div>
+    <div class="k"><div class="khead"><div class="kic">${ICON.chart}</div><div class="lab">Offerwall</div></div><div class="val">$530.3k</div><div class="note">28.2M impressions</div></div>
+    <div class="k"><div class="khead"><div class="kic">${ICON.chart}</div><div class="lab">Unity Ads</div></div><div class="val">$68.3k</div><div class="note">2.1M impressions</div></div>
+    <div class="k"><div class="khead"><div class="kic">${ICON.gauge}</div><div class="lab">Supply eCPM</div></div><div class="val">$146.92</div><div class="note">Blended · offerwall $267.68</div></div>
   </div>
 
   ${sec('Offerwall — payout by title','chart','s')}
   <div class="grid g2">
     <div class="card">${hbars([
-      {label:'Baseball Hits 26',v:434930,c:C.supply,img:IMG_bh},
-      {label:'Heroes vs. Hordes',v:77080,c:C.supplyL,img:IMG_hvh},
-    ],{max:500000,fmt:v=>money(v),lblW:186})}
-    <div class="cap">eCPM: Baseball Hits $25.10 vs Heroes vs. Hordes $6.57.</div></div>
+      {label:'Baseball Hits 26',v:455490,c:C.supply,img:IMG_bh},
+      {label:'Heroes vs. Hordes',v:74730,c:C.supplyL,img:IMG_hvh},
+    ],{max:520000,fmt:v=>money(v),lblW:186})}
+    <div class="cap">Supply eCPM: Baseball Hits $479.73 vs Heroes vs. Hordes $72.71.</div></div>
     <div class="card" style="padding:12px 30px">${nlist([
-      ["Baseball Hits 26 is your engine","85% of offerwall supply on premium inventory ($25.10 eCPM) — newly ramped from ~$10k."],
-      ["Heroes vs. Hordes under-monetizes","2.7× the impressions but a fifth of the payout ($6.57 eCPM)."],
+      ["Baseball Hits 26 is your engine","86% of offerwall supply on premium inventory ($479.73 eCPM) — ramped from ~$39k last period."],
+      ["Heroes vs. Hordes under-monetizes","1.4× the impressions of Baseball Hits but a sixth of the payout ($72.71 eCPM)."],
       ["That eCPM gap is your opportunity","lifting HvH toward Baseball Hits' yield is the biggest supply lever."],
     ])}</div>
   </div>
@@ -547,16 +547,16 @@ V.supply=`
   ${sec('Unity Ads — payout by app','chart','s')}
   <div class="grid g2">
     <div class="card">${hbars([
-      {label:'HvH — rewarded',v:22060,c:C.supply},
-      {label:'MLB Content',v:19180,c:C.supply},
-      {label:'MLB Hits',v:12980,c:C.supply},
-      {label:'TWD: Aftermath',v:7990,c:C.supply},
-      {label:'HvH — ironSource',v:2060,c:C.supplyL},
+      {label:'HvH — Unity Ads',v:22020,c:C.supply},
+      {label:'MLB Content',v:21570,c:C.supply},
+      {label:'MLB Hits',v:13280,c:C.supply},
+      {label:'TWD: Aftermath',v:9060,c:C.supply},
+      {label:'HvH — ironSource',v:1980,c:C.supplyL},
     ],{max:26000,fmt:v=>money(v),lblW:158,rh:40})}</div>
-    <div class="card"><p class="prose"><b>Ares — $40.6k.</b> Rewarded video across MLB Content, MLB Hits and TWD: Aftermath — 863k impressions, all rewarded. MLB Content leads at $19.2k.</p>
+    <div class="card"><p class="prose"><b>Ares — $44.3k.</b> Rewarded video across MLB Content ($21.6k), MLB Hits ($13.3k) and TWD: Aftermath ($9.1k) — up sharply as these apps scaled.</p>
       <hr style="border:none;border-top:1px solid var(--lineSoft);margin:18px 0">
-      <p class="prose"><b>Swift — $24.1k.</b> Heroes vs. Hordes earns $22.1k on Unity Ads plus $2.1k via ironSource — but both fell ~35% vs last period.</p>
-      <p style="font-size:12.5px;color:var(--supplyInk);font-style:italic;margin-top:14px">→ Swift's Unity Ads revenue is sliding while its offerwall grows — worth reactivating idle inventory.</p>
+      <p class="prose"><b>Swift — $24.0k.</b> Heroes vs. Hordes earns $22.0k on Unity Ads plus $2.0k via ironSource — both slipped vs last period (Unity Ads −34%, ironSource −15%).</p>
+      <p style="font-size:12.5px;color:var(--supplyInk);font-style:italic;margin-top:14px">→ Swift's in-app revenue is sliding while its offerwall holds — worth reactivating idle inventory.</p>
     </div>
   </div>`;
 
@@ -606,8 +606,8 @@ V.plan=`
       <th style="padding-left:30px">Opportunity</th><th>Channel</th><th>Details</th><th style="color:var(--supplyInk)">Potential uplift</th><th style="padding-right:30px">Why</th>
     </tr></thead><tbody>
       <tr><td class="lead2" style="padding-left:30px">Hold the June scale, defend ROAS</td><td class="indigo">Unity Ads</td><td>Keep Baseball Hits ~$125k/mo; watch D7 ROAS as cohorts mature</td><td class="teal">Sustain +193% scale</td><td style="padding-right:30px">Protect the $4.76 CPI as you grow</td></tr>
-      <tr><td class="lead2" style="padding-left:30px">Lift Heroes vs. Hordes yield</td><td class="teal">Offerwall</td><td>Demand-team eCPM review — HvH $6.57 vs BH $25.10</td><td class="teal">+30–50% supply revenue</td><td style="padding-right:30px">Largest single monetization gap</td></tr>
-      <tr><td class="lead2" style="padding-left:30px">Win back Swift Unity Ads supply</td><td class="teal">Unity Ads</td><td>Reactivate rewarded + interstitial on HvH (down 35%)</td><td class="teal">Recover ~$13k/period</td><td style="padding-right:30px">Unity Ads fell while offerwall grew</td></tr>
+      <tr><td class="lead2" style="padding-left:30px">Lift Heroes vs. Hordes yield</td><td class="teal">Offerwall</td><td>Demand-team eCPM review — HvH $72.71 vs BH $479.73 supply eCPM</td><td class="teal">+30–50% supply revenue</td><td style="padding-right:30px">Largest single monetization gap</td></tr>
+      <tr><td class="lead2" style="padding-left:30px">Win back Swift Unity Ads supply</td><td class="teal">Unity Ads</td><td>Reactivate rewarded + interstitial on HvH (down 34%)</td><td class="teal">Recover ~$12k/period</td><td style="padding-right:30px">Unity Ads fell while offerwall held</td></tr>
       <tr><td class="lead2" style="padding-left:30px">Confirm Baseball Hits ROAS</td><td class="indigo">Unity Ads</td><td>Re-check D7 ROAS once late-June cohorts hit day 7</td><td class="teal">Validate the scale</td><td style="padding-right:30px">~20% understated by immature cohorts</td></tr>
       <tr><td class="lead2" style="padding-left:30px">Iterate &amp; scale TWD</td><td class="indigo">Unity Ads</td><td>Refresh creatives, recalibrate goal, then scale past $20k</td><td class="teal">Unlocks a third title</td><td style="padding-right:30px">Early test promising but small</td></tr>
       <tr><td class="lead2" style="padding-left:30px">Defend Heroes vs. Hordes on TapJoy</td><td class="teal">TapJoy</td><td>Weekly ROAS vs Almedia before any shift; port the Baseball Hits offer/creative playbook</td><td class="teal">Retain your largest rewarded channel</td><td style="padding-right:30px">Team is weighing a move to Almedia</td></tr>

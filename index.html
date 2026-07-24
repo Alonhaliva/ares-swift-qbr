@@ -316,6 +316,10 @@ function sec(title,ic,cls){return `<div class="sec ${cls||''}"><div class="ic">$
 function trend(txt,kind){return `<span class="trend ${kind}">${txt}</span>`}
 function nlist(items){return `<ul class="bl">${items.map((it,i)=>`<li><span class="num">${i+1}</span><span>${Array.isArray(it)?`<b>${it[0]}</b> ${it[1]}`:it}</span></li>`).join('')}</ul>`}
 function sbar(pct,max,w,color){return `<span style="display:inline-block;height:8px;border-radius:4px;background:${color};width:${Math.max(pct/max*w,5)}px;vertical-align:middle;margin-right:10px"></span>`}
+function mixbar(name,play,vp,vid){
+  const seg=(v,c)=>v<=0?'':`<div title="${v}%" style="width:${v}%;background:${c};display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff">${v>=8?v+'%':''}</div>`;
+  return `<div style="display:flex;align-items:center;gap:12px;margin:7px 0"><div style="width:130px;font-size:12px;color:var(--body);font-weight:600">${name}</div><div style="flex:1;display:flex;height:22px;border-radius:5px;overflow:hidden;background:var(--line)">${seg(play,'var(--demand)')}${seg(vp,'var(--supply)')}${seg(vid,'var(--accent)')}</div></div>`;
+}
 const SRC=[['VoodooAds',12.5,5.90],['Gamegou Ad',6.9,1.78],['advjy',6.0,7.76],['LEARNINGS CO.',5.4,8.53],['SAYGAMES',5.0,9.18],['Electronic Arts',4.8,12.10],['MobilityWare Ads',4.5,5.50],['Easybrain',3.6,7.70],['Crazy Labs',3.3,7.27],['BoomBit Games',2.8,4.99],['Tripledot',2.4,9.56],['Gamebasics',2.3,13.70]];
 const CRE=[['Overhaul Slugfest · Mid/Next HR — P-CID-1-16',42.7],['Overhaul Slugfest · Easy — P-CID-1-18',9.8],['Cal Raleigh · Base Single — P-CID-5-6',8.8],['Video 22 → P-CID-1-16',8.1],['Cal Raleigh · Multi-Replay — P-CID-5-4',3.1],['Video 37 (15s) — P-CID-1-16',1.7],['Video 29 — P-CID-1-18',1.4],['TWD · Farm Kill Count — P-CID-3-3',1.3]];
 
@@ -489,10 +493,22 @@ V.ua=`
       <div class="cap" style="padding:0 30px">Ad revenue is a growing share of D28 value — a real monetization lift that argues for re-testing a hybrid ROAS goal.</div>
     </div>
     <div class="card" style="padding:12px 30px">${nlist([
-      ["Beating your D28 target.","Baseball Hits has run above your 50% D28 IAP ROAS goal since May — let's align the Android goal to that headroom and lean in."],
+      ["Beating your D28 target.","Matured May cohorts came in at <b style=\"color:var(--ink)\">74% D28 IAP ROAS on iOS</b> and <b style=\"color:var(--ink)\">71% on Android</b> — both well clear of your 50% goal (Apr → May: iOS 63→74%, Android 32→71%). Let's align the Android goal to that headroom and lean in."],
       ["Re-test Hybrid ROAS.","With D28 ad-rev share up (iOS 1.7%→5.7%, Android 4.6%→6.6% since April), hybrid is worth another run. Did something change on monetization in early May?"],
-      ["Refresh the creative.","No new packs since May 22. Sports peers carry more share of voice on video + playable — let's test longer videos (45s+, ideally 60s+)."],
+      ["Refresh the creative.","No new packs since May 22 — and Baseball Hits runs <b style=\"color:var(--ink)\">0% pure video</b> (73% playable, 27% video+playable) while the sports category sits at 53% video+playable and 10% video. Test longer video (45s+, ideally 60s+)."],
     ])}</div>
+  </div>
+
+  <div class="card" style="margin-top:16px;padding:16px 30px 20px">
+    <div style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:2px">Creative mix — Baseball Hits vs. the sports category</div>
+    <div class="cap" style="padding:0 0 12px">Share of network spend by ad format. Baseball Hits leans almost entirely on playables; peers put the majority behind video + playable.</div>
+    ${mixbar('Baseball Hits 26',73,27,0)}
+    ${mixbar('Sports category',37,53,10)}
+    <div style="display:flex;gap:18px;margin-top:12px;font-size:11px;color:var(--muted)">
+      <span style="display:flex;align-items:center;gap:5px"><span style="width:10px;height:10px;border-radius:2px;background:var(--demand);display:inline-block"></span>Playable</span>
+      <span style="display:flex;align-items:center;gap:5px"><span style="width:10px;height:10px;border-radius:2px;background:var(--supply);display:inline-block"></span>Video + playable</span>
+      <span style="display:flex;align-items:center;gap:5px"><span style="width:10px;height:10px;border-radius:2px;background:var(--accent);display:inline-block"></span>Video</span>
+    </div>
   </div>
 
   ${sec('TWD: Aftermath — early test','star')}
@@ -658,6 +674,7 @@ V.plan=`
       <tr><td class="lead2" style="padding-left:30px">Confirm Baseball Hits ROAS</td><td class="indigo">Unity Ads</td><td>Re-check D7 ROAS once late-June cohorts hit day 7</td><td class="teal">Validate the scale</td><td style="padding-right:30px">~20% understated by immature cohorts</td></tr>
       <tr><td class="lead2" style="padding-left:30px">Iterate &amp; scale TWD</td><td class="indigo">Unity Ads</td><td>Refresh creatives, recalibrate goal, then scale past $20k</td><td class="teal">Unlocks a third title</td><td style="padding-right:30px">Early test promising but small</td></tr>
       <tr><td class="lead2" style="padding-left:30px">Defend Heroes vs. Hordes on TapJoy</td><td class="teal">TapJoy</td><td>Weekly ROAS vs Almedia before any shift; port the Baseball Hits offer/creative playbook</td><td class="teal">Retain your largest rewarded channel</td><td style="padding-right:30px">Team is weighing a move to Almedia</td></tr>
+      <tr><td class="lead2" style="padding-left:30px">Re-open HvH US on new TapJoy formats</td><td class="indigo">TapJoy</td><td>Relaunch on <b>CPI billing</b> (ETA Q4) + <b>MRCPE tROAS</b> (in testing); run TWD as MRCPE on both platforms from day one</td><td class="teal">Re-open US demand with less risk</td><td style="padding-right:30px">Direct answer to the Almedia question</td></tr>
     </tbody></table>
   </div>
 
@@ -670,6 +687,7 @@ V.plan=`
       <tr><td class="n" style="text-align:center">4</td><td>Re-pull Baseball Hits D7 ROAS once late-June cohorts mature</td><td class="teal">Unity</td><td style="padding-right:30px">Mid-July</td></tr>
       <tr><td class="n" style="text-align:center">5</td><td>Refresh TWD creatives and recalibrate ROAS goal before scaling</td><td class="teal">Ares</td><td style="padding-right:30px">Q3</td></tr>
       <tr><td class="n" style="text-align:center">6</td><td>Review weekly HvH TapJoy ROAS vs Almedia before any shift; optimize the TWD TapJoy launch (Jakub) from day one</td><td class="teal">Unity + Swift</td><td style="padding-right:30px">Next 2 weeks</td></tr>
+      <tr><td class="n" style="text-align:center">7</td><td>Line up HvH US relaunch on CPI billing (Q4) + MRCPE tROAS; share your list of available TWD MRCPE events so we can design the funnel and starting bids</td><td class="teal">Unity + Swift</td><td style="padding-right:30px">Q3–Q4</td></tr>
     </tbody></table>
   </div>
 

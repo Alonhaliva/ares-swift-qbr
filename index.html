@@ -478,8 +478,25 @@ V.ua=`
     ])}</div>
   </div>
 
+  ${sec('Baseball Hits — where we&rsquo;d push next','star')}
+  <div class="grid g2">
+    <div class="card" style="padding:12px 0">
+      <div style="padding:6px 30px 0;font-size:13px;font-weight:700;color:var(--ink)">D28 ad-revenue share is climbing</div>
+      <table class="t" style="margin-top:8px"><thead><tr><th style="padding-left:30px">Platform</th><th style="text-align:right">Apr</th><th style="text-align:right">May</th><th style="text-align:right;padding-right:30px">Jun</th></tr></thead><tbody>
+        <tr><td class="lead2" style="padding-left:30px">iOS</td><td class="n">1.7%</td><td class="n">3.8%</td><td class="n" style="padding-right:30px"><span class="up">5.7%</span></td></tr>
+        <tr><td class="lead2" style="padding-left:30px">Android</td><td class="n">4.6%</td><td class="n">6.0%</td><td class="n" style="padding-right:30px"><span class="up">6.6%</span></td></tr>
+      </tbody></table>
+      <div class="cap" style="padding:0 30px">Ad revenue is a growing share of D28 value — a real monetization lift that argues for re-testing a hybrid ROAS goal.</div>
+    </div>
+    <div class="card" style="padding:12px 30px">${nlist([
+      ["Beating your D28 target.","Baseball Hits has run above your 50% D28 IAP ROAS goal since May — let's align the Android goal to that headroom and lean in."],
+      ["Re-test Hybrid ROAS.","With D28 ad-rev share up (iOS 1.7%→5.7%, Android 4.6%→6.6% since April), hybrid is worth another run. Did something change on monetization in early May?"],
+      ["Refresh the creative.","No new packs since May 22. Sports peers carry more share of voice on video + playable — let's test longer videos (45s+, ideally 60s+)."],
+    ])}</div>
+  </div>
+
   ${sec('TWD: Aftermath — early test','star')}
-  <div class="card"><p class="prose"><b>~$20.5k combined</b> (iOS $9.3k · Android $11.2k). A small, deliberate test alongside the Baseball Hits scale-up. We'll refresh creatives and recalibrate the ROAS goal before committing larger budget — worth a second test together, not a pause.</p></div>`;
+  <div class="card"><p class="prose"><b>~$20.5k combined</b> (iOS $9.3k · Android $11.2k). A small, deliberate test alongside the Baseball Hits scale-up. We'll refresh creatives and recalibrate the ROAS goal before committing larger budget — worth a second test together, not a pause. <b>Ares' other titles remain paused</b> for now.</p></div>`;
 
 V.owd=`
   <div class="ey">Demand · TapJoy · your focus area</div>
@@ -491,6 +508,11 @@ V.owd=`
     <div class="k"><div class="khead"><div class="kic">${ICON.users}</div><div class="lab">Installs</div></div><div class="val">85,998</div><div class="note">68k HvH · 18k BH26</div></div>
     <div class="k"><div class="khead"><div class="kic">${ICON.chart}</div><div class="lab">Conversions</div></div><div class="val">276,927</div></div>
     <div class="k"><div class="khead"><div class="kic">${ICON.star}</div><div class="lab">HvH share</div></div><div class="val">90%</div><div class="note">of TapJoy spend</div></div>
+  </div>
+
+  <div style="margin-top:24px;background:linear-gradient(100deg,var(--supplySoft),var(--demandSoft));border:1px solid var(--line);border-radius:14px;padding:16px 22px;display:flex;align-items:center;gap:14px">
+    <span style="font-size:23px">🏆</span>
+    <div style="font-size:14px;color:var(--body);line-height:1.55"><b style="color:var(--ink)">Baseball Hits 26</b> climbed from ~#70 to <b style="color:var(--ink)">#9 on iOS</b> and <b style="color:var(--ink)">#8 on Android</b> since launch — real momentum behind the offerwall growth.</div>
   </div>
 
   ${sec('By title — this period vs. prior','chart')}
@@ -521,8 +543,27 @@ V.owd=`
     <p>You've flagged HvH's TapJoy performance as softening and are weighing a shift toward Almedia and other rewarded channels. Here's the fuller picture, and where we'd look together first:</p>
     <p><b>It's still your largest rewarded source.</b> $421.6k on 68k installs across the trailing three months — up vs. the prior period, with CS-conversion holding ~0.11%. If what you're seeing is a recent-weeks dip, let's put the weekly ROAS and payer curves next to Almedia's before moving budget — a channel this size shouldn't be cut on a short-window read.</p>
     <p><b>Baseball Hits is a live playbook.</b> On the same offerwall it converts ~9× better (1.01% vs 0.11%). Porting its offer/creative design, geo and event optimization to HvH is the most direct path to lifting performance.</p>
-    <p><b>TWD launches in ~2 weeks</b> with Unity in Jakub's TapJoy plan — let's optimize it from day one rather than retrofit, and use it to pressure-test the channel fresh.</p>
-  </div>`;
+    <p><b>TWD launches in ~2 weeks</b> with Unity in Jakub's TapJoy plan — let's optimize it from day one (plan below).</p>
+  </div>
+
+  ${sec("What&rsquo;s coming to the Offerwall",'star','s')}
+  <div class="grid g2">
+    <div class="card">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px"><span style="font-size:16px;font-weight:800;color:var(--ink)">CPI billing</span><span class="pill sup" style="font-size:10px">ETA Q4</span></div>
+      <p class="prose">Pay per <b>install</b> rather than per engagement — de-risks the buy and maps cleanly to your CPI targets, removing the main friction on scaling the offerwall.</p>
+    </div>
+    <div class="card">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px"><span style="font-size:16px;font-weight:800;color:var(--ink)">MRCPE tROAS</span><span class="pill sup" style="font-size:10px">In testing</span></div>
+      <p class="prose">Target-ROAS bidding on the multi-reward engagement product — already in testing, with full access expected in a couple of months.</p>
+    </div>
+  </div>
+  <div class="note-row">Both are strong reasons to bring <b style="color:var(--ink)">Heroes vs. Hordes back on TapJoy (US)</b> sooner rather than later.</div>
+
+  ${sec('TWD: Aftermath — TapJoy launch plan','star','s')}
+  <div class="card" style="padding:12px 30px">${nlist([
+    ["Run it as an MRCPE on both platforms.","The multi-reward engagement format suits a fresh launch and lets us optimize to in-game events from day one."],
+    ["What we need from you.","Your list of available MRCPE events in TWD — so we can design the funnel and propose a set of competitive starting bids for the genre."],
+  ])}</div>`;
 
 V.supply=`
   <div class="ey">Supply · monetization</div>

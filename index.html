@@ -629,37 +629,42 @@ V.supply=`
 
 V.m2e=`
   <div class="ey">New · Unity Ads feature</div>
-  <div class="lead">M2E Dynamic Offerwall — a fresh lever for Heroes vs. Hordes</div>
-  <div class="sublead">Unity's new dynamic banner into the offerwall, live on Heroes vs. Hordes since Jun 8 (US). Early read: it's already ~60% of offerwall publisher revenue and net-profitable — a Unity-native way to grow the exact channel you're weighing a pullback on.</div>
+  <div class="lead">M2E Dynamic Offerwall — a fast-growing lever for Heroes vs. Hordes</div>
+  <div class="sublead">Unity's dynamic banner into the offerwall, live on Heroes vs. Hordes. In three months it has grown to <b>~47% of your daily offerwall reach</b>, revenue has more than doubled, and <b>Unity's own network fills 81% of it</b> — a native way to grow the exact channel you're weighing a pullback on. May 1 – Jul 27, 2026.</div>
   <div style="display:inline-flex;align-items:center;gap:0;background:var(--supplySoft);border:1px solid var(--line);border-radius:30px;padding:6px 16px 6px 6px;margin-top:18px;font-size:13px;font-weight:600;color:var(--supplyInk)">${gimg('hvh',24)}Heroes vs. Hordes · Swift Games</div>
 
   <div class="kpis" style="margin-top:26px">
-    <div class="k sup"><div class="khead"><div class="kic">${ICON.coin}</div><div class="lab">M2E OW pub revenue</div></div><div class="val sup">$2,013</div><div class="note">US · since Jun 8</div></div>
-    <div class="k"><div class="khead"><div class="kic">${ICON.chart}</div><div class="lab">Share of offerwall rev</div></div><div class="val">60%</div><div class="note">vs 40% standard video</div></div>
-    <div class="k sup"><div class="khead"><div class="kic">${ICON.gauge}</div><div class="lab">Net profit</div></div><div class="val sup">+$256</div><div class="note">profitable in pilot</div></div>
-    <div class="k"><div class="khead"><div class="kic">${ICON.star}</div><div class="lab">Android net-profit eCPM</div></div><div class="val">+$10</div><div class="note">iOS −$7, optimizing</div></div>
+    <div class="k sup"><div class="khead"><div class="kic">${ICON.coin}</div><div class="lab">M2E revenue</div></div><div class="val sup">$25.0k</div><div class="note">since May 1</div></div>
+    <div class="k"><div class="khead"><div class="kic">${ICON.chart}</div><div class="lab">Impressions</div></div><div class="val">1.08M</div><div class="note">$23.10 rev eCPM</div></div>
+    <div class="k sup"><div class="khead"><div class="kic">${ICON.gauge}</div><div class="lab">Share of OW reach</div></div><div class="val sup">~47%</div><div class="note">of daily offerwall users</div></div>
+    <div class="k"><div class="khead"><div class="kic">${ICON.star}</div><div class="lab">Revenue growth</div></div><div class="val">2.3×</div><div class="note">per day since launch</div></div>
   </div>
 
-  ${sec('M2E offerwall vs. standard video — publisher revenue','chart','s')}
+  ${sec('Who fills the M2E offerwall — revenue by demand source','chart','s')}
   <div class="grid g2">
-    <div class="card">${vbars(['Android','iOS'],[{name:'M2E offerwall',c:C.supply,v:[1580,434]},{name:'Standard video',c:C.demandL,v:[906,420]}],{max:1800,val:true,fmt:v=>'$'+v.toLocaleString()})}
-      <div class="cap">On Android, M2E already out-earns standard video ($1,580 vs $906) in its first three weeks.</div></div>
+    <div class="card">${hbars([
+      {label:'Unity network (comet)',v:20220,c:C.supply},
+      {label:'Offerwall (M2E)',v:2826,c:C.supply},
+      {label:'Liftoff',v:818,c:C.supplyL},
+      {label:'Other · 54 DSPs',v:1138,c:C.supplyL},
+    ],{max:23000,fmt:v=>'$'+(v>=1000?(v/1000).toFixed(1)+'k':v.toFixed(0))})}
+      <div class="cap">Of 57 bidding DSPs, Unity's own network (comet) fills <b>81%</b> — $20.2k at a $24.06 eCPM.</div></div>
     <div class="card" style="padding:10px 0">
-      <table class="t"><thead><tr><th style="padding-left:30px">Platform</th><th style="text-align:right">M2E OW pub rev</th><th style="text-align:right">Net profit</th><th style="text-align:right;padding-right:30px">Net-profit eCPM</th></tr></thead><tbody>
-        <tr><td class="lead2" style="padding-left:30px">Android</td><td class="n">$1,580</td><td class="n"><span class="up">+$342</span></td><td class="n" style="padding-right:30px"><span class="up">+$10</span></td></tr>
-        <tr><td class="lead2" style="padding-left:30px">iOS</td><td class="n">$434</td><td class="n"><span class="down">−$86</span></td><td class="n" style="padding-right:30px"><span class="down">−$7</span></td></tr>
-        <tr class="tot"><td class="lead2" style="padding-left:30px">Total (US)</td><td class="n">$2,013</td><td class="n"><span class="up">+$256</span></td><td class="n" style="padding-right:30px"><span class="up">+$6</span></td></tr>
+      <table class="t"><thead><tr><th style="padding-left:30px">Month</th><th style="text-align:right">Impressions</th><th style="text-align:right;padding-right:30px">Revenue</th></tr></thead><tbody>
+        <tr><td class="lead2" style="padding-left:30px">May</td><td class="n">284k</td><td class="n" style="padding-right:30px">$6.7k</td></tr>
+        <tr><td class="lead2" style="padding-left:30px">June</td><td class="n">348k</td><td class="n" style="padding-right:30px">$8.5k</td></tr>
+        <tr class="tot"><td class="lead2" style="padding-left:30px">July*</td><td class="n">450k</td><td class="n" style="padding-right:30px"><span class="up">$9.8k</span></td></tr>
       </tbody></table>
-      <p style="font-size:12px;color:var(--muted);padding:14px 30px 4px;line-height:1.7">Gross M2E offerwall eCPM is $44 (net cost eCPM $15) — healthy for a brand-new placement still in ramp.</p>
+      <p style="font-size:12px;color:var(--muted);padding:14px 30px 4px;line-height:1.7">*July is 27 days and already the biggest month. Daily revenue rose from ~$184 in the launch week to ~$428 in the last — 2.3×.</p>
     </div>
   </div>
 
-  ${sec('Why it matters — before you reallocate','star')}
+  ${sec('Why it matters — the Almedia answer','star')}
   <div class="callbox">
-    <h4>Heroes vs. Hordes: a new offerwall path</h4>
-    <p>You're weighing shifting HvH budget toward Almedia and other rewarded channels. M2E dynamic offerwall — Unity's new dynamic banner into the offerwall — is already pulling its weight on HvH in its first ~3 weeks (US).</p>
-    <p><b>It drove $2,013 of publisher revenue</b> — 60% of HvH offerwall revenue — at a $256 net profit. <b>Android is the standout:</b> M2E out-earns standard video ($1,580 vs $906) at a +$10 net-profit eCPM.</p>
-    <p><b>iOS is still finding its feet</b> (−$7 net-profit eCPM) — an optimization target, not a reason to hold back on Android. <b>Our recommendation:</b> switch on the updated dynamic banner across HvH Android now and tune iOS — a Unity-native way to grow the very channel you were about to pull back from.</p>
+    <h4>Heroes vs. Hordes: a Unity-native growth engine</h4>
+    <p>You're weighing shifting HvH budget toward Almedia and other rewarded channels. M2E dynamic offerwall is a Unity feature that, in three months, has become <b>about half of your offerwall reach</b> (47% of daily unique viewers) and is <b>adding incremental profit</b> (+$2.6k in the last 30 days).</p>
+    <p><b>It's filled by Unity's own demand</b> — the Unity Ads network buys 81% of the inventory ($20.2k of $25.0k) — so it scales on Unity demand rather than depending on outside networks.</p>
+    <p><b>The upside lever is conversion:</b> M2E users convert at roughly half the organic rate today (3.9% vs 7.3%). <b>Our recommendation:</b> keep scaling M2E volume and tune the funnel toward the organic rate — a Unity-native way to grow the very channel you were about to pull back from.</p>
   </div>`;
 
 V.plan=`

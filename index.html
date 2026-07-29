@@ -10,12 +10,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#FAFBFD; --surface:#FFFFFF;
-  --ink:#0F1117; --body:#4B515D; --muted:#888F9E; --faint:#B3B9C6;
-  --line:#EBEDF3; --lineSoft:#F2F4F8;
-  --demand:#4F46E5; --demandSoft:#EEEDFC; --demandInk:#3F37C9;
-  --supply:#0D9488; --supplySoft:#E1F4F1; --supplyInk:#0B7B71;
-  --pos:#0E9E6E; --posSoft:#E4F5EE; --neg:#DC5B44; --negSoft:#FBEBE7; --accent:#F59E0B;
+  --bg:#F7F7F5; --surface:#FFFFFF;
+  --ink:#0B0B0B; --body:#52514E; --muted:#898781; --faint:#C3C2B7;
+  --line:#E7E6E0; --lineSoft:#F0EFEC;
+  --demand:#7C3AED; --demandSoft:#F3E8FF; --demandInk:#6D28D9;
+  --supply:#1BAF7A; --supplySoft:#E4F5EE; --supplyInk:#127A5A;
+  --pos:#127A5A; --posSoft:#E7F2E7; --neg:#B3261E; --negSoft:#FDEEE7; --accent:#EB6834;
   --font:'Inter',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   --sh1:0 1px 2px rgba(15,17,23,.05);
   --sh2:0 1px 3px rgba(15,17,23,.04),0 12px 28px -14px rgba(15,17,23,.16);
@@ -37,15 +37,15 @@ body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
 body.dark{
   --bg:#0E1017; --surface:#161A23; --ink:#F1F3F7; --body:#BBC1CD; --muted:#868D9C; --faint:#5A6272;
   --line:#272C37; --lineSoft:#1F232D;
-  --demand:#8188F4; --demandSoft:#212439; --demandInk:#AAAFF8;
-  --supply:#2FC2AE; --supplySoft:#123029; --supplyInk:#63D8C8;
-  --pos:#3FD08A; --posSoft:#123128; --neg:#F0705A; --negSoft:#3A2019; --accent:#F5A93B;
+  --demand:#A78BFA; --demandSoft:#2A1A4A; --demandInk:#C9B8FB;
+  --supply:#34D399; --supplySoft:#0F2A22; --supplyInk:#6EE7B7;
+  --pos:#3FD08A; --posSoft:#123128; --neg:#F0705A; --negSoft:#3A2019; --accent:#F59E5A;
 }
 body.dark::before{background:
   radial-gradient(1000px 640px at 100% -12%, rgba(120,120,255,.14), transparent 62%),
   radial-gradient(900px 640px at 0% 110%, rgba(20,190,170,.10), transparent 62%);}
 body.dark header{background:rgba(14,16,23,.82)}
-body.dark .hero{background:linear-gradient(135deg,#1E2140 0%,#141824 46%,#0F2C29 100%);border-color:#272C37}
+body.dark .hero{background:linear-gradient(135deg,#2A1A4A 0%,#161222 46%,#0F2A22 100%);border-color:#272C37}
 body.dark .statband{background:#12151D;border-color:#242935}
 body.dark .callbox{background:linear-gradient(135deg,#14182450,#1B2130);border:1px solid #2A303C}
 body.dark .focus{background:#1C2029}
@@ -73,7 +73,7 @@ nav.tabs button .pip{display:inline-block;width:6px;height:6px;border-radius:50%
 
 /* hero */
 .hero{position:relative;border-radius:24px;padding:46px 46px 40px;overflow:hidden;
-  background:linear-gradient(135deg,#EEEEFE 0%,#FBFCFE 42%,#E4F5F2 100%);border:1px solid var(--line);box-shadow:var(--sh2)}
+  background:linear-gradient(135deg,#F3E8FF 0%,#FBFAF7 42%,#E4F5EE 100%);border:1px solid var(--line);box-shadow:var(--sh2)}
 .hero::before{content:"";position:absolute;right:-80px;top:-90px;width:280px;height:280px;border-radius:50%;
   background:radial-gradient(circle,rgba(79,70,229,.18),transparent 70%)}
 .hero::after{content:"";position:absolute;right:60px;bottom:-120px;width:260px;height:260px;border-radius:50%;
@@ -323,6 +323,35 @@ function mixbar(name,play,vp,vid){
 const SRC=[['VoodooAds',12.5,5.90],['Gamegou Ad',6.9,1.78],['advjy',6.0,7.76],['LEARNINGS CO.',5.4,8.53],['SAYGAMES',5.0,9.18],['Electronic Arts',4.8,12.10],['MobilityWare Ads',4.5,5.50],['Easybrain',3.6,7.70],['Crazy Labs',3.3,7.27],['BoomBit Games',2.8,4.99],['Tripledot',2.4,9.56],['Gamebasics',2.3,13.70]];
 const CRE=[['Overhaul Slugfest · Mid/Next HR — P-CID-1-16',42.7],['Overhaul Slugfest · Easy — P-CID-1-18',9.8],['Cal Raleigh · Base Single — P-CID-5-6',8.8],['Video 22 → P-CID-1-16',8.1],['Cal Raleigh · Multi-Replay — P-CID-5-4',3.1],['Video 37 (15s) — P-CID-1-16',1.7],['Video 29 — P-CID-1-18',1.4],['TWD · Farm Kill Count — P-CID-3-3',1.3]];
 
+function vectorHub(){
+  const enabled=["Install & session data","In-app purchase events (D28)","D7 / D28 ROAS goals","MMP + SKAN attribution"];
+  const locked=["GA4 / analytics linking","Ad-revenue events (hybrid)","TapJoy MRCPE events"];
+  const outcomes=["CPI $6.40  ·  −28%","Installs  +305%","D28 ROAS above 50%","Scaled to ~$125k/mo"];
+  const left=enabled.map(t=>({t,lock:false})).concat(locked.map(t=>({t,lock:true})));
+  const W=1000,H=440, cx=600, cy=H/2, r=76;
+  const lx=8, lw=252, lh=40, lgap=12, ltot=left.length*lh+(left.length-1)*lgap, ly0=(H-ltot)/2;
+  const rx=740, rw=252, rh=46, rgap=18, rtot=outcomes.length*rh+(outcomes.length-1)*rgap, ry0=(H-rtot)/2;
+  let g="";
+  left.forEach((n,i)=>{ const y=ly0+i*(lh+lgap)+lh/2, x1=lx+lw, x2=cx-r+4, c1x=x1+90, c2x=x2-90;
+    const col=n.lock?"#c3c2b7":"#7c3aed", dash=n.lock?'stroke-dasharray="5 5"':'';
+    g+=`<path d="M${x1},${y} C${c1x},${y} ${c2x},${cy} ${x2},${cy}" fill="none" stroke="${col}" stroke-width="${n.lock?1.5:2}" ${dash} opacity="${n.lock?0.7:0.9}"/>`; });
+  outcomes.forEach((o,j)=>{ const y=ry0+j*(rh+rgap)+rh/2, x1=cx+r-4, x2=rx-10, c1x=x1+70, c2x=x2-70;
+    g+=`<path d="M${x1},${cy} C${c1x},${cy} ${c2x},${y} ${x2},${y}" fill="none" stroke="#1baf7a" stroke-width="2" marker-end="url(#vah)"/>`; });
+  left.forEach((n,i)=>{ const y=ly0+i*(lh+lgap);
+    const fill=n.lock?"#ffffff":"#f3e8ff", stroke=n.lock?"#c3c2b7":"#7c3aed", dash=n.lock?'stroke-dasharray="4 4"':'', tcol=n.lock?"#898781":"#4c1d95";
+    g+=`<rect x="${lx}" y="${y}" width="${lw}" height="${lh}" rx="20" fill="${fill}" stroke="${stroke}" stroke-width="1.5" ${dash}/>`;
+    g+=`<text x="${lx+lw/2}" y="${y+lh/2+4}" text-anchor="middle" style="font:600 13px system-ui;fill:${tcol}">${n.lock?"🔒 ":""}${n.t}</text>`; });
+  outcomes.forEach((o,j)=>{ const y=ry0+j*(rh+rgap);
+    g+=`<rect x="${rx}" y="${y}" width="${rw}" height="${rh}" rx="12" fill="#e7f2e7" stroke="#1baf7a" stroke-width="1.5"/>`;
+    g+=`<text x="${rx+rw/2}" y="${y+rh/2+5}" text-anchor="middle" style="font:700 14px system-ui;fill:#006300">${o}</text>`; });
+  g+=`<circle cx="${cx}" cy="${cy}" r="${r+16}" fill="#7c3aed" opacity="0.12"/>`;
+  g+=`<circle cx="${cx}" cy="${cy}" r="${r}" fill="#7c3aed"/><circle cx="${cx}" cy="${cy}" r="${r-16}" fill="#6d28d9"/>`;
+  g+=`<text x="${cx}" y="${cy-3}" text-anchor="middle" style="font:800 19px system-ui;fill:#ffffff">Unity Vector</text>`;
+  g+=`<text x="${cx}" y="${cy+18}" text-anchor="middle" style="font:500 11px system-ui;fill:#d8c7f5">Unity's ML optimization</text>`;
+  g+=`<text x="${lx+lw/2}" y="14" text-anchor="middle" style="font:700 11px system-ui;fill:#898781;letter-spacing:1px">SIGNALS IN</text>`;
+  g+=`<text x="${rx+rw/2}" y="14" text-anchor="middle" style="font:700 11px system-ui;fill:#898781;letter-spacing:1px">OUTCOMES</text>`;
+  return `<svg class="chart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet"><defs><marker id="vah" markerWidth="9" markerHeight="9" refX="6" refY="4" orient="auto"><path d="M0,0 L7,4 L0,8 Z" fill="#1baf7a"/></marker></defs>${g}</svg>`;
+}
 const TABS=[
   {id:'overview', label:'Overview', pip:null},
   {id:'qoq', label:'Quarter-over-Quarter', pip:null},
@@ -330,6 +359,7 @@ const TABS=[
   {id:'owd', label:'TapJoy demand', pip:C.demand},
   {id:'supply', label:'Monetization', pip:C.supply},
   {id:'m2e', label:'M2E Offerwall ✦', pip:C.supply},
+  {id:'vector', label:'Unity Vector', pip:C.demand},
   {id:'plan', label:'Q3 Plan', pip:null},
 ];
 const V={};
@@ -665,6 +695,36 @@ V.m2e=`
     <p>You're weighing shifting HvH budget toward Almedia and other rewarded channels. M2E dynamic offerwall is a Unity feature that is now <b>about half of your offerwall reach</b> (47% of daily unique viewers), rising month-over-month this quarter, and <b>contributing profit</b> (+$2.6k in the last 30 days).</p>
     <p><b>It's filled by Unity's own demand</b> — the Unity Ads network buys 81% of the inventory ($20.2k of $25.0k) — so it scales on Unity demand rather than depending on outside networks.</p>
     <p><b>The upside lever is conversion:</b> M2E users convert at roughly half the organic rate today (3.9% vs 7.3%). <b>Our recommendation:</b> keep scaling M2E volume and tune the funnel toward the organic rate — a Unity-native way to grow the very channel you were about to pull back from.</p>
+  </div>`;
+
+V.vector=`
+  <div class="ey">Optimization engine</div>
+  <div class="lead">Unity Vector — the engine behind your UA</div>
+  <div class="sublead">The signals feeding Unity's optimization model, the outcomes they drove, and the ones we'd unlock next to make it smarter.</div>
+
+  ${sec('Signal flow','flow','n')}
+  <div class="card" style="padding:24px 22px">${vectorHub()}
+    <div class="cap" style="padding-top:16px"><b style="color:var(--demandInk)">●</b> Enabled signal &nbsp;·&nbsp; <b style="color:var(--faint)">▢</b> 🔒 Locked — the unlock &nbsp;·&nbsp; <b style="color:var(--supplyInk)">→</b> Outcome</div>
+  </div>
+
+  ${sec('Enabled today vs. the unlock','star')}
+  <div class="grid g2">
+    <div class="card" style="padding:12px 30px">
+      <div style="font-weight:800;color:var(--ink);padding:10px 0 2px;font-size:15px">✅ Feeding Vector today</div>
+      ${nlist([
+        ["In-app purchase events (D28).","Powering the D28-IAP campaigns and ROAS optimization."],
+        ["D7 / D28 ROAS goals.","Vector optimizes bids to your target return windows."],
+        ["MMP + SKAN attribution.","Install and post-install signal across iOS and Android."],
+      ])}
+    </div>
+    <div class="card" style="padding:12px 30px;background:var(--demandSoft);border:1px solid var(--demand)">
+      <div style="font-weight:800;color:var(--demandInk);padding:10px 0 2px;font-size:15px">🔒 The unlock — connect next</div>
+      ${nlist([
+        ["GA4 / analytics linking.","Richer engagement and quality signals for Vector to optimize on."],
+        ["Ad-revenue events.","So Vector optimizes to hybrid (IAP + ad) ROAS, not IAP alone."],
+        ["TapJoy MRCPE events.","Power the TWD launch funnel and the Heroes vs. Hordes US re-open."],
+      ])}
+    </div>
   </div>`;
 
 V.plan=`

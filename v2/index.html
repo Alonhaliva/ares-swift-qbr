@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Swift Games &amp; Ares Interactive — 2026 Business Review</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F7F8FA; --surface:#FFFFFF;
+  --ink:#17181C; --body:#667085; --muted:#98A2B3; --faint:#B7BECC;
+  --line:#E4E7EC; --lineSoft:#F0F1F4;
+  --demand:#6753E6; --demandSoft:#F0EEFF; --demandInk:#4F38B8; --demandBd:#D9D3FF;
+  --supply:#0F8B8D; --supplySoft:#E8F6F5; --supplyInk:#087174; --supplyBd:#BFE4E2;
+  --pos:#1D8758; --posSoft:#EAF6EF; --neg:#C4473A; --negSoft:#FCECEA; --accent:#B56A00; --accentSoft:#FFF4E5;
+  --font:'Inter',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --sh1:0 1px 3px rgba(11,11,11,.04);
+  --sh2:0 1px 3px rgba(11,11,11,.05);
+  --sh3:0 2px 4px rgba(15,17,23,.05),0 30px 60px -30px rgba(15,17,23,.28);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{font-family:var(--font);color:var(--body);background:var(--bg);line-height:1.7;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;font-feature-settings:"cv02","cv03","cv04","ss01"}
+body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
+  background:radial-gradient(1000px 640px at 100% -12%, transparent, transparent 62%),
+             radial-gradient(900px 640px at 0% 110%, transparent, transparent 62%);}
+.wrap{max-width:1080px;margin:0 auto;padding:0 32px}
+
+/* dark theme */
+#theme{position:fixed;right:18px;top:12px;transform:none;z-index:200;width:36px;height:36px;font-size:15px;border-radius:50%;
+  border:1px solid var(--line);background:var(--surface);box-shadow:var(--sh2);cursor:pointer;font-size:19px;line-height:1;
+  display:flex;align-items:center;justify-content:center;transition:transform .2s,box-shadow .2s}
+#theme:hover{transform:scale(1.08);box-shadow:var(--sh2)}
+body.dark{
+  --bg:#0E1017; --surface:#161A23; --ink:#F1F3F7; --body:#BBC1CD; --muted:#868D9C; --faint:#5A6272;
+  --line:#272C37; --lineSoft:#1F232D;
+  --demand:#A78BFA; --demandSoft:#2A1A4A; --demandInk:#C9B8FB;
+  --supply:#3BC5C7; --supplySoft:#0E2A2B; --supplyInk:#7FDADB;
+  --pos:#3FD08A; --posSoft:#123128; --neg:#F0705A; --negSoft:#3A2019; --accent:#E0A03A;
+}
+body.dark::before{background:
+  radial-gradient(1000px 640px at 100% -12%, transparent, transparent 62%),
+  radial-gradient(900px 640px at 0% 110%, transparent, transparent 62%);}
+body.dark header{background:rgba(14,16,23,.82)}
+body.dark .hero{background:linear-gradient(135deg,#2A1A4A 0%,#161222 46%,#0F2A22 100%);border-color:#272C37}
+body.dark .statband{background:#12151D;border-color:#242935}
+body.dark .callbox{background:linear-gradient(135deg,#14182450,#1B2130);border:1px solid #2A303C}
+body.dark .focus{background:#1C2029}
+body.dark .badge.dem{background:linear-gradient(135deg,#7C74F4,#4B44D6)} body.dark .badge.sup{background:linear-gradient(135deg,#25C4B2,#0E8C7E)}
+
+header{background:rgba(255,255,255,.85);backdrop-filter:saturate(160%) blur(12px);position:sticky;top:0;z-index:100;box-shadow:0 1px 0 var(--line)}
+header::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:linear-gradient(90deg,var(--demand),var(--supply))}
+.hbar{display:flex;align-items:center;gap:16px;padding:17px 32px;max-width:1080px;margin:0 auto;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:9px;font-weight:800;font-size:16px;color:var(--ink);letter-spacing:-.02em}
+.brand .dot{width:11px;height:11px;background:linear-gradient(135deg,var(--demand),var(--supply));transform:rotate(45deg);border-radius:2px}
+.htitle{font-size:12.5px;color:var(--muted);font-weight:500;border-left:1px solid var(--line);padding-left:16px}
+.htitle b{color:var(--ink);font-weight:700}
+.hper{margin-left:auto;font-size:12px;color:var(--faint);white-space:nowrap;font-weight:500}
+nav.tabs{display:flex;gap:2px;max-width:1080px;margin:0 auto;padding:0 24px;overflow-x:auto}
+nav.tabs button{background:none;border:0;color:var(--muted);font-family:var(--font);font-size:13px;font-weight:600;
+  padding:13px 15px;cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:.15s}
+nav.tabs button:hover{color:var(--ink)}
+nav.tabs button.on{color:var(--ink);border-bottom-color:var(--supply)}
+nav.tabs button .pip{display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:7px;vertical-align:middle}
+
+#main{padding-top:44px;padding-bottom:120px}
+.tab{display:none;animation:fade .3s ease}
+.tab.on{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* hero */
+.hero{position:relative;border-radius:24px;padding:46px 46px 40px;overflow:hidden;
+  background:linear-gradient(135deg,#F3E8FF 0%,#FBFAF7 42%,#E4F5EE 100%);border:1px solid var(--line);box-shadow:var(--sh2)}
+.hero::before{content:"";position:absolute;right:-80px;top:-90px;width:280px;height:280px;border-radius:50%;
+  background:none}
+.hero::after{content:"";position:absolute;right:60px;bottom:-120px;width:260px;height:260px;border-radius:50%;
+  background:none}
+.hero .ey{position:relative}
+.hero h1{position:relative;font-size:46px;font-weight:800;letter-spacing:-.035em;color:var(--ink);line-height:1.04;margin-bottom:16px}
+.hero .hsub{position:relative;font-size:15.5px;color:var(--body);max-width:640px;line-height:1.65}
+.hero .titles{position:relative;display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.hero .titles span{display:inline-flex;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:30px;padding:6px 15px 6px 6px;font-size:13px;font-weight:600;color:var(--ink);box-shadow:none}
+body.dark .hero .titles span{background:rgba(255,255,255,.07);border-color:#2A303C}
+.heroInner{display:grid;grid-template-columns:1.06fr .94fr;gap:46px;align-items:center;position:relative}
+.hero-copy{position:relative}
+.statgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.statgrid .st{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--sh1);transition:transform .2s,box-shadow .2s}
+.statgrid .st:hover{box-shadow:var(--sh2)}
+body.dark .statgrid .st{background:rgba(255,255,255,.055);border-color:#2A303C}
+
+/* hero — coherent with the deck */
+.hero2{position:relative;padding:38px 44px;border-radius:20px;overflow:hidden;background:linear-gradient(120deg,#261A4F 0%,#4F38B8 55%,#6753E6 100%);box-shadow:0 12px 34px -14px rgba(92,33,182,.5)}
+.hero2 .ic-badge{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:rgba(255,255,255,.16);color:#F3E8FF;padding:7px 15px;border-radius:30px;opacity:0;animation:rise .6s .05s ease forwards}
+.hero2 h1{font-size:clamp(38px,5.2vw,62px);font-weight:800;letter-spacing:-.035em;line-height:1.04;margin:18px 0 0;color:#fff;opacity:0;animation:rise .6s .12s ease forwards}
+.hero2 .sub{font-size:clamp(14.5px,1.4vw,17px);color:#ECDCFD;max-width:720px;margin-top:18px;line-height:1.6;opacity:0;animation:rise .6s .2s ease forwards}
+.hero2 .sub b{color:#fff;font-weight:700}
+.hero2 .titles{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;opacity:0;animation:rise .6s .28s ease forwards}
+.hero2 .titles span{display:inline-flex;align-items:center;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.26);border-radius:14px;padding:8px 15px 8px 8px;font-size:13.5px;font-weight:600;color:#fff;box-shadow:none}
+.hero2-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:34px;opacity:0;animation:rise .7s .36s ease forwards}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@media (max-width:820px){ .hero2-stats{grid-template-columns:1fr 1fr} }
+.statband{position:relative;display:grid;grid-template-columns:repeat(4,1fr);margin-top:34px;background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:var(--sh1);overflow:hidden}
+.statband .st{padding:22px 24px;border-right:1px solid var(--lineSoft)}
+.statband .st:last-child{border-right:none}
+.st .lab{font-size:10.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+.st .val{font-size:30px;font-weight:800;letter-spacing:-.03em;color:var(--ink);margin:10px 0 8px;line-height:1;font-variant-numeric:tabular-nums}
+.st .val.dem{color:var(--demand)} .st .val.sup{color:var(--supply)}
+.trend{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;padding:3px 9px;border-radius:20px}
+.trend.good{background:var(--posSoft);color:var(--pos)} .trend.bad{background:var(--negSoft);color:var(--neg)}
+.trend.flat{background:var(--lineSoft);color:var(--muted)}
+
+.ey{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--demandInk);margin-bottom:16px}
+.lead{font-size:32px;font-weight:800;color:var(--ink);letter-spacing:-.03em;line-height:1.1;margin-bottom:16px}
+.sublead{font-size:15px;color:var(--body);max-width:720px;line-height:1.65}
+
+.sec{display:flex;align-items:center;gap:14px;margin:76px 0 28px}
+.sec .ic{width:30px;height:30px;border-radius:9px;flex:none;display:flex;align-items:center;justify-content:center;
+  background:var(--demandSoft);color:var(--demandInk)}
+.sec.s .ic{background:var(--supplySoft);color:var(--supplyInk)}
+.sec.n .ic{background:linear-gradient(135deg,var(--demand),var(--supply));color:#fff}
+.sec .ic svg{width:16px;height:16px}
+.sec h3{font-size:20px;font-weight:800;color:var(--ink);letter-spacing:-.02em;white-space:nowrap}
+.sec .rule{flex:1;height:1px;background:var(--line)}
+.sec .pill{flex:none}
+
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:10.5px;font-weight:700;letter-spacing:.05em;padding:5px 12px;border-radius:20px;text-transform:uppercase}
+.pill.dem{background:var(--demandSoft);color:var(--demandInk)}
+.pill.sup{background:var(--supplySoft);color:var(--supplyInk)}
+.pill .pip{width:6px;height:6px;border-radius:50%}
+.pill.dem .pip{background:var(--demand)} .pill.sup .pip{background:var(--supply)}
+
+.grid{display:grid;gap:22px}
+.g2{grid-template-columns:1fr 1fr}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:30px;box-shadow:var(--sh2);transition:transform .2s ease,box-shadow .2s ease}
+.card:hover{box-shadow:var(--sh2)}
+
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.kpis.five{grid-template-columns:repeat(5,1fr)}
+.k{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 20px 22px;box-shadow:var(--sh1);transition:transform .2s,box-shadow .2s}
+.k:hover{box-shadow:var(--sh2)}
+.k .khead{display:flex;align-items:center;gap:9px;color:var(--muted)}
+.k .kic{width:26px;height:26px;border-radius:8px;display:flex;align-items:center;justify-content:center;background:var(--lineSoft);color:var(--muted);flex:none}
+.k.dem .kic{background:var(--demandSoft);color:var(--demandInk)} .k.sup .kic{background:var(--supplySoft);color:var(--supplyInk)}
+.k .kic svg{width:14px;height:14px}
+.k .lab{font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.k .val{font-size:29px;font-weight:800;letter-spacing:-.03em;color:var(--ink);margin-top:14px;line-height:1;font-variant-numeric:tabular-nums}
+.k .val.dem{color:var(--demand)} .k .val.sup{color:var(--supply)}
+.k .note{font-size:11.5px;color:var(--muted);margin-top:12px;line-height:1.5}
+
+.intro{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.intro .half{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px;box-shadow:var(--sh2);transition:transform .2s,box-shadow .2s}
+.intro .half:hover{transform:translateY(-2px);box-shadow:var(--sh3)}
+.badge{width:46px;height:46px;border-radius:13px;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.badge svg{width:23px;height:23px;color:#fff}
+.badge.dem{background:linear-gradient(135deg,#6A62F0,#4038C7)} .badge.sup{background:linear-gradient(135deg,#17B3A4,#0B7B71)}
+.intro h4{font-size:18px;color:var(--ink);margin-bottom:8px;font-weight:800;letter-spacing:-.01em}
+.intro p{font-size:13.5px;color:var(--body);line-height:1.7}
+.intro .ch{font-size:12.5px;color:var(--muted);margin-top:18px;padding-top:16px;border-top:1px solid var(--lineSoft)}
+.intro .ch b{color:var(--ink);font-weight:700}
+.note-row{font-size:11.5px;color:var(--faint);margin-top:16px;font-style:italic}
+
+table.t{width:100%;border-collapse:collapse;font-size:13.5px}
+table.t th{text-align:left;font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:0 18px 12px;border-bottom:1px solid var(--line)}
+table.t td{padding:16px 18px;border-bottom:1px solid var(--lineSoft);color:var(--body);line-height:1.5}
+table.t tr:last-child td{border-bottom:none}
+table.t td.n{text-align:right;font-variant-numeric:tabular-nums;font-weight:700;color:var(--ink)}
+table.t td.lead2{font-weight:700;color:var(--ink)}
+tr.tot td{border-top:2px solid var(--ink);font-weight:800}
+.bigtable table.t td{font-size:15.5px;padding:20px 18px}
+.bigtable .netbig{font-size:21px;font-weight:800;font-variant-numeric:tabular-nums}
+.teal{color:var(--supply);font-weight:700}.indigo{color:var(--demand);font-weight:700}
+.up{color:var(--pos);font-weight:700}.down{color:var(--neg);font-weight:700}
+.focus{background:#FAFAFF}
+
+.bl{list-style:none;display:grid;gap:4px}
+.bl li{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--lineSoft);font-size:14px;color:var(--body);line-height:1.65}
+.bl li:last-child{border-bottom:none}
+.bl .num{flex:none;width:26px;height:26px;border-radius:8px;background:var(--demandSoft);color:var(--demandInk);font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.bl li b{color:var(--ink);font-weight:700}
+
+.chart{width:100%;height:auto;display:block}
+.cap{font-size:11.5px;color:var(--muted);margin-top:14px;line-height:1.6}
+.legend{display:flex;gap:20px;font-size:12px;color:var(--muted);margin:0 0 14px;font-weight:500}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:7px;vertical-align:-1px}
+
+.callbox{border-radius:18px;padding:32px 34px;background:linear-gradient(135deg,#171A2B,#20263C);box-shadow:var(--sh3);position:relative;overflow:hidden}
+.callbox::before{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(79,70,229,.35),transparent 70%)}
+.callbox h4{color:#fff;font-size:16px;margin-bottom:14px;font-weight:800;letter-spacing:-.01em;position:relative}
+.callbox p{font-size:13.5px;color:#CBD0DC;margin-bottom:14px;line-height:1.75;position:relative}
+.callbox p:last-child{margin-bottom:0}
+.callbox b{color:#fff}
+
+.gloss{margin-top:44px;border-top:1px solid var(--line)}
+.gloss details{border-bottom:1px solid var(--lineSoft)}
+.gloss summary{cursor:pointer;font-weight:700;color:var(--ink);font-size:13.5px;padding:16px 2px;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.gloss summary::-webkit-details-marker{display:none}
+.gloss summary::after{content:"+";color:var(--faint);font-weight:400;font-size:20px}
+.gloss details[open] summary::after{content:"–"}
+.gloss .gd{font-size:13px;color:var(--body);padding:0 2px 18px;max-width:720px;line-height:1.7}
+.foot{font-size:11.5px;color:var(--faint);margin-top:48px;padding-top:22px;border-top:1px solid var(--line);text-align:center;line-height:1.9}
+.prose{font-size:13.5px;color:var(--body);line-height:1.75} .prose b{color:var(--ink);font-weight:700}
+
+@media (max-width:820px){ .g2,.kpis,.kpis.five,.intro,.statband,.heroInner{grid-template-columns:1fr} .statband .st{border-right:none;border-bottom:1px solid var(--lineSoft)} .hero h1{font-size:34px} .hper{display:none} }
+@media print{ header{position:static} nav.tabs{display:none} .tab{display:block!important} .card:hover,.k:hover,.intro .half:hover{transform:none} }
+</style>
+</head>
+<body>
+<button id="theme" aria-label="Toggle dark mode">🌙</button>
+<header>
+  <div class="hbar">
+    <span class="brand"><span class="dot"></span>Unity</span>
+    <span class="htitle"><b>2026 Business Review</b> — Swift Games &amp; Ares Interactive</span>
+    <span class="hper">Trailing 3 months · Mar 30 – Jun 30, 2026</span>
+  </div>
+  <nav class="tabs" id="tabs"></nav>
+</header>
+<main class="wrap" id="main"></main>
+
+<script>
+const IMG_hvh='data:image/jpeg;base64,'+'/9j/4AAQSkZJRgABAQAASABIAAD/4QB6RXhpZgAATU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAABJKGAAcAAAAiAAAAUKABAAMAAAABAAEAAKACAAQAAAABAAAAZKADAAQAAAABAAAAZAAAAABBU0NJSQAAAEVLVVZJUDY1N1hESzJRNk5HTFBSTVdPVkdF/+0AOFBob3Rvc2hvcCAzLjAAOEJJTQQEAAAAAAAAOEJJTQQlAAAAAAAQ1B2M2Y8AsgTpgAmY7PhCfv/AABEIAGQAZAMBIgACEQEDEQH/xAAfAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgv/xAC1EAACAQMDAgQDBQUEBAAAAX0BAgMABBEFEiExQQYTUWEHInEUMoGRoQgjQrHBFVLR8CQzYnKCCQoWFxgZGiUmJygpKjQ1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4eLj5OXm5+jp6vHy8/T19vf4+fr/xAAfAQADAQEBAQEBAQEBAAAAAAAAAQIDBAUGBwgJCgv/xAC1EQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4+Tl5ufo6ery8/T19vf4+fr/2wBDAAICAgICAgMCAgMEAwMDBAUEBAQEBQcFBQUFBQcIBwcHBwcHCAgICAgICAgKCgoKCgoLCwsLCw0NDQ0NDQ0NDQ3/2wBDAQICAgMDAwYDAwYNCQcJDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ3/3QAEAAf/2gAMAwEAAhEDEQA/APg222XCeVKOe1NezaFsHkHoajjUjGK6zTljvkFvMPm7Gv5xbaP9KKk+XXoY1lERMuRwTgj613d34F1OKxTWlt5BaSsUEm07C4AJAbpkAgkZ4zUNroclvcIHXK5BBx1Ffpf8IND0r4jfBvWPhnNGh1K2zrGmHA3PLGgSVB7sgAx/hXu5HkrzKVSFOXvRg5JfzWtdL5XfyPzzjjjiPD9PD4mcb051Iwk/5VK9pPy5rL5n5s6JoxaUxsv3hitNPC8hvhCFOC3H417fH4Jl03VDC8ZGx8dO1dzb+Cd1/byeX1IB4rx1TtVszrxHEEY+9F7o0br4NeHLD9n+88Z3EJfVZNVt7G2bcQI4xG0kvyg4JY4HOcY4618cf8I6zSudvC5r9UvEummT9n+w05RnzddupMe0asgr5An8HGK1kk2cnPavrOM8FRwmLjhqEbKMIJ+vKm2/Ns/NvCzizE43LKuMxlRyc6tRq/SPM1FLySR8kXektvYKp61Ul0Wa1gM8sZGRxkV9ieCfhJdeJtctbGOAySXUyxRR4+8x/kAOSewrpf2nNE+H/hJLLwD4StIpr7SwTqup5Jae6YAGJBnascXTgZLdTxXmxyGt/Z7zGq1GF7RvvJ9bLsur+S62+4h4hYWeeQyDDxc6nLzTatywj05nfeXRK76uytf89ZEIJyKg+z7+TwO9dVLpbMxJGF7msa7wp8tOAOK8K5+kQq82xjuQrbVGQKbvPpStwSP6UnH+RTsdGp//0PiW00p7sqbU793bvXZQeF9TsWRriB4yQGG5SpwwyDz2I5Fc34dlktLyOZDwGGR2NfqF4A8a/Dj4neDtP8H/ABNtBDNp8C21hrduoNxbRr92OUf8tIl7Zzgccda/EMhyR5lOVCFRKpb3U9ObyT79l1P7k494znw7Sp4urRlOhe05R1cF0k11j/M+m+x8geGtKTUI1guE+fsf896+pPhY2q+D9RtdV0/Jn0+UXEYHHmIvDx/8CTI+tbGt/APVPCFwl/YvHqOlzYe3vrU74ZEPTkZ2n2P4Zr0TwhojBoxKmHXHarwTxmSZjCs4uMoPZ/in5NaPyPzfinNMt4jyepQpzU6NWO6e3ZrzT1XZo3fH3gXS9WvYvFegoGsdWX7VFtHCl+XX8Cc49DVbSPB3mtARHkgr2rjvF/j7UfhD4jFv4o8UWmk+E765hs9C0q50ySRLm+uyhnklvV3GKK33EgKFRUJL5wK+u7bwzFIWspFKpODGxjbBAcYO1h9eDW2dzwVfMKlbLU/ZX0umlfrFNrXlejauj8+yjNcyw+WUqGZte0Ss2ne6W0vmrPufPXh7XvCHjnwBJoHhrWLLVbzQ9Tu01G3tZllktJJJZAolVeVLbWxnrg+lcxf+CUMQR1CRoCzseAFXkk+wrF/ZW8S6r8Stc8eDV47WCHwdqzaXposYDb+daSyXIBuyc+fIvlgq/HJJ71vfHTxdpcPi7SfgnpfiOfQ/EXiGzkvLdrLThqLrLATLDDcKQwEdyI3yuASisSyggnfOsfUzDHvGY+k4L3eZQ9+0bJNrSLdu1r6GWQqeTYFZbgp88oqTXN7t27ys7Xtfv0Oq8Pww/DzwfdeNYotmr6nE9ro6sPmt7Y/enx2dxyPTIHrXwf4r0K61S8murncwZizM3JJPPU96/QjxBbap4k0jTLnVVAnFjbrKqRGFA4Qb9sZZigL5O0kkZ618++KPCckiOiARRL9524A/E1fEua/2niY0cDFqjFKNOPl/m931u+59J4dU45Ph6mIx008RUbnVm+/byjFaLokj4H8RWXlFoIF4HGRXmN3YTBj8h/Kv018L/s43/idG1W6jSw0lPml1HUG+z2yr6qWwX/AY968e+PGgfBfwvpa6Z4I1a61jWUbE86QrFYBQDkISTIzZ6EfLjvXPjOEsZg8L9YxbjTfSMn77/wC3dWvnY/TuHfFTK8zzBZdlcZ1u84RvTj6zdk/+3bnwjJCVbDHmmeWPWp7hGMzE561D5Z96+Zsz9iUj/9H5T0TTLW5KmKTB9DX0H4K07ULCWOS2bIBHQ1wXhP4SeOtS06DWrHRr+aymyY7iO2leJ9pwdrqpU4IwcHrXvXhXwh4m010W5tZ4iMcSRsv8xX8+xwuIhaaTP7qzvNMNOMqcaib6q6Pp34deIfEOlQiLSpQIpP8AW2FzlrWbPXA58tj6gYPcVU1b46aP4S1S71P4h2Nj4J0ZfEEOjWkdy01zfXSNCHkuhFCHCw78lGG4CMbmAra8FadfAxpJCc8dua9mn8D+BPiVoN3oXibS7HXLCdvKuVZVZkmiGAVlTDxyx5+VlYMvY19HjM/xuOw1LBY1p8sk+Zq8+VfZUuzdr3vpouh/NmJyLLstx9XG4KLipLWEXaF2/i5dk7Xta13ucz8X/hboP7Q/wTvtE0K9s9Q+0xjUNB1KCRZ7f7XCDsIkjJykqlopMHO1z3FT/Cjxtp3w0+D+nwfF/wASW1vc+GZDost7eHyp52tvljQxDc8kyphfk3FwoYjJNO+Cv7PPhv8AZ0n1q+0LWL19DvXe4W2u5WPllsAK6riN9gGFcKHbPzZPJ+Qr74jfDX4r/Evxn4Y8W2n2XS114vp9wD+/t7uFBCbiMnPMu1hJGAcjHBwa+dzbMMRhYxxEYSeHhL30km+V7TXWyfpo7tLoYShSxang4TUnbmi7Wd9OaNu7W++sbJvr7V8H/H/7MPwt1DXE8N+IfsL+JriKaaW/sLmytJLhDIVZ5pI9q7jKclioq38HPg1baF8bPHPxX8Z6yuteIL+1iuLa4Zo/s9naXhdXdJFOzaUiSOI8bIRjJ3E1wmofBD4K6Rpbat4o8Zx6rpyoXNjbpHC8iZ3bZXVi3PQkhOOMin/B/wCMPgrxpqHxA8L3ekyw6TAmnQLcWihkstPgWSOPEJAzFCwGSAc7s4xivNxHEeH9pGWUTlKjCLdSUm+W0tIRcpJyu5Na9FfdXt10sFVnCrKvpKfKlpaTaavZaXSSd11aS3aOk8X/ALUPwquvHWk/DPwRqj6xquqXotptSsrY3em2gVWZi8gIMoyAGaIMiclnUA43fAt1PZeEYPE/xDtLbV/E/wBouhC8RH9nNbxzMtvcRQj/AFfmxhWKHLKc5au3+HfhL9nb4Z6Y6/Dm/wDD0U2qx+fPqBv7aW8vUmJYEyM+4REk7Y02xqOAtVvEWo+HLx5LKx1CzeWIfLGkqAFcZzHzh1APJTIHevtMDmuKy3EOtl8uV1I8uqTd1d3g+jtdOy1ST0seTiMty7MYrDY2DcKcrtN2T6e+lbS9rJt2fe58w/Frxz4y8Ws0d/dStAmRHADshjHbagwo+vX3r4q8S6XcPI73MnXrX2z400q+nEhtQjA5xtIb+VfJvi/w3rQLvJE5HPY14WN+uVZueIvd97n9AcHVsHRoxo4TljFbJW/Q+f7q3t0mK5Jx3qv5Vv71qXVhOk7K6EEdsVW+xS/3T+Vefyn6eqqtuf/S5/4T/tE+MPA9iNI0fUbm1tS27ykf93uPU7GyoJ78V9W6D+0r441UKsutMwbtLbQyf+yivzL8P2YBV53CDI4r6I8IXmnW7IAd5496/G8v41zXCUlQoVfdWyajK3/gSZ/WvF/hZwzj688bVw37yWrcZSjd93ytXfdn3RrOt+M/iR4Q1jwpF4lTTG1mymsxeW9mVntzMpXzEKTIQy5yMEGuL8Sfs1fEbx5qcGs6N8Tb/wAFJFZwWX9m6SLkWkjW5OblvJvIP3swPz5UngfMa0Ph5LeajLDBY27uzYwqgkn8BWp49+Mnjjw0vibw/wDCzSbPxD4s0C507Tjo9yWjuRNqCrILmNMqLiFUYYw6KSGy/wAhB1x+dY/HVaWOxn2HyKSioxXO18XKktWkk33t1PyJ8P4LKJzwWXaOXvWlJzfu9udvRX16dR/gHStV8PeNbT9nTV/GcniHVNP0pfEOq6jcyyGSSPcYo42E8szhgHEjDcfl29un41ePrjWY/i94x+HGpsui63Ff3c6RzBjbyXiTF4xkAs6SQsWjI+9uB64r7e8V/AH9r3SdfsPj/cXa+J/Gt3cCG807TWR57a2KeWkbhfKhaFlJjdIsiMYbe3LDsviF+x5rPx0lsNa1DXNO07x9o9ubS/tLcLdCNBhxbzzDy2me3JwJFyEyVGQAa8fLY1MvzmonL9zWVuZyvyzTcklF7qV3dLu9kj38xhg6GHwuZ05wq2S56aVn/LO9l7q25JNW2tfr8XeK9N8fahodvpeq6lp9va+GLxbDX2BkP2ebbI5UNz5zFYX2uNqj5f7y59Z/ZC+KY+Htr48+IevpDLBdadLp4SaRHeZomaQbowdyk4ReVG4njPNex23/AAT9+M/jBoNH8feOY10iGaOVorWItIxjG1TmRsLgf7JGcHBIFfV/w0+Cf7N8HgzXfgR4citr2ZI1utRluI4Z7uVw/lm4/fK5JSQbCSoC5AGK786hCpl88vjWSnUeyXRPmklpFXa0vZ2W92zLMs7yjF4ynUwmFfsIWc3rF6qMVvKdkndr3tW9Ekj42/ZX/ZR+G/xk+Ez+NfiONXa7XVLqxs/st2IYRawKhwqtG/SWSTkHHtxX1tpHwg8FfD258OutuL6w8FWt9YaFaTYcC31Db5rXbbAZpQVGwjAHPB7eV+CfAX7RP7NHi/TPBei6ppXir4ZateyoHv5Vsl0sOHldhGWLwuTnCxGSFz1WMksPUNO+I+l/ETwxFr2ivuMjTpho2iWcW8rxNNb7v9bA7ISjqSCK09riY4qNTBtuVFc94p+5e8btrRXu7X9THPcdh82xtaeLkvY4iTUYylunrypO2qS1svvQ/Wvid4G0pmFz4L0m4UdQVKH8wOK82v8A49fBNFaHU/h5Dg8E21/JGfwytedeNtYh3SJcx4PPavl3xK9jcOxik2mu1+IOfR0nXk/XU+iyfwa4TrpSng0n3Ta/JovfEHxH4I1TxVd33hOynsdNl2tHb3UizSRnHzDeqqGGenGcda4r+09M/uCuIuoZBMwDZHrmq/lS+v618vUx7qTc5JXeuyX4H7thsko0aMKMJytFJK8m3oratu7fm9Wf/9P5J8HadqXiTV7bSNPR7i6upUiiiQbneRzhVUdyTX6T+Cf2ddJ8CWUOsfF7WYdLYgOulWjLcahJ3wQuVjz6/N74r8xdBvF0SVbrfmVeRj1r1NPilr16oiadlXGMliSR9a/EcjxuW4dueNouo1sk7L56Nn9vcd5Jn+YqNDJsTGjB/FJw5pf9u6pfevM/TK4+Kmk2Fv8A2J4JtU8O6d91pARNqE4HdpDlUz/wLHbFafhS+0M3Z1GCxg+1SFGkvJVEl1IUztLzMC7bdxwM4XJwBX58eFdauLqQSzSHaDkknrX0p4Q8RzX93BpunguzsqAJyWJOAB6813ZrxVjMxisIkoUltCKtFfq35u77H5NHwywOUOWJvKpXa96rN80n312S8opLufWnjT4j694V8KaleeD9GuNe19dLvLrTbWPYI3ngUbQ5dlyFLByoySBgckV5n+xl8NdZ8A+Brjxv46ubm58V+NZm1O5S6cl7WGdjIFZCSFnnZjLPjHzFU42Vb+JnhjwlqN94b0PW4mfUfDEv9oz31vcSW80UkwGbUPEylo5goEqNlWRenNdjp/iezjs0sLXFtD5ZijER2+WpBGV9CM5B9aeaZdiMrnHDYiUZc6jO1veg3tF9Ntb6NXtsfC5ZiKeZ4erUwUWoKTjzdJqO7j15b6W2bjfoeUfAv4geJtY/am+MXhzUr3zdJ0B5hZwYGYjNdJjJBJOArAZA9qwfif8ADzxL4N/aj8OfGz4VR2si6zDMPFtjLdR2q/ZYkVLi4w3L+dEFIAzieFWI+ZiOo8M6BrPgj4ka5qOq6Ro2mrd2SXH9rabO8moa4jyHyn1IPCgEiqdx2u/zd8V1PiTUPCHiy0/sjxnpltrOlzlUntrhcrJHuVyuQQwBKjIBwcc5GRXNVp4jCVFQdJUHK2jSkrSs+a0XrdPS7166M7cKoYzmxWFl7SKjyaaXcVytarur+T1vdHXX3i/SPEWi2OsxxxXFrexpd2xfZMuGGVdWG5Tx0I7VxU/j7wpLbweHvF2nxvp0ACW0tqqwz2gHA8ortGF7Dj644rC8d6XD4Pg/snRkSHRmhF5oywqEiS1b70KKOFEZOQo6K2O1fJ+v+LFug8Mr4cZ716OKlj+GcxccPVvonzLRTi1o7bWa6dHddDv4ZyTLeLcqUsTR0u04veEk7NJ7pp7PqrPqfQfxK+EEuqaI/iXwpdr4g0ZgSL22GZoD/cuYxyCO7YHqQK/N/wAa6deaPeSQXKkYJwexr3Pwp8c/GPwv1v8AtHQr1o1biSNvngnQfwyIeGH6jsRXnfxs+J+h/EPxBJrmlaVHpCXMcbT2sTb4luAv7xo+AVR2+YKc7c4zWOd47Lcfh/rdGHs69/eivhku6X2X3W3a1tf1LgLIeIskx39n4mp7fBtNwnJ/vINW92X8ya2lvprurfPkt1JvOD+dR/apfX9ahnVHkLI2Ae1Q+WP71fI2R+4KEbbH/9T4JVzwSea6LSsyOGY4QdTXNQDeRnoK0WvNq+XFwB6V/OTvsj/SipHmVj1ez19gyWdmcDgZFfov8B9Cg+H/AIHm+MPiaNTK26DQbaX/AJb3OMNMQeqR84PqCewz+UWj35gvI5OuCK+kvHH7QXibxXp9jpl7MiQ2FslrbQW8awwwQoAAqIvAzjk9T3NfR8N47A4Gu8Vio80o6xj0cul32XXqflPiPwzm2b4WGV5XJU41HapO+sYdeVW1k9leyR7hq/xIl1HVZQbgzSTzNLPKTzJI5+Zj/IDsOK6Ky8a5vIIFk9+tfEmia9I915rv90Zzn1rvfC3iB9Q8TW9uHzvlSMfiQK87EY6tjca69d3lJ3b82RDg3CZfgo4TCw5adONkvJL+vU/RL416v/YusRsWw39iaep9iwZq+Zp/G7S2rYk+Zc9/Su//AGwdfi0zxhd2Ucg3QwWkBAPQxwjj9a+GLfxO5Lxl+oz1r6bxAq3zaUU/hjTX3Qifn/g1kHtuGqeJmvjnVl8nVnb8D9J/AGvRfFn4Z6l4WDB9b8MhtT07u8lqeJ4h64znHuPSvz3+Ic8ml6xNGCQpJK1p/CX4zXfws8d2PieLdNFaTfv4N2BNbv8ALLHzx8yEgehwe1eefEfxhbeL9avNTtI/IjmnkkjiznYrMSq/gOK5czzejjMpoU6n8am3FecHr+D29WfXcL8FYvKOJ8XXor/ZK8VN+VVaOy/vRs2/JHMXWrC8QxSnn1rjrvcrkE5HaoZJmLZHGKQzeau2Tr618jtsftFKiobFFnyTSbqaysrEUmG96vQ6LH//1fgGRiq7V4FRIxqSaol6fjX869D/AEuWxp2jsoZx1FM8+V2ZmPOaLX/VtUK/xfWpjuZyWp09ncSxWjOhwx71seG9UvdP1WG9tX2TQyLIjEZwynIODweRWDb/APHkavaR/wAfQoou07ruediYpwkmjvviB4x8ReK9Rn1XX7t7y7u5Wmmlfq7vyT6D6DgV5Y1zMjgq2DXW691H4Vxcn3hW2JqzqVJTm7t7tmGVYelRw8KVGKjFKySVkl2SWgXk8hbcTzis1ZZBJjPXrV27/pWcv+sFZJaHr01oSSMeTVVmNWZO9VXoW5oiVXYqM07e1RJ90U6kwZ//2Q==';
+const IMG_bh='data:image/jpeg;base64,'+'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';
+const IMG_twd='data:image/jpeg;base64,'+'/9j/4AAQSkZJRgABAQAASABIAAD/4QB6RXhpZgAATU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAABJKGAAcAAAAiAAAAUKABAAMAAAABAAEAAKACAAQAAAABAAAAZKADAAQAAAABAAAAZAAAAABBU0NJSQAAAFFER0dBQ1RaUkk1MkJTWks3UTRGUkJQTzZZ/+0AOFBob3Rvc2hvcCAzLjAAOEJJTQQEAAAAAAAAOEJJTQQlAAAAAAAQ1B2M2Y8AsgTpgAmY7PhCfv/AABEIAGQAZAMBIgACEQEDEQH/xAAfAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgv/xAC1EAACAQMDAgQDBQUEBAAAAX0BAgMABBEFEiExQQYTUWEHInEUMoGRoQgjQrHBFVLR8CQzYnKCCQoWFxgZGiUmJygpKjQ1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4eLj5OXm5+jp6vHy8/T19vf4+fr/xAAfAQADAQEBAQEBAQEBAAAAAAAAAQIDBAUGBwgJCgv/xAC1EQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4+Tl5ufo6ery8/T19vf4+fr/2wBDAAICAgICAgMCAgMEAwMDBAUEBAQEBQcFBQUFBQcIBwcHBwcHCAgICAgICAgKCgoKCgoLCwsLCw0NDQ0NDQ0NDQ3/2wBDAQICAgMDAwYDAwYNCQcJDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ3/3QAEAAf/2gAMAwEAAhEDEQA/APzd034k6RMoXUdOtZ+7PC/lMc+nQfpXoWjeJ/hhcBTqF/qGk54LNCLmNfxQhsfhXgdz8KPEVuvmRvbTKehBwT+lc3e+F9e0sqJ7ZlLNtUo2QT+dfNywdCfwux7ClUi7tH2u9l4cvrSZvCHjjRLuSWLEaXFwbOQOegKTheh96+atJtNQ0q7vdL1Zk+12s7eYyyLKj7ucq6EqwPXINef2/hzWLxgqJub0xk/nXYaVoseiSJa3WGuLhlURKC7FifQd6qhho0OZqW4qtR1bKx9a+Col0Xw2dQvj5S3JDl2JACDoPoaux/Ffw7PejTdPimvWPAnj2qnHUAM2589BtFfOfxJ8QweHfDkfhm0u5bmdH8mRhIzRrsAaQDJ5wW2k9BgAd68e8ManONThnjs/tkrNsjV3aJct6yKyso7kg9Pwrx6GAhjYSxM3o27dNO511ZPBzVN76X9f69T9IvDHxi8DXvim18PXd7HbyyvDlLtXt9rE/dbzAAGyPXFcl+1VN/wl99NqbDDPfDmM5G1FKgD2wBXy74hsYV0jT/EStDLeG5NpcKjStbfvAQhVpHZ2XIwWyByPx+r774eeKNX+Fdl4y1DT7rT7Czgihma4BmVJg5iUmRfvI/AViA6kYYfMGMQoYfBzjOMt3bXubww1fESfu9L/AC1PkPwzosdv4ktJ2+aSFg25snAr6rg+Hujax4bPi/QpnTX7RphM+flUKAdm08EFenvXh8sNlaaovl3ts5K9EYA5H1r6S+EXi3wPouh6lpniO7YXF5KZIQykxKSMZZwDxjoOOa9qdVulzI8+dK1dRbPHP2kr6XWfDnw4EioFm06SYFCMMS4Q/kVxWr+05o2mWF94FaW4djb6GieTtUMGUIAA2Mt175wBiuU/aH1Kznv/AAxBoxa+s9LsXjR4QSo/0h3x0OOPbpR4y+Inij4reJtM1PxLoyaRFYackGnRBGG+EsBvJfBYsRjIAFawXNGMl3b/ADM6d6VT0TX4oTSHFhp0FrYlpFRQHO1iA/cDkdBitP7fe/3G/wC+W/xr1h9I0u2c20cS24iCrtW5aPJ2gkkZPJJ6/wBab/Z2n/3j/wCBjV5zaufSQxUXFPlf3n//0Ph2G5u47w27qfL42kD5f1rpZ9AtNYijSQYaMllPTt0OKp210s0KGYYI646DFdVptym/aQFIU5Prn2r5Rya1R9Jy9zk7XSbS24jQBh+dbWmpa2M8mrXMKulqN43AH5zwo57Zrp30W1e3F9HnAIBXtzVHxdYDT/A+o65IpWG1UfKuAWdgUQc9fmYZ71w5jUTw8ot76ffod2XU/wDaIWWzv9x+ffiTW31LWXaXBEZkYDsWZyx/M0/SdUjt4VS5PyNl3I6sQrMF/wCBNgfSob/w/dWpW+uo2jWXhC/GcdcepzR4S0HUdf1ZNJsIFubmR1RI5CEQscsAXZlCZ29T9K9+nOlChaL91I8mrSrVMR7y1b0P25+En7LfgvxB+zBPpNxbvceJ/Eui2+p217Jh5BdmMTxKoIOxEJAAUjqSSSefNdQ/aW0w/DPQ/AsbNHcaVZxWGq29zgrPaq8ULrMp+9LEykK3Bwobg4x2fwe+Lfx/j+GGnah4D06xkvPB0Y0W7jvXBFt/Z8aIZii4Wb5cjaG25Uktt6/n/wDE7wD460y0tvib4qgbS5PHd9qd4scsaRsVaRZleOFBhYjvyMZU5ODxivg8DhliK9SniW/ivb8no3o1p20R9/i+bC0YVKaXw2T7aap3S1W9vNsPGMN5PrBhtrO1jWB2jRkQgsoY5y3JP1rmD8P/AB7P5l/YWVxJCuXyiNgAe4r6N8I2raz4XsLrV4YpryxSO3EiptZo1WMjeMcsu/G70AzzX014dhtrKzt4FJVp9qxqc4BzznA6HtX1FLEuHuRWiPi8VSi3d7n5e/2x4i0m5W1uJHDsufLk5zzjGDXWeF9S8T+JNcGmGF7ichVt0hQu5Gfx2qv4AV93L8LvBl74gk1LXNOiu72xufOilkygjGdw6EAgHnmuqvLWy0WcavpdtDFNtP7yBVVmU9csB0NdLxcexwqhLY+StT8G/Fy2uvLNhqKkgMc7WyTnnOelZ/8Awi3xb/58tQ/Ja+tX8beIb1jKkQZB8qkjJwPcCm/8JX4j/wCeC/8AfNczrvsj0Y0qlt/xP//R+RNH0a3tW825curdVNdENPgMpmtyFQckdOlZomiTgkn2q7bzm4jcSSLDGgLMzkKqqOpJPAAHWvj5y3kz6qEU3yo7qwjF5prQxldwAIyfTrXkvxL8baReabb+GtDuYb+7t3YyqoaSGFwQQHC/LI55GDwv15rzLx98WbaXTm8NeEJnEb5S5vAdplUEgiPuEPrwTXjVn4in8Pm007R5W33W+W9QSFUcAfJCACM8cv6kgfwmvPxeCniaV+XZ3Sem3V9l5dT2Msr08JX5py6Wdtd9LLz9NvMx9Yv7u8vXn1PDzkkH5BGiKDxhFwqjjOB+Nez+DPCR0uOw8YWc7wXJhlntpMK0UkqMU2uGBBwc9ORng14N4t1pLmQLbWX2EL99AD1HfJ5P41614U8UWd54YtvC+oLI5jneaMeYVBSUAMEIIIPRuDzitMdTxCwtP2Ssm7SWj92z+W9vkdWVTwv16p7V3aV4vVe9ddd+/nc/Rv8AY88U6pb6frvg7VCujnVJBeC81CUS28s8WPnREj3jcCUkRiFZG53YBHIf8FC/iFb+KL3wlbE20dzZJKp+zktGUmRDiMYG1DycADGRXcfs4+E/h3o2nXGtapb6Lcr9mdoBeWz382WQjAa4chGxySFOMH1r89P2hPGen+KPia9joSiTTNCtY7CKRQuwzKPm/wBXhePlU59K8fLvb4nMIuF1BXb0tsmknq+r8vuPUzuthcPg5KbUptJJrXWTu3eyvZL+ne/u3wk8a317ptvpOsDM0cfkRyBVCSRtzEzMPvHamOecjvX3p4St4fs6zkB2dDl8cYHT6Yr4J/Zm8J6f4vSTTLmexstQE6TQyXDSJnaDlVEZK7QG/iQgHksBxX6KaP4a1/whM9hq1sYJFUbT1V19VbkMD6ivo3G02j4Ws+aKaZwXii3Fpe74JFCzbfMI5ULznPsa851C9jt4W8tpPLfIGD06jAXtz0rc+I0k9tq1oGEm0xkbh7HuP8e1eWAanDPJLsdkuG2lfmJZfr2P0rNSs7M9Kjhb01K5rW2rz2aGGRC5DZBY4OMDHFWP+Eif/nl+tXodNE6eYcjcSQHGCAefSpf7HT1H5f8A1qXMzRumf//S+KL/AFyy02F59QkSKNRn5jhmOMgKO5NeGeMPiLfa/ZPpNqPsdizhiqcSyrj7sjEkFc84GPfNeT6zr9zd3Pn3Nw9yS24M5ycH05OBz06Vv6Z8NPib4m06DVvD2iT31leAtC8bxFXCkg4BcEEEEcgV879XhC1SvJL10X4n12FpYrFzdHL6Mqklq+WLk7bbJOy1/E5WAaheal/Z+nQTXczqxSGCNpZTtyThUBY4HPA6V6r8JfBukeIPFFynxJ0q+i0uWzQWszR3ELRzPPCqvGF2CRvJMrKhOG2k9ia9q/Yx8O/ED4Vftc/CbxN4n0m40u0v/EaaMJZWTDSajDLbeX8rk5Ik7iv6UfGiaNZa14LXwjDFLJpl3qLlXkEcQXw5pmoW8UbuxCosdxcqCzEAdTivWoKnUjzwaa8tTxsww+KwlV0MXTlCW9pJxflo0mfyhfG3wlpGjeOrzRfh1Z3d7oX+jwWVyiyXJnuPJVpk3h5d0wfcGj+VlxgouOcLTPCniltGTOh6kz7AFP2Ofkk4XBCdeMcd6/pJ8bfDTxPZ/EjwFNoulXd3Y2Hx5vvEF/NbxM8draanpTv58zKMJG09wE3HjcwHU19M2Rvbfx7qVtZ8+H47TwgdM2ZOd95qZuCf9osFz7YrKvgVNKKdtbmmFzN05OclfSx/JPLf/F+10ttKsf7ca2EHnSxQQT7VhOQHcquQnyn5iccEZ4NUPDmga3/YcGof2Zez21+/yXC28jRySM23IkC7cl+OueMDk1/X4kHnX1t/wr65Fpb3g0h4p47U3kJsZor6ZBMiyRN9nZn4O8BWI+h+Vv2P7iS4/ZY8NxrEBokaeLkkXYBbC4t9fVbXrlVbiQxgHscdKqGDUY8v6GFbG88+ZLT1Pw08N6B4l8D2mleIYNKu57/7a3k2tzaSssbQhSZWjZfuKXALEbckjPBr7kvfiP8AtD6hZaH4L8Farpt1qB3XGo6h4rjcafcTSkSJZWEYTKrHGcmSPB2kAHPT9PvCthquq/Hz4oXl/DrxtJ7XS/Dlu3iOKK1tjBcnUJpjpLLtNxZgiMKTmQvvHRRXzx+0/qniHwr+xlZf2vG7tZaP4DtrbzV2K1658q6ERx9/AG4DoDzxXLPLry9o+l/n2JeKk4ezju/6/wCAeG+N9B8QJo+m6r4w0J9AvLj/AI+raK4W7tlljAy0E6ffjbqu4K4HDDNcJ59jJEkD/KiEMGDdFHtWv8PfinqGp+HZfAfxUWTTNK8nBm1CVXjhIHE0Mqqzxun91sowyCVHNeI69f3PhvXrnSJbmK6jgkKRzQsHimjydsiMCflYcj6140o03P8AdyTT2s/wPpngsyw1K2Nw86bX80ZR9GrpHsUhs3bdCd69iKZtg9P1rhtN1tTaKWB55GB2/Or/APbcfo35f/Xp8hycx//T/B6S68yIZ/gJA+navdtfvfHkmm+BvBOjPdaW8GnQyLdWly8UF1FqbLJFIdu07kJZGHzcg44rhP8AhAY7eBp7u8GVySqL6e5/wr3K7uNJsPGXhCys2U6fpmmWOBCWmbeivIVIXcSxkPTtmvFxdWLlFxV7Xf4f8E+94aoVVRrx9o4c7pQbTtpKd2vL4U201a1tmxus/DrWvDt74QF94r1m5v59VjilnjvJFFrcq26OW1YktHIoBw/UEZGOlbesSOPFlt4B1P4meMpJtReWC7tZNTuZVkTUkLzKxI8si4bb5ud2/ncD2seK76PVLey1G0c3P2fXklZmZo/JG/b5ZQ5wy7uW4x+lcNrev6Q/xV0Kx/s5P7Tt7+zml1FXy0kZjOI8Y7ZHOe1eXh6uJkrcz2ltZan6Tm2X5NRquaowalUpJc7lL3WrNJp7tpu7dt/I+htJttbudZ1Tw9H8XPH5l0qCG6vEXW7oeWzAGIg/db5EHTJXaBxxWd4duYNf0XU/EGk/Fzx9/Y2lNEvnrrF0hQookPyEBvkZ8rgcZJHOa57wxq4j+KHje6VQxksNOwh5DFYm+U+uelUfA3iYT+H/ABBP4h8PR6Na3NzF5umpGYY/KEUSbguF4YjJ46iuSdXF2b9pLaPVdbX0/L8T6PD5bw6504PCUknKutYztam5KDb5rJaJyW7esbWaPQtF8E+JdE8UanpjfE3xsLFdLsYYBbavPCxtN06C2lwxVoo8Hy1AVVDt8vr5pb+HfEOk/A2/vbfxp4ms4dKk1G5ttKttUli09JLW7bymFup2g708zK4O/wCYEGu5m8RXNt4j8SytgRQaXZyRMOM7ftLtnPfcMDHasnxHfW1/4K8SeHbE8PAI0AH8d43mH9ZBSp4zGc0eab3j93X77o0xvDPDPsqkqOFimo10lr8V3yPV/ZUJcvkxfEUPi2P4faP458SfEbxpJcwNpV/dM+sXMv2QSFUeaAFmdZI0lbYwyRlvUisvxTo8OsyeGtI13x54t12zv50uLO31jU5rqARpGXLRxuCEkCkAZAwCevQ7njY2+oaF4i0CC7ikD6MsMdopG+EwpKyMRnOHO0Dj+GvJ9ZuI7jWfh5bicrL9nLs5UMiL9mTA54z7Vvh8RiZq7m/tP5ct19zPHzrI8kwj9nSwkGrUo31u5e15Ju/N9qLT8nv2Pe/Dl0vhZr/Vv7Svb23sLpopIbuUXYkRURxw4HzFn5y2Nor1q48Ma74q8MyeLLK1eS005iZJFAcKkhB2kL86bScjIKkE4YYxXyLrGuXUHhrXryO9LwWV0UaJo0HmoFiOVZVUq2W6ncMDHvXOeCv2htc+H7G2hs9Utrw2+8zwX00Ui3oJaOVonLQTQyLhJYZY2Vo+FxwRrh8NOouaT1V/yXp/TPj+McXQw8Z0cJCynyS1bd+WVVafFbSXVr4W0mfZmnR3FvaqjTiPvtJzjNXt8/8Az9L+lfCM/wC0F8RLi9u72S7gia6nebybaFEgi34+SJSCVQdhmmf8L++IP/P9/wCQ4/8A4mt1hJtXbX9fI/P5VdfhP//U/Jm5uo7iGSARh3mAUF+CDnPB6c1Ut9Q0u3trFrO+j0i/gjkjkeKLe7bj1c4xkjjvWHHJvUhiSMgg5qpJZQSEyTAc8cHNeHBKStI+3qOeClJ01f1urap6NNNPToy3LeR2ga2g8WNAt1MZ5F8gOryswJY++RmsyS30ebWV1uTxipvoyrJP9m5DIML3A4HtXNeJrW1srqIwsSyw5ZSOA7Hj9Oa4pR82BXXQpKS5ov8ABf5HBic3lG1OdNO1mvenp2+3vqz3K31KO1v7jVLfx5surtUSeUWoy4jGFBHTgVNdawb2KaC68f7451CyKbUfMB7j+leGbdz+wr9r/wDgnfoep3v7OPiO78GeF/CXiLxEnjzZL/wkkOnyFNOXToGKqbwo3lvLgHY25ckgE5q/qcW73/Bf5D/1lrRg48mjvpz1Ou/2+ut+5+YsuvyytMZfH28zxeTJm1X5o/m+U/8AfTfnVW31NbUOIPHZQTFGfNsHLGMKq8kn7oUAfSv6Svh94O8dS6vbr8WPAvwttNKC7Zn0jT9HkyEtkSV5i83mRq8qvLEIUkZWcRuNi7z/ACo3hMlzM55LSOx+u45p/U4rS/4L/In/AFmrSfM46/46nX/t89nGoRrqE+pr47zdXcaxTS/ZhlkT7oOeMD2FZks1q0trIPGYd9PB+zH7MPkyu04/4CMc1wWg6PJrWoQWSDHnbgD7gE1WNiLea4hmGDHnB9x6VHsYJ2vr6L/IJZ7VmruGl/56m973+Pe+vqd/dyi6tnt77xU3kXzvK48jCyMQFJJXHZQMdOBWL4r1S21TVFmspfNiWCKMOAVyYxtPX6V3fw4sfDniBh4c1uJp4Hj86IsQjo4PzKrA5wc8d+Oa4/WPB8q67qumaOMf2fIWhtpn/fSQno6NgBvcVlzQjNxfT0tYVXGVatF6aNrrJu6vbdvu/vOW8lG55/A4o8hPU/nVaSWVW2MChQbSNnPHrjvUfnP6n/vk1ryyOG8eqP/V/FoyOofB6Cr9kPtLgzEthAwHvuxWa3SStPS/vf8AbMf+h189E/T8wiuS5xHiu/uJJUsWIMccjuOPmJOBye+B0rj1JBz6V0nif/kIn/eb+dc2vf8AGvWwSSoq3n+Z8Jmkm8S7+X5EiyNj86VjuIZuTiol6VL2H0rfqcX2SPpzVpBuVifUVV/+tVqL7jfUU3sSj27wRBDDrvhvy0A238cfT7yy+UxB9cFzisz4gadbWPiPWLa3BCwXE8aknJ2qxAya2PBv/Id8O/8AYTt//QbeqvxM/wCRr17/AK+7n/0M14sW/br0f5nrpf7O/VfkzH8GwiSSwnLMHgugqEHoGBY/qP8APFd78QI1kgs9YGUu0sUuVlQ4KyZycex7iuI8E9Lb/r8T/wBAau78d/8AIGtf+wSlFd/vkVQ/hM5+xsrDX7G31XUrWJ7mZPnZQV3EEjJAPXirX/CM6D/z5p+bf40nhf8A5AFn/uN/6Ea3q5Jyak0md9PWCbP/2Q==';
+const GIMG={hvh:IMG_hvh,bh:IMG_bh,twd:IMG_twd};
+function gimg(k,sz){sz=sz||22;return `<img src="${GIMG[k]}" alt="" style="width:${sz}px;height:${sz}px;border-radius:${Math.round(sz*0.24)}px;vertical-align:middle;margin-right:9px;box-shadow:0 1px 3px rgba(0,0,0,.20)">`}
+
+const C={demand:'#6753E6',supply:'#0F8B8D',demandL:'#A99BF0',supplyL:'#6FC0C2',ink:'#17181C',body:'#667085',muted:'#98A2B3',line:'#E4E7EC',accent:'#B56A00',neg:'#C4473A',pos:'#1D8758'};
+const GR={'#4F46E5':['#6A62F0','#4038C7'],'#B3AEF3':['#C4BFF7','#A199EE'],'#0D9488':['#17B3A4','#0B7B71'],'#8ED0C8':['#A6DDD6','#79C5BC']};
+let SN=0;
+function defs(cols,p){let d='';[...new Set(cols)].forEach(c=>{const g=GR[c];if(g)d+=`<linearGradient id="${p}${c.slice(1)}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${g[0]}"/><stop offset="1" stop-color="${g[1]}"/></linearGradient>`;});return `<defs>${d}</defs>`}
+function gf(c,p){return GR[c]?`url(#${p}${c.slice(1)})`:c}
+const ICON={
+  demand:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg>',
+  supply:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/><path d="M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg>',
+  flow:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h11"/><path d="M12 4l3 3-3 3"/><path d="M20 17H9"/><path d="M12 14l-3 3 3 3"/></svg>',
+  star:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.3 5.8.8-4.2 4.1 1 5.8L12 16.9 6.8 19l1-5.8L3.6 9.1l5.8-.8z"/></svg>',
+  chart:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V4"/><path d="M4 20h16"/><rect x="7" y="11" width="3" height="6"/><rect x="13" y="7" width="3" height="10"/></svg>',
+  plan:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg>',
+  target:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.4"/></svg>',
+  users:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 5a3 3 0 0 1 0 6"/><path d="M18.5 20c0-2.3-1-4.3-2.5-5.4"/></svg>',
+  coin:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v10M9.5 9.2a2.4 2 0 0 1 5 0c0 2.6-5 1.4-5 4a2.4 2 0 0 0 5 0"/></svg>',
+  gauge:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18a8 8 0 1 1 16 0"/><path d="M12 18l4-4"/></svg>',
+};
+
+function money(v){return v>=1000? '$'+(v/1000).toFixed(v>=100000?0:1)+'k' : '$'+v}
+function vbars(labels, series, opts={}){
+  const W=560,H=280, pad={l:8,r:8,t:32,b:42}, p='v'+(SN++)+'_';
+  const max=opts.max||Math.max(...series.flatMap(s=>s.v))*1.12;
+  const n=labels.length, gw=(W-pad.l-pad.r)/n; let g=defs(series.map(s=>s.c),p);
+  {let lx=W/2-84;series.forEach(s=>{g+=`<rect x="${lx}" y="6" width="11" height="11" rx="3" fill="${gf(s.c,p)}"/><text x="${lx+17}" y="15.5" font-size="12.5" fill="${C.muted}">${s.name}</text>`;lx+=100;});}
+  labels.forEach((lb,i)=>{
+    const gx=pad.l+i*gw, bw=Math.min(56,(gw*0.62)/series.length);
+    const groupW=bw*series.length+(series.length-1)*10, startX=gx+(gw-groupW)/2;
+    series.forEach((s,si)=>{const v=s.v[i], bh=(H-pad.t-pad.b)*v/max, bx=startX+si*(bw+10), by=H-pad.b-bh;
+      g+=`<rect x="${bx}" y="${by}" width="${bw}" height="${bh}" rx="5" fill="${gf(s.c,p)}"/>`;});
+    g+=`<text x="${gx+gw/2}" y="${H-pad.b+22}" font-size="12.5" fill="${C.muted}" text-anchor="middle">${lb}</text>`;
+  });
+  g+=`<line x1="${pad.l}" y1="${H-pad.b}" x2="${W-pad.r}" y2="${H-pad.b}" stroke="${C.line}"/>`;
+  return `<svg class="chart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet">${g}</svg>`;
+}
+function hbars(rows, opts={}){
+  const W=560, rh=opts.rh||48, padT=6, padB=6, lblW=opts.lblW||166, valW=68, p='h'+(SN++)+'_';
+  const H=padT+padB+rows.length*rh; const max=opts.max||Math.max(...rows.map(r=>r.v))*1.08;
+  let g=defs(rows.map(r=>r.c||C.supply),p);
+  rows.forEach((r,i)=>{const cy=padT+i*rh+rh/2, bw=(W-lblW-valW)*r.v/max, bh=Math.min(22,rh*0.46), c=r.c||C.supply;
+    let tx=lblW-12, anchor='end';
+    if(r.img){const s=22, iy=cy-s/2, cid=p+'c'+i;
+      g+=`<clipPath id="${cid}"><rect x="6" y="${iy}" width="${s}" height="${s}" rx="6"/></clipPath>`;
+      g+=`<image href="${r.img}" x="6" y="${iy}" width="${s}" height="${s}" clip-path="url(#${cid})" preserveAspectRatio="xMidYMid slice"/>`;
+      tx=6+s+9; anchor='start';}
+    g+=`<text x="${tx}" y="${cy+4}" font-size="12.5" font-weight="500" fill="${C.ink}" text-anchor="${anchor}">${r.label}</text>`;
+    g+=`<rect x="${lblW}" y="${cy-bh/2}" width="${Math.max(bw,2)}" height="${bh}" rx="4" fill="${gf(c,p)}"/>`;
+    g+=`<text x="${lblW+Math.max(bw,2)+9}" y="${cy+4}" font-size="12.5" font-weight="700" fill="${C.ink}">${opts.fmt?opts.fmt(r.v):r.v}</text>`;});
+  return `<svg class="chart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet">${g}</svg>`;
+}
+function combo(labels, spend, roas){
+  const W=560,H=280, pad={l:8,r:8,t:34,b:40}, p='c'+(SN++)+'_';
+  const maxS=Math.max(...spend)*1.32, maxR=Math.max(...roas.filter(x=>x!=null))*1.28;
+  const n=labels.length, gw=(W-pad.l-pad.r)/n, plotH=H-pad.t-pad.b; let g=defs([C.demand],p), pts=[];
+  labels.forEach((lb,i)=>{
+    const gx=pad.l+i*gw, bw=Math.min(60,gw*0.42), bx=gx+(gw-bw)/2;
+    const bh=plotH*spend[i]/maxS, by=H-pad.b-bh;
+    g+=`<rect x="${bx}" y="${by}" width="${bw}" height="${bh}" rx="5" fill="${gf(C.demand,p)}"/>`;
+    const inside=bh>44, ly=inside?by+19:by-8, lc=inside?'#fff':C.ink;
+    g+=`<text x="${bx+bw/2}" y="${ly}" font-size="11.5" font-weight="700" fill="${lc}" text-anchor="middle">$${(spend[i]/1000).toFixed(1)}k</text>`;
+    g+=`<text x="${gx+gw/2}" y="${H-pad.b+22}" font-size="12.5" fill="${C.muted}" text-anchor="middle">${lb}</text>`;
+    pts.push(roas[i]==null?null:[gx+gw/2, pad.t+plotH*(1-roas[i]/maxR)]);
+  });
+  const solid=pts.filter(x=>x);
+  if(solid.length>1) g+=`<polyline fill="none" stroke="${C.accent}" stroke-width="2.5" stroke-linejoin="round" points="${solid.map(x=>x.join(',')).join(' ')}"/>`;
+  pts.forEach((pt,i)=>{ if(!pt) return;
+    g+=`<circle cx="${pt[0]}" cy="${pt[1]}" r="4.5" fill="#fff" stroke="${C.accent}" stroke-width="2.5"/>`;
+    g+=`<rect x="${pt[0]-17}" y="${pt[1]-24}" width="34" height="16" rx="8" fill="#fff" stroke="${C.line}"/>`;
+    g+=`<text x="${pt[0]}" y="${pt[1]-12.5}" font-size="11" font-weight="700" fill="${C.accent}" text-anchor="middle">${roas[i]}%</text>`;});
+  g+=`<rect x="${pad.l}" y="6" width="11" height="11" rx="3" fill="${gf(C.demand,p)}"/><text x="${pad.l+17}" y="15.5" font-size="12" fill="${C.muted}">Spend</text>`;
+  g+=`<rect x="${pad.l+84}" y="6" width="11" height="11" rx="3" fill="${C.accent}"/><text x="${pad.l+101}" y="15.5" font-size="12" fill="${C.muted}">D7 ROAS %</text>`;
+  return `<svg class="chart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet">${g}</svg>`;
+}
+function flowBar(title, total, parts){
+  const W=940,H=92, barH=48, y=36, p='f'+(SN++)+'_';
+  let g=defs(parts.map(x=>x.c),p);
+  g+=`<text x="0" y="18" font-size="15" font-weight="700" fill="${C.body}">${title}</text>`;
+  g+=`<text x="${W}" y="18" font-size="18" font-weight="800" fill="${C.ink}" text-anchor="end">${money(total)}</text>`;
+  let cx=0; const scale=W/total;
+  parts.forEach(pt=>{const pw=pt.v*scale;
+    g+=`<rect x="${cx}" y="${y}" width="${Math.max(pw-3,1)}" height="${barH}" rx="8" fill="${gf(pt.c,p)}"/>`;
+    if(pw>150) g+=`<text x="${cx+pw/2}" y="${y+barH/2+5}" font-size="14.5" font-weight="700" fill="#fff" text-anchor="middle">${pt.label} · ${money(pt.v)}</text>`;
+    cx+=pw;});
+  return `<svg class="chart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet">${g}</svg>`;
+}
+
+function pill(t){return t==='dem'?`<span class="pill dem"><span class="pip"></span>Demand · buying</span>`:`<span class="pill sup"><span class="pip"></span>Supply · selling</span>`}
+function sec(title,ic,cls){return `<div class="sec ${cls||''}"><div class="ic">${ICON[ic]||ICON.star}</div><h3>${title}</h3><div class="rule"></div></div>`}
+function trend(txt,kind){return `<span class="trend ${kind}">${txt}</span>`}
+function nlist(items){return `<ul class="bl">${items.map((it,i)=>`<li><span class="num">${i+1}</span><span>${Array.isArray(it)?`<b>${it[0]}</b> ${it[1]}`:it}</span></li>`).join('')}</ul>`}
+function sbar(pct,max,w,color){return `<span style="display:inline-block;height:8px;border-radius:4px;background:${color};width:${Math.max(pct/max*w,5)}px;vertical-align:middle;margin-right:10px"></span>`}
+function mixbar(name,play,vp,vid){
+  const seg=(v,c)=>v<=0?'':`<div title="${v}%" style="width:${v}%;background:${c};display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff">${v>=8?v+'%':''}</div>`;
+  return `<div style="display:flex;align-items:center;gap:12px;margin:7px 0"><div style="width:130px;font-size:12px;color:var(--body);font-weight:600">${name}</div><div style="flex:1;display:flex;height:22px;border-radius:5px;overflow:hidden;background:var(--line)">${seg(play,'var(--demand)')}${seg(vp,'var(--supply)')}${seg(vid,'var(--accent)')}</div></div>`;
+}
+const SRC=[['VoodooAds',12.5,5.90],['Gamegou Ad',6.9,1.78],['advjy',6.0,7.76],['LEARNINGS CO.',5.4,8.53],['SAYGAMES',5.0,9.18],['Electronic Arts',4.8,12.10],['MobilityWare Ads',4.5,5.50],['Easybrain',3.6,7.70],['Crazy Labs',3.3,7.27],['BoomBit Games',2.8,4.99],['Tripledot',2.4,9.56],['Gamebasics',2.3,13.70]];
+const CRE=[['Overhaul Slugfest · Mid/Next HR — P-CID-1-16',42.7],['Overhaul Slugfest · Easy — P-CID-1-18',9.8],['Cal Raleigh · Base Single — P-CID-5-6',8.8],['Video 22 → P-CID-1-16',8.1],['Cal Raleigh · Multi-Replay — P-CID-5-4',3.1],['Video 37 (15s) — P-CID-1-16',1.7],['Video 29 — P-CID-1-18',1.4],['TWD · Farm Kill Count — P-CID-3-3',1.3]];
+
+function vectorHub(){
+  const enabled=["Install & session data","In-app purchase events (D28)","D7 / D28 ROAS goals","MMP + SKAN attribution"];
+  const locked=["GA4 / analytics linking","Ad-revenue events (hybrid)","TapJoy MRCPE events"];
+  const outcomes=["CPI $6.40  ·  −28%","Installs  +305%","D28 ROAS above 50%","Scaled to ~$125k/mo"];
+  const left=enabled.map(t=>({t,lock:false})).concat(locked.map(t=>({t,lock:true})));
+  const W=1000,H=440, cx=600, cy=H/2, r=76;
+  const lx=8, lw=252, lh=40, lgap=12, ltot=left.length*lh+(left.length-1)*lgap, ly0=(H-ltot)/2;
+  const rx=740, rw=252, rh=46, rgap=18, rtot=outcomes.length*rh+(outcomes.length-1)*rgap, ry0=(H-rtot)/2;
+  let g="";
+  left.forEach((n,i)=>{ const y=ly0+i*(lh+lgap)+lh/2, x1=lx+lw, x2=cx-r+4, c1x=x1+90, c2x=x2-90;
+    const col=n.lock?"#c3c2b7":"#7c3aed", dash=n.lock?'stroke-dasharray="5 5"':'';
+    g+=`<path d="M${x1},${y} C${c1x},${y} ${c2x},${cy} ${x2},${cy}" fill="none" stroke="${col}" stroke-width="${n.lock?1.5:2}" ${dash} opacity="${n.lock?0.7:0.9}"/>`; });
+  outcomes.forEach((o,j)=>{ const y=ry0+j*(rh+rgap)+rh/2, x1=cx+r-4, x2=rx-10, c1x=x1+70, c2x=x2-70;
+    g+=`<path d="M${x1},${cy} C${c1x},${cy} ${c2x},${y} ${x2},${y}" fill="none" stroke="#1baf7a" stroke-width="2" marker-end="url(#vah)"/>`; });
+  left.forEach((n,i)=>{ const y=ly0+i*(lh+lgap);
+    const fill=n.lock?"#ffffff":"#f3e8ff", stroke=n.lock?"#c3c2b7":"#7c3aed", dash=n.lock?'stroke-dasharray="4 4"':'', tcol=n.lock?"#898781":"#4c1d95";
+    g+=`<rect x="${lx}" y="${y}" width="${lw}" height="${lh}" rx="20" fill="${fill}" stroke="${stroke}" stroke-width="1.5" ${dash}/>`;
+    g+=`<text x="${lx+lw/2}" y="${y+lh/2+4}" text-anchor="middle" style="font:600 13px system-ui;fill:${tcol}">${n.lock?"🔒 ":""}${n.t}</text>`; });
+  outcomes.forEach((o,j)=>{ const y=ry0+j*(rh+rgap);
+    g+=`<rect x="${rx}" y="${y}" width="${rw}" height="${rh}" rx="12" fill="#e7f2e7" stroke="#1baf7a" stroke-width="1.5"/>`;
+    g+=`<text x="${rx+rw/2}" y="${y+rh/2+5}" text-anchor="middle" style="font:700 14px system-ui;fill:#006300">${o}</text>`; });
+  g+=`<circle cx="${cx}" cy="${cy}" r="${r+16}" fill="#7c3aed" opacity="0.12"/>`;
+  g+=`<circle cx="${cx}" cy="${cy}" r="${r}" fill="#7c3aed"/><circle cx="${cx}" cy="${cy}" r="${r-16}" fill="#6d28d9"/>`;
+  g+=`<text x="${cx}" y="${cy-3}" text-anchor="middle" style="font:800 19px system-ui;fill:#ffffff">Unity Vector</text>`;
+  g+=`<text x="${cx}" y="${cy+18}" text-anchor="middle" style="font:500 11px system-ui;fill:#d8c7f5">Unity's ML optimization</text>`;
+  g+=`<text x="${lx+lw/2}" y="14" text-anchor="middle" style="font:700 11px system-ui;fill:#898781;letter-spacing:1px">SIGNALS IN</text>`;
+  g+=`<text x="${rx+rw/2}" y="14" text-anchor="middle" style="font:700 11px system-ui;fill:#898781;letter-spacing:1px">OUTCOMES</text>`;
+  return `<svg class="chart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet"><defs><marker id="vah" markerWidth="9" markerHeight="9" refX="6" refY="4" orient="auto"><path d="M0,0 L7,4 L0,8 Z" fill="#1baf7a"/></marker></defs>${g}</svg>`;
+}
+const TABS=[
+  {id:'overview', label:'Overview', pip:null},
+  {id:'qoq', label:'Quarter-over-Quarter', pip:null},
+  {id:'ua', label:'User Acquisition', pip:C.demand},
+  {id:'owd', label:'TapJoy demand', pip:C.demand},
+  {id:'supply', label:'Monetization', pip:C.supply},
+  {id:'m2e', label:'M2E Offerwall ✦', pip:C.supply},
+  {id:'vector', label:'Unity Vector', pip:C.demand},
+  {id:'plan', label:'Q3 Plan', pip:null},
+];
+const V={};
+
+V.overview=`
+  <section class="hero2">
+    <div class="ic-badge">◆ Quarterly Business Review · Unity</div>
+    <h1>Swift Games &amp; Ares Interactive</h1>
+    <div class="sub">A full-funnel partnership review across Unity Ads and TapJoy — demand &amp; supply, in one place. <b>Trailing 3 months · Mar 30 – Jun 30, 2026</b>.</div>
+    <div class="titles"><span>${gimg('hvh',30)}Heroes vs. Hordes</span><span>${gimg('bh',30)}Baseball Hits 26</span><span>${gimg('twd',30)}TWD: Aftermath</span></div>
+  </section>
+  <div class="hero2-stats">
+      <div class="k dem"><div class="khead"><div class="kic">${ICON.target}</div><div class="lab">Demand deployed</div></div><div class="val dem"><span data-to="758.3" data-pre="$" data-suf="k" data-dec="1">$0</span></div><div class="note">Unity Ads + TapJoy</div></div>
+      <div class="k sup"><div class="khead"><div class="kic">${ICON.coin}</div><div class="lab">Supply earned</div></div><div class="val sup"><span data-to="598.6" data-pre="$" data-suf="k" data-dec="1">$0</span></div><div class="note">Publisher payout</div></div>
+      <div class="k"><div class="khead"><div class="kic">${ICON.users}</div><div class="lab">Installs</div></div><div class="val"><span data-to="44990" data-comma="1">0</span></div><div class="note">Acquired this window</div></div>
+      <div class="k"><div class="khead"><div class="kic">${ICON.gauge}</div><div class="lab">Blended CPI</div></div><div class="val"><span data-to="6.40" data-pre="$" data-dec="2">$0</span></div><div class="note">Down 28% vs prior</div></div>
+    </div>
+    <div style="display:flex;align-items:center;gap:13px;margin-top:24px;padding:14px 20px;border:1px solid var(--supply);background:var(--supplySoft);border-radius:14px">
+      <span style="font-size:16px;line-height:1">★</span>
+      <div style="font-size:14px;color:var(--body);line-height:1.5"><b style="color:var(--supplyInk);letter-spacing:.09em;font-size:11px;text-transform:uppercase">Fun fact&nbsp;&nbsp;·&nbsp;&nbsp;</b>Baseball Hits 26 climbed from rank <b style="color:var(--ink)">~#70</b> to <b style="color:var(--ink)">#9 on iOS</b> and <b style="color:var(--ink)">#8 on Android</b> since launch.</div>
+    </div>
+
+  ${sec('Where the money flows','flow','n')}
+  <div class="card" style="padding:38px">
+    <div style="margin-bottom:32px">
+      <div class="legend"><span><i style="background:${C.demand}"></i>Unity Ads</span><span><i style="background:${C.demandL}"></i>TapJoy</span></div>
+      ${flowBar('Demand — what you spend', 758249, [{label:'Unity Ads UA',v:287984,c:C.demand},{label:'TapJoy',v:470249,c:C.demandL}])}
+    </div>
+    <div>
+      <div class="legend"><span><i style="background:${C.supply}"></i>TapJoy Offerwall</span><span><i style="background:${C.supplyL}"></i>Unity Ads</span></div>
+      ${flowBar('Supply — what you earn', 598580, [{label:'Offerwall',v:530260,c:C.supply},{label:'Unity Ads',v:68310,c:C.supplyL}])}
+    </div>
+  </div>
+
+  ${sec('What stood out','star','n')}
+  <div class="card" style="padding:12px 30px">${nlist([
+    ["You scaled UA hard.","$288.0k this window (+193% vs prior) at a $6.40 CPI — down 28% — with installs up 305% to ~45,000."],
+    ["Ares monetization came online.","Baseball Hits offerwall supply ramped to $455.5k (from ~$39k last period) — now your single largest earning stream."],
+    ["Keep an eye on D7 ROAS.","It reads ~20% (from 25.7%) as you scaled, but matured Apr/May held 24–26% — late-June cohorts are still maturing."],
+    ["Swift monetization slipped −9%.","Its offerwall held (+3%), but Unity Ads fell −34% — idle inventory worth winning back."],
+  ])}</div>
+
+  <div class="gloss">
+    <details><summary>A note on D7 ROAS &amp; the reporting window</summary><div class="gd">All four streams run <b>Mar 30 – Jun 30, 2026</b>, compared with the prior period. <b>D7 ROAS</b> = revenue by day 7 ÷ spend; cohorts acquired in the last 7 days haven't reached day 7 yet, so the most recent weeks read low until they mature.</div></details>
+  </div>`;
+
+function delta(pct, good){const cls=good?'up':'down';const sign=pct>0?'+':'';return `<span class="${cls}">${sign}${pct}%</span>`}
+V.qoq=`
+  <div class="ey">Quarter over quarter</div>
+  <div class="lead">This period vs. the previous period</div>
+  <div class="sublead">Trailing 3 months (Mar 30 – Jun 30, 2026) compared with the prior period. Green is favorable, red is unfavorable.</div>
+
+  ${sec('User acquisition','users')}
+  <div class="card" style="padding:10px 0">
+    <table class="t" style="min-width:500px">
+      <thead><tr><th style="padding-left:30px">Metric</th><th class="focus" style="text-align:right">This period</th><th style="text-align:right">Previous</th><th style="text-align:right;padding-right:30px">Δ</th></tr></thead>
+      <tbody>
+        <tr><td class="lead2" style="padding-left:30px">Spend</td><td class="n focus">$288.0k</td><td class="n">$98.4k</td><td class="n" style="padding-right:30px">${delta(192.8,true)}</td></tr>
+        <tr><td class="lead2" style="padding-left:30px">Installs</td><td class="n focus">44,990</td><td class="n">11,123</td><td class="n" style="padding-right:30px">${delta(304.5,true)}</td></tr>
+        <tr><td class="lead2" style="padding-left:30px">Cost per install</td><td class="n focus">$6.40</td><td class="n">$8.84</td><td class="n" style="padding-right:30px">${delta(-27.6,true)}</td></tr>
+        <tr><td class="lead2" style="padding-left:30px">D7 ROAS</td><td class="n focus">19.95%</td><td class="n">25.67%</td><td class="n" style="padding-right:30px">${delta(-22.3,false)}</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  ${sec('TapJoy demand','target')}
+  <div class="card" style="padding:10px 0">
+    <table class="t" style="min-width:520px">
+      <thead><tr><th style="padding-left:30px">Title</th><th class="focus" style="text-align:right">This period</th><th style="text-align:right">Previous</th><th style="text-align:right;padding-right:30px">Δ</th></tr></thead>
+      <tbody>
+        <tr><td class="lead2" style="padding-left:30px">${gimg('hvh',20)}Heroes vs. Hordes · Swift</td><td class="n focus">$421.6k</td><td class="n">$120.7k</td><td class="n" style="padding-right:30px">${delta(249,true)}</td></tr>
+        <tr><td class="lead2" style="padding-left:30px">${gimg('bh',20)}Baseball Hits 26 · Ares</td><td class="n focus">$48.7k</td><td class="n">$0</td><td class="n" style="padding-right:30px"><span class="up">new</span></td></tr>
+        <tr class="tot"><td class="lead2" style="padding-left:30px">Total TapJoy demand</td><td class="n focus">$470.3k</td><td class="n">$120.7k</td><td class="n" style="padding-right:30px">${delta(290,true)}</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  ${sec('Monetization','coin','s')}
+  <div class="card" style="padding:10px 0">
+    <table class="t" style="min-width:560px">
+      <thead><tr><th style="padding-left:30px">Stream</th><th class="focus" style="text-align:right">This period</th><th style="text-align:right">Previous</th><th style="text-align:right;padding-right:30px">Δ</th></tr></thead>
+      <tbody>
+        <tr><td class="lead2" style="padding-left:30px">${gimg('bh',20)}Ares — Offerwall (Baseball Hits 26)</td><td class="n focus">$455.5k</td><td class="n">$39.3k</td><td class="n" style="padding-right:30px">${delta(1058,true)}</td></tr>
+        <tr><td class="lead2" style="padding-left:30px">Ares — Unity Ads</td><td class="n focus">$44.3k</td><td class="n">$5.4k</td><td class="n" style="padding-right:30px">${delta(715,true)}</td></tr>
+        <tr><td class="lead2" style="padding-left:30px">${gimg('hvh',20)}Swift — Offerwall (Heroes vs. Hordes)</td><td class="n focus">$74.7k</td><td class="n">$72.5k</td><td class="n" style="padding-right:30px">${delta(3,true)}</td></tr>
+        <tr><td class="lead2" style="padding-left:30px">Swift — Unity Ads</td><td class="n focus">$22.0k</td><td class="n">$33.6k</td><td class="n" style="padding-right:30px">${delta(-34,false)}</td></tr>
+        <tr><td class="lead2" style="padding-left:30px">Swift — ironSource</td><td class="n focus">$2.0k</td><td class="n">$2.3k</td><td class="n" style="padding-right:30px">${delta(-15,false)}</td></tr>
+        <tr class="tot"><td class="lead2" style="padding-left:30px">Total supply</td><td class="n focus">$598.6k</td><td class="n">$167.3k</td><td class="n" style="padding-right:30px">${delta(258,true)}</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div style="margin-top:34px" class="callbox">
+    <h4>What's driving it</h4>
+    <p><b>Demand scaled hard.</b> We leaned into Baseball Hits across both platforms — spend +193% and installs +305% at a 28% lower CPI ($6.40). D7 ROAS reads ~20% (from 25.7%): partly the cost of scaling fast, partly because late-June cohorts haven't reached day 7. Matured Apr/May held 24–26%.</p>
+    <p><b>Supply tilted to Ares.</b> Baseball Hits monetization newly ramped from ~$15k to $475.5k — now the account's biggest earner. Swift slipped −17%: its offerwall grew +15%, but Unity Ads fell −38% — idle inventory we can reactivate.</p>
+  </div>
+  <div class="note-row">HvH TapJoy grew over the full window, but your team is watching a recent-weeks softening — see the TapJoy demand tab for the full read.</div>`;
+
+V.ua=`
+  <div class="ey">Demand · user acquisition</div>
+  <div class="lead">User acquisition — Unity Ads</div>
+  <div class="sublead">Installs we bought for your Ares titles (Baseball Hits 26 + TWD: Aftermath) · Mar 30 – Jun 30, 2026.</div>
+
+  <div class="kpis five" style="margin-top:34px">
+    <div class="k dem"><div class="khead"><div class="kic">${ICON.target}</div><div class="lab">Total spend</div></div><div class="val dem">$288.0k</div></div>
+    <div class="k"><div class="khead"><div class="kic">${ICON.users}</div><div class="lab">Installs</div></div><div class="val">44,990</div></div>
+    <div class="k"><div class="khead"><div class="kic">${ICON.coin}</div><div class="lab">Blended CPI</div></div><div class="val">$6.40</div></div>
+    <div class="k sup"><div class="khead"><div class="kic">${ICON.gauge}</div><div class="lab">D7 ROAS</div></div><div class="val sup">19.95%</div><div class="note">Maturing · see note</div></div>
+    <div class="k"><div class="khead"><div class="kic">${ICON.star}</div><div class="lab">Titles</div></div><div class="val">2</div></div>
+  </div>
+
+  ${sec('Spend by title &amp; platform','chart')}
+  <div class="grid g2">
+    <div class="card">
+      ${vbars(['Baseball Hits 26','TWD: Aftermath'],[{name:'iOS',c:C.demand,v:[190683,9268]},{name:'Android',c:C.supply,v:[76812,11221]}],{max:210000})}
+      <div class="cap">Baseball Hits 26 is 93% of UA spend ($267.5k); TWD is an early test (~$20.5k).</div>
+    </div>
+    <div class="card" style="padding:10px 0">
+      <table class="t"><thead><tr><th style="padding-left:30px">Top campaigns</th><th style="text-align:right;padding-right:30px">Spend</th></tr></thead><tbody>
+        <tr><td class="lead2" style="padding-left:30px">BH · iOS · US · D7-HYB</td><td class="n" style="padding-right:30px">$117.7k</td></tr>
+        <tr><td class="lead2" style="padding-left:30px">BH · iOS · US · D28-IAP</td><td class="n" style="padding-right:30px">$51.4k</td></tr>
+        <tr><td class="lead2" style="padding-left:30px">BH · Android · US · D7-HYB</td><td class="n" style="padding-right:30px">$49.5k</td></tr>
+        <tr><td class="lead2" style="padding-left:30px">BH · Android · US · D28-IAP</td><td class="n" style="padding-right:30px">$27.3k</td></tr>
+        <tr><td class="lead2" style="padding-left:30px">TWD · Android / iOS</td><td class="n" style="padding-right:30px">$20.5k</td></tr>
+      </tbody></table>
+    </div>
+  </div>
+
+  ${sec('Where we spent it — top sources','chart')}
+  <div class="card" style="padding:10px 0">
+    <table class="t"><thead><tr><th style="padding-left:30px">Source app / network</th><th>Share of UA spend</th><th style="text-align:right;padding-right:30px">CPI</th></tr></thead><tbody>
+      ${SRC.map(s=>`<tr><td class="lead2" style="padding-left:30px">${s[0]}</td><td>${sbar(s[1],12.5,130,C.demand)}<b style="color:var(--ink)">${s[1]}%</b></td><td class="n" style="padding-right:30px">$${s[2].toFixed(2)}</td></tr>`).join('')}
+    </tbody></table>
+    <p style="font-size:12px;color:var(--muted);padding:14px 30px 4px;line-height:1.7">55 sources in total; the top 12 shown are ~60% of spend. <b style="color:var(--ink)">Gamegou ($1.78 CPI)</b> and MobilityWare ($5.50) are the most efficient at scale, while Gamebasics ($13.70) and Electronic Arts ($12.10) run the priciest.</p>
+  </div>
+
+  ${sec('Top creatives by spend','chart')}
+  <div class="card" style="padding:10px 0">
+    <table class="t"><thead><tr><th style="padding-left:30px">Creative pack</th><th style="padding-right:30px">Share of UA spend</th></tr></thead><tbody>
+      ${CRE.map(c=>`<tr><td class="lead2" style="padding-left:30px">${c[0]}</td><td style="padding-right:30px">${sbar(c[1],42.7,150,C.demand)}<b style="color:var(--ink)">${c[1]}%</b></td></tr>`).join('')}
+    </tbody></table>
+    <div style="margin:14px 30px 4px;padding:11px 15px;background:var(--accentSoft);border:1px solid var(--accent);border-radius:10px;display:flex;gap:10px;align-items:flex-start"><span style="font-size:13px;line-height:1.5">⚠</span><div style="font-size:12.5px;color:var(--body);line-height:1.55"><b style="color:var(--accent);text-transform:uppercase;letter-spacing:.06em;font-size:11px">Concentration risk&nbsp;&nbsp;</b>One creative — <b style="color:var(--ink)">Overhaul Slugfest (P-CID-1-16)</b> — carries <b style="color:var(--ink)">43%</b> of all UA spend. Diversifying the winner protects against fatigue as we scale.</div></div>
+  </div>
+
+  ${sec('Monthly spend &amp; D7 ROAS','chart')}
+  <div class="grid g2">
+    <div class="card">${combo(['Apr','May','Jun'],[92234,67913,125643],[24,26,null])}<div class="cap">June spend hit $125.6k at a $4.76 CPI. June D7 ROAS is omitted — those cohorts are still maturing.</div></div>
+    <div class="card" style="padding:12px 30px">${nlist([
+      ["We scaled into June.","Spend Apr $92.2k → May $67.9k → Jun $125.6k as efficiency improved."],
+      ["CPI kept falling.","$10.12 → $7.48 → $4.76 — strong unit economics at scale."],
+      ["ROAS held where it's matured.","Apr 24% and May 26%, both above your 20% target."],
+      ["Read June with care.","9 of 30 June days haven't reached day 7, so the ~20% will firm up."],
+    ])}</div>
+  </div>
+
+  ${sec('Baseball Hits — where we&rsquo;d push next','star')}
+  <div class="grid g2">
+    <div class="card" style="padding:12px 0">
+      <div style="padding:6px 30px 0;font-size:13px;font-weight:700;color:var(--ink)">D28 ad-revenue share is climbing</div>
+      <table class="t" style="margin-top:8px"><thead><tr><th style="padding-left:30px">Platform</th><th style="text-align:right">Apr</th><th style="text-align:right">May</th><th style="text-align:right;padding-right:30px">Jun</th></tr></thead><tbody>
+        <tr><td class="lead2" style="padding-left:30px">iOS</td><td class="n">1.7%</td><td class="n">3.8%</td><td class="n" style="padding-right:30px"><span class="up">5.7%</span></td></tr>
+        <tr><td class="lead2" style="padding-left:30px">Android</td><td class="n">4.6%</td><td class="n">6.0%</td><td class="n" style="padding-right:30px"><span class="up">6.6%</span></td></tr>
+      </tbody></table>
+      <div class="cap" style="padding:0 30px">Ad revenue is a growing share of D28 value — a real monetization lift that argues for re-testing a hybrid ROAS goal.</div>
+    </div>
+    <div class="card" style="padding:12px 30px">${nlist([
+      ["Clearing your D28 target as we scale.","Blended matured D28 IAP ROAS is <b style=\"color:var(--ink)\">56% iOS / 57% Android</b> — above your 50% goal. May cohorts were exceptional (74% / 71%); June normalized to ~47% as weekly spend tripled. Let's hold target discipline and align one Android goal as June/July volume matures."],
+      ["Re-test Hybrid ROAS.","With D28 ad-rev share up (iOS 1.7%→5.7%, Android 4.6%→6.6% since April), hybrid is worth another run. Did something change on monetization in early May?"],
+      ["Refresh the creative — lean into video.","Your <b style=\"color:var(--ink)\">video+playable already out-earns playable</b> (0.245 vs 0.204 D7) but is only 23% of spend. Baseball Hits runs <b style=\"color:var(--ink)\">0% pure video</b> (77% playable, 23% video+playable) while the sports category puts ~65% behind video. No new packs since May 22 — add video, test 45s+ (60s+ if possible)."],
+    ])}</div>
+  </div>
+
+  <div class="card" style="margin-top:16px;padding:16px 30px 20px">
+    <div style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:2px">Creative mix — Baseball Hits vs. the sports category</div>
+    <div class="cap" style="padding:0 0 12px">Share of network spend by ad format. Baseball Hits leans almost entirely on playables; peers put the majority behind video + playable.</div>
+    ${mixbar('Baseball Hits 26',77,23,0)}
+    ${mixbar('Sports category',35,56,9)}
+    <div style="display:flex;gap:18px;margin-top:12px;font-size:11px;color:var(--muted)">
+      <span style="display:flex;align-items:center;gap:5px"><span style="width:10px;height:10px;border-radius:2px;background:var(--demand);display:inline-block"></span>Playable</span>
+      <span style="display:flex;align-items:center;gap:5px"><span style="width:10px;height:10px;border-radius:2px;background:var(--supply);display:inline-block"></span>Video + playable</span>
+      <span style="display:flex;align-items:center;gap:5px"><span style="width:10px;height:10px;border-radius:2px;background:var(--accent);display:inline-block"></span>Video</span>
+    </div>
+  </div>
+
+  ${sec('TWD: Aftermath — early test','star')}
+  <div class="card"><p class="prose"><b>~$20.5k combined</b> (iOS $9.3k · Android $11.2k). A small, deliberate test alongside the Baseball Hits scale-up. We'll refresh creatives and recalibrate the ROAS goal before committing larger budget — worth a second test together, not a pause. <b>Ares' other titles remain paused</b> for now.</p></div>`;
+
+V.owd=`
+  <div class="ey">Demand · TapJoy · your focus area</div>
+  <div class="lead">TapJoy demand — the growth question</div>
+  <div class="sublead">Both studios as advertisers on the TapJoy offerwall · $470.3k this window vs. the prior period · Mar 30 – Jun 30, 2026. This is the channel your team asked us to dig into.</div>
+
+  <div class="kpis" style="margin-top:34px">
+    <div class="k dem"><div class="khead"><div class="kic">${ICON.target}</div><div class="lab">TapJoy demand</div></div><div class="val dem">$470.3k</div><div class="note">Prior period $120.7k</div></div>
+    <div class="k"><div class="khead"><div class="kic">${ICON.users}</div><div class="lab">Installs</div></div><div class="val">85,998</div><div class="note">68k HvH · 18k BH26</div></div>
+    <div class="k"><div class="khead"><div class="kic">${ICON.chart}</div><div class="lab">Conversions</div></div><div class="val">276,927</div></div>
+    <div class="k"><div class="khead"><div class="kic">${ICON.star}</div><div class="lab">HvH share</div></div><div class="val">90%</div><div class="note">of TapJoy spend</div></div>
+  </div>
+
+  <div style="margin-top:24px;background:linear-gradient(100deg,var(--supplySoft),var(--demandSoft));border:1px solid var(--line);border-radius:14px;padding:16px 22px;display:flex;align-items:center;gap:14px">
+    <span style="font-size:23px">🏆</span>
+    <div style="font-size:14px;color:var(--body);line-height:1.55"><b style="color:var(--ink)">Baseball Hits 26</b> climbed from ~#70 to <b style="color:var(--ink)">#9 on iOS</b> and <b style="color:var(--ink)">#8 on Android</b> since launch — real momentum behind the offerwall growth.</div>
+  </div>
+
+  ${sec('By title — this period vs. prior','chart')}
+  <div class="card" style="padding:10px 0;overflow-x:auto">
+    <table class="t" style="min-width:680px"><thead><tr><th style="padding-left:30px">Title</th><th class="focus" style="text-align:right">This period</th><th style="text-align:right">Previous</th><th style="text-align:right">Δ</th><th style="text-align:right">Installs</th><th style="text-align:right;padding-right:30px">CS-conv %</th></tr></thead><tbody>
+      <tr><td class="lead2" style="padding-left:30px">${gimg('hvh',20)}Heroes vs. Hordes <span style="color:var(--muted);font-weight:400">· Swift</span></td><td class="n focus">$421.6k</td><td class="n">$120.7k</td><td class="n"><span class="up">+249%</span></td><td class="n">68,058</td><td class="n" style="padding-right:30px">0.11%</td></tr>
+      <tr><td class="lead2" style="padding-left:30px">${gimg('bh',20)}Baseball Hits 26 <span style="color:var(--muted);font-weight:400">· Ares</span></td><td class="n focus">$48.7k</td><td class="n">$0</td><td class="n"><span class="up">new</span></td><td class="n">17,940</td><td class="n" style="padding-right:30px">1.01%</td></tr>
+    </tbody></table>
+  </div>
+
+  ${sec('Heroes vs. Hordes — where the spend goes','chart')}
+  <div class="grid g2">
+    <div class="card">${hbars([
+      {label:'Classic Offerwall',v:413085,c:C.demand},
+      {label:'Web · SDK · QR · Discover',v:8471,c:C.demandL},
+    ],{max:430000,fmt:v=>money(v),lblW:210,rh:58})}
+    <div class="cap">98% of HvH TapJoy spend runs through the classic offerwall.</div></div>
+    <div class="card" style="padding:12px 30px">${nlist([
+      ["Almost all classic offerwall.","Web, in-SDK, QR and the new Offerwall Discover placements are ~$8.5k combined — barely switched on."],
+      ["Offerwall Discover is brand new.","A fresh placement ($130 so far) — incremental inventory we haven't yet leaned into."],
+      ["Room in placement mix.","Diversifying beyond the classic wall is a lever before concluding the channel is tapped out."],
+    ])}</div>
+  </div>
+
+  ${sec("What your team told us — and our read","star")}
+  <div class="callbox">
+    <h4>Heroes vs. Hordes: dig in before you reallocate</h4>
+    <p>You've flagged HvH's TapJoy performance as softening and are weighing a shift toward Almedia and other rewarded channels. Here's the fuller picture, and where we'd look together first:</p>
+    <p><b>It's still your largest rewarded source.</b> $421.6k on 68k installs across the trailing three months — up vs. the prior period, with CS-conversion holding ~0.11%. If what you're seeing is a recent-weeks dip, let's put the weekly ROAS and payer curves next to Almedia's before moving budget — a channel this size shouldn't be cut on a short-window read.</p>
+    <p><b>Baseball Hits is a live playbook.</b> On the same offerwall it converts ~9× better (1.01% vs 0.11%). Porting its offer/creative design, geo and event optimization to HvH is the most direct path to lifting performance.</p>
+    <p><b>TWD launches in ~2 weeks</b> with Unity in Jakub's TapJoy plan — let's optimize it from day one (plan below).</p>
+  </div>
+
+  ${sec("What&rsquo;s coming to the Offerwall",'star','s')}
+  <div class="grid g2">
+    <div class="card">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px"><span style="font-size:16px;font-weight:800;color:var(--ink)">CPI billing</span><span class="pill sup" style="font-size:10px">ETA Q4</span></div>
+      <p class="prose">Pay per <b>install</b> rather than per engagement — de-risks the buy and maps cleanly to your CPI targets, removing the main friction on scaling the offerwall.</p>
+    </div>
+    <div class="card">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px"><span style="font-size:16px;font-weight:800;color:var(--ink)">MRCPE tROAS</span><span class="pill sup" style="font-size:10px">In testing</span></div>
+      <p class="prose">Target-ROAS bidding on the multi-reward engagement product — already in testing, with full access expected in a couple of months.</p>
+    </div>
+  </div>
+  <div class="note-row">Both are strong reasons to bring <b style="color:var(--ink)">Heroes vs. Hordes back on TapJoy (US)</b> sooner rather than later.</div>
+
+  ${sec('TWD: Aftermath — TapJoy launch plan','star','s')}
+  <div class="card" style="padding:12px 30px">${nlist([
+    ["Run it as an MRCPE on both platforms.","The multi-reward engagement format suits a fresh launch and lets us optimize to in-game events from day one."],
+    ["What we need from you.","Your list of available MRCPE events in TWD — so we can design the funnel and propose a set of competitive starting bids for the genre."],
+  ])}</div>`;
+
+V.supply=`
+  <div class="ey">Supply · monetization</div>
+  <div class="lead">Monetization — publisher earnings</div>
+  <div class="sublead">What you earned showing ads in your games · $598.6k total payout · ~30M impressions · Mar 30 – Jun 30, 2026.</div>
+
+  <div class="kpis" style="margin-top:34px">
+    <div class="k sup"><div class="khead"><div class="kic">${ICON.coin}</div><div class="lab">Total supply</div></div><div class="val sup">$598.6k</div><div class="note">Publisher payout · +258% vs prior</div></div>
+    <div class="k"><div class="khead"><div class="kic">${ICON.chart}</div><div class="lab">Offerwall</div></div><div class="val">$530.3k</div><div class="note">28.2M impressions</div></div>
+    <div class="k"><div class="khead"><div class="kic">${ICON.chart}</div><div class="lab">Unity Ads</div></div><div class="val">$68.3k</div><div class="note">2.1M impressions</div></div>
+    <div class="k"><div class="khead"><div class="kic">${ICON.gauge}</div><div class="lab">Supply eCPM</div></div><div class="val">$146.92</div><div class="note">Blended · offerwall $267.68</div></div>
+  </div>
+
+  ${sec('Offerwall — payout by title','chart','s')}
+  <div class="grid g2">
+    <div class="card">${hbars([
+      {label:'Baseball Hits 26',v:455490,c:C.supply,img:IMG_bh},
+      {label:'Heroes vs. Hordes',v:74730,c:C.supplyL,img:IMG_hvh},
+    ],{max:520000,fmt:v=>money(v),lblW:186})}
+    <div class="cap">Supply eCPM: Baseball Hits $479.73 vs Heroes vs. Hordes $72.71.</div></div>
+    <div class="card" style="padding:12px 30px">${nlist([
+      ["Baseball Hits 26 is your engine","86% of offerwall supply on premium inventory ($479.73 eCPM) — ramped from ~$39k last period."],
+      ["Heroes vs. Hordes under-monetizes","1.4× the impressions of Baseball Hits but a sixth of the payout ($72.71 eCPM)."],
+      ["That eCPM gap is your opportunity","lifting HvH toward Baseball Hits' yield is the biggest supply lever."],
+    ])}</div>
+  </div>
+
+  ${sec('Unity Ads — payout by app','chart','s')}
+  <div class="grid g2">
+    <div class="card">${hbars([
+      {label:'HvH — Unity Ads',v:22020,c:C.supply},
+      {label:'MLB Content',v:21570,c:C.supply},
+      {label:'MLB Hits',v:13280,c:C.supply},
+      {label:'TWD: Aftermath',v:9060,c:C.supply},
+      {label:'HvH — ironSource',v:1980,c:C.supplyL},
+    ],{max:26000,fmt:v=>money(v),lblW:158,rh:40})}</div>
+    <div class="card"><p class="prose"><b>Ares — $44.3k.</b> Rewarded video across MLB Content ($21.6k), MLB Hits ($13.3k) and TWD: Aftermath ($9.1k) — up sharply as these apps scaled.</p>
+      <hr style="border:none;border-top:1px solid var(--lineSoft);margin:18px 0">
+      <p class="prose"><b>Swift — $24.0k.</b> Heroes vs. Hordes earns $22.0k on Unity Ads plus $2.0k via ironSource — both slipped vs last period (Unity Ads −34%, ironSource −15%).</p>
+      <p style="font-size:12.5px;color:var(--supplyInk);font-style:italic;margin-top:14px">→ Swift's in-app revenue is sliding while its offerwall holds — worth reactivating idle inventory.</p>
+    </div>
+  </div>`;
+
+V.m2e=`
+  <div class="ey">New · Unity Ads feature</div>
+  <div class="lead">M2E Dynamic Offerwall — a core offerwall channel for Heroes vs. Hordes</div>
+  <div class="sublead">Unity's dynamic banner into the offerwall, live on Heroes vs. Hordes. It's now <b>~47% of your daily offerwall reach</b>, rising month-over-month through this quarter, and <b>Unity's own network fills 81% of it</b> — a native way to grow the exact channel you're weighing a pullback on. May 1 – Jul 27, 2026.</div>
+  <div style="display:inline-flex;align-items:center;gap:0;background:var(--supplySoft);border:1px solid var(--line);border-radius:30px;padding:6px 16px 6px 6px;margin-top:18px;font-size:13px;font-weight:600;color:var(--supplyInk)">${gimg('hvh',24)}Heroes vs. Hordes · Swift Games</div>
+
+  <div class="kpis" style="margin-top:26px">
+    <div class="k sup"><div class="khead"><div class="kic">${ICON.coin}</div><div class="lab">M2E revenue</div></div><div class="val sup">$25.0k</div><div class="note">since May 1</div></div>
+    <div class="k"><div class="khead"><div class="kic">${ICON.chart}</div><div class="lab">Impressions</div></div><div class="val">1.08M</div><div class="note">$23.10 rev eCPM</div></div>
+    <div class="k sup"><div class="khead"><div class="kic">${ICON.gauge}</div><div class="lab">Share of OW reach</div></div><div class="val sup">~47%</div><div class="note">of daily offerwall users</div></div>
+    <div class="k"><div class="khead"><div class="kic">${ICON.star}</div><div class="lab">Unity network fill</div></div><div class="val">81%</div><div class="note">of M2E revenue (comet)</div></div>
+  </div>
+
+  ${sec('Who fills the M2E offerwall — revenue by demand source','chart','s')}
+  <div class="grid g2">
+    <div class="card">${hbars([
+      {label:'Unity network (comet)',v:20220,c:C.supply},
+      {label:'Offerwall (M2E)',v:2826,c:C.supply},
+      {label:'Liftoff',v:818,c:C.supplyL},
+      {label:'Other · 54 DSPs',v:1138,c:C.supplyL},
+    ],{max:23000,fmt:v=>'$'+(v>=1000?(v/1000).toFixed(1)+'k':v.toFixed(0))})}
+      <div class="cap">Of 57 bidding DSPs, Unity's own network (comet) fills <b>81%</b> — $20.2k at a $24.06 eCPM.</div></div>
+    <div class="card" style="padding:10px 0">
+      <table class="t"><thead><tr><th style="padding-left:30px">Month</th><th style="text-align:right">Impressions</th><th style="text-align:right;padding-right:30px">Revenue</th></tr></thead><tbody>
+        <tr><td class="lead2" style="padding-left:30px">May</td><td class="n">284k</td><td class="n" style="padding-right:30px">$6.7k</td></tr>
+        <tr><td class="lead2" style="padding-left:30px">June</td><td class="n">348k</td><td class="n" style="padding-right:30px">$8.5k</td></tr>
+        <tr class="tot"><td class="lead2" style="padding-left:30px">July*</td><td class="n">450k</td><td class="n" style="padding-right:30px"><span class="up">$9.8k</span></td></tr>
+      </tbody></table>
+      <p style="font-size:12px;color:var(--muted);padding:14px 30px 4px;line-height:1.7">*July is 27 days and already the biggest month — revenue has climbed month-over-month through the quarter.</p>
+    </div>
+  </div>
+
+  ${sec('Why it matters — the Almedia answer','star')}
+  <div class="callbox">
+    <h4>Heroes vs. Hordes: a Unity-native growth engine</h4>
+    <p>You're weighing shifting HvH budget toward Almedia and other rewarded channels. M2E dynamic offerwall is a Unity feature that is now <b>about half of your offerwall reach</b> (47% of daily unique viewers), rising month-over-month this quarter, and <b>contributing profit</b> (+$2.6k in the last 30 days).</p>
+    <p><b>It's filled by Unity's own demand</b> — the Unity Ads network buys 81% of the inventory ($20.2k of $25.0k) — so it scales on Unity demand rather than depending on outside networks.</p>
+    <p><b>The upside lever is conversion:</b> M2E users convert at roughly half the organic rate today (3.9% vs 7.3%). <b>Our recommendation:</b> keep scaling M2E volume and tune the funnel toward the organic rate — a Unity-native way to grow the very channel you were about to pull back from.</p>
+  </div>`;
+
+V.vector=`
+  <div class="ey">Optimization engine</div>
+  <div class="lead">Unity Vector — the engine behind your UA</div>
+  <div class="sublead">The signals feeding Unity's optimization model, the outcomes they drove, and the ones we'd unlock next to make it smarter.</div>
+
+  ${sec('Signal flow','flow','n')}
+  <div class="card" style="padding:24px 22px">${vectorHub()}
+    <div class="cap" style="padding-top:16px"><b style="color:var(--demandInk)">●</b> Enabled signal &nbsp;·&nbsp; <b style="color:var(--faint)">▢</b> 🔒 Locked — the unlock &nbsp;·&nbsp; <b style="color:var(--supplyInk)">→</b> Outcome</div>
+  </div>
+
+  ${sec('Enabled today vs. the unlock','star')}
+  <div class="grid g2">
+    <div class="card" style="padding:12px 30px">
+      <div style="font-weight:800;color:var(--ink);padding:10px 0 2px;font-size:15px">✅ Feeding Vector today</div>
+      ${nlist([
+        ["In-app purchase events (D28).","Powering the D28-IAP campaigns and ROAS optimization."],
+        ["D7 / D28 ROAS goals.","Vector optimizes bids to your target return windows."],
+        ["MMP + SKAN attribution.","Install and post-install signal across iOS and Android."],
+      ])}
+    </div>
+    <div class="card" style="padding:12px 30px;background:var(--demandSoft);border:1px solid var(--demand)">
+      <div style="font-weight:800;color:var(--demandInk);padding:10px 0 2px;font-size:15px">🔒 The unlock — connect next</div>
+      ${nlist([
+        ["GA4 / analytics linking.","Richer engagement and quality signals for Vector to optimize on."],
+        ["Ad-revenue events.","So Vector optimizes to hybrid (IAP + ad) ROAS, not IAP alone."],
+        ["TapJoy MRCPE events.","Power the TWD launch funnel and the Heroes vs. Hordes US re-open."],
+      ])}
+    </div>
+  </div>`;
+
+V.plan=`
+  <div class="ey">Looking ahead</div>
+  <div class="lead">Q3 growth plan</div>
+  <div class="sublead">Six opportunities we see across your demand and supply — with the channel, the uplift we'd expect, and why.</div>
+
+  ${sec('Growth opportunities','plan','n')}
+  <div class="card" style="padding:10px 0;overflow-x:auto">
+    <table class="t" style="min-width:780px"><thead><tr>
+      <th style="padding-left:30px">Opportunity</th><th>Channel</th><th>Details</th><th style="color:var(--supplyInk)">Potential uplift</th><th style="padding-right:30px">Why</th>
+    </tr></thead><tbody>
+      <tr><td class="lead2" style="padding-left:30px">Hold the June scale, defend ROAS</td><td class="indigo">Unity Ads</td><td>Keep Baseball Hits ~$125k/mo; watch D7 ROAS as cohorts mature</td><td class="teal">Sustain +193% scale</td><td style="padding-right:30px">Protect the $4.76 CPI as you grow</td></tr>
+      <tr><td class="lead2" style="padding-left:30px">Launch Heroes vs. Hordes on Unity Ads</td><td class="indigo">Unity Ads</td><td>Start with <b>D7 Hybrid</b>; layer in <b>D28 ROAS</b> once there's initial data, running in tandem</td><td class="teal">New UA channel for Swift's flagship</td><td style="padding-right:30px">HvH buys only via TapJoy today — Unity Ads UA is untapped</td></tr>
+      <tr><td class="lead2" style="padding-left:30px">Lift Heroes vs. Hordes yield</td><td class="teal">Offerwall</td><td>Demand-team eCPM review — HvH $72.71 vs BH $479.73 supply eCPM</td><td class="teal">+30–50% supply revenue</td><td style="padding-right:30px">Largest single monetization gap</td></tr>
+      <tr><td class="lead2" style="padding-left:30px">Win back Swift Unity Ads supply</td><td class="teal">Unity Ads</td><td>Reactivate rewarded + interstitial on HvH (down 34%)</td><td class="teal">Recover ~$12k/period</td><td style="padding-right:30px">Unity Ads fell while offerwall held</td></tr>
+      <tr><td class="lead2" style="padding-left:30px">Confirm Baseball Hits ROAS</td><td class="indigo">Unity Ads</td><td>Re-check D7 ROAS once late-June cohorts hit day 7</td><td class="teal">Validate the scale</td><td style="padding-right:30px">~20% understated by immature cohorts</td></tr>
+      <tr><td class="lead2" style="padding-left:30px">Iterate &amp; scale TWD</td><td class="indigo">Unity Ads</td><td>Refresh creatives, recalibrate goal, then scale past $20k</td><td class="teal">Unlocks a third title</td><td style="padding-right:30px">Early test promising but small</td></tr>
+      <tr><td class="lead2" style="padding-left:30px">Defend Heroes vs. Hordes on TapJoy</td><td class="teal">TapJoy</td><td>Weekly ROAS vs Almedia before any shift; port the Baseball Hits offer/creative playbook</td><td class="teal">Retain your largest rewarded channel</td><td style="padding-right:30px">Team is weighing a move to Almedia</td></tr>
+      <tr><td class="lead2" style="padding-left:30px">Re-open HvH US on new TapJoy formats</td><td class="indigo">TapJoy</td><td>Relaunch on <b>CPI billing</b> (ETA Q4) + <b>MRCPE tROAS</b> (in testing); run TWD as MRCPE on both platforms from day one</td><td class="teal">Re-open US demand with less risk</td><td style="padding-right:30px">Direct answer to the Almedia question</td></tr>
+    </tbody></table>
+  </div>
+
+  ${sec('Action items &amp; owners','plan','n')}
+  <div class="card" style="padding:10px 0;overflow-x:auto">
+    <table class="t" style="min-width:640px"><thead><tr><th style="padding-left:30px;text-align:center;width:44px">#</th><th>Action</th><th>Owner</th><th style="padding-right:30px">Timing</th></tr></thead><tbody>
+      <tr><td class="n" style="text-align:center">1</td><td>Hold Baseball Hits UA ~$125k/mo; monitor D7 ROAS as cohorts mature</td><td class="teal">Unity + Ares</td><td style="padding-right:30px">Early Q3</td></tr>
+      <tr><td class="n" style="text-align:center">2</td><td>Demand-team review to lift Heroes vs. Hordes offerwall eCPM 30–50%</td><td class="teal">Unity</td><td style="padding-right:30px">Q3</td></tr>
+      <tr><td class="n" style="text-align:center">3</td><td>Reactivate Swift's rewarded + interstitial Unity Ads inventory on HvH</td><td class="teal">Swift</td><td style="padding-right:30px">Q3</td></tr>
+      <tr><td class="n" style="text-align:center">4</td><td>Re-pull Baseball Hits D7 ROAS once late-June cohorts mature</td><td class="teal">Unity</td><td style="padding-right:30px">Mid-July</td></tr>
+      <tr><td class="n" style="text-align:center">5</td><td>Refresh TWD creatives and recalibrate ROAS goal before scaling</td><td class="teal">Ares</td><td style="padding-right:30px">Q3</td></tr>
+      <tr><td class="n" style="text-align:center">6</td><td>Review weekly HvH TapJoy ROAS vs Almedia before any shift; optimize the TWD TapJoy launch (Jakub) from day one</td><td class="teal">Unity + Swift</td><td style="padding-right:30px">Next 2 weeks</td></tr>
+      <tr><td class="n" style="text-align:center">7</td><td>Line up HvH US relaunch on CPI billing (Q4) + MRCPE tROAS; share your list of available TWD MRCPE events so we can design the funnel and starting bids</td><td class="teal">Unity + Swift</td><td style="padding-right:30px">Q3–Q4</td></tr>
+      <tr><td class="n" style="text-align:center">8</td><td>Launch Heroes vs. Hordes on Unity Ads UA — start with D7 Hybrid, add D28 ROAS once there's initial data to run in tandem</td><td class="teal">Unity + Swift</td><td style="padding-right:30px">Q3</td></tr>
+    </tbody></table>
+  </div>
+
+  <div class="foot">Prepared by Alon Haliva · Account Manager, Unity · Ad Monetization &amp; Growth<br>
+  Source: Unity Ads UA export (Mar 30–Jun 30, 2026, vs prior period), Ares &amp; Swift supply exports (vs prior period), TapJoy demand export (through May 28). Figures rounded.</div>`;
+
+const tabsEl=document.getElementById('tabs'), mainEl=document.getElementById('main');
+tabsEl.innerHTML=TABS.map((t,i)=>`<button data-id="${t.id}" class="${i===0?'on':''}">${t.pip?`<span class="pip" style="background:${t.pip}"></span>`:''}${t.label}</button>`).join('');
+let cur='overview';
+function animateCover(){
+  document.querySelectorAll('[data-to]').forEach(el=>{
+    const to=parseFloat(el.dataset.to), dec=+(el.dataset.dec||0), pre=el.dataset.pre||'', suf=el.dataset.suf||'', comma=el.dataset.comma==='1';
+    const dur=1200, t0=performance.now();
+    const fmt=v=>pre+(comma?Math.round(v).toLocaleString():v.toFixed(dec))+suf;
+    (function step(t){let p=Math.min((t-t0)/dur,1);p=1-Math.pow(1-p,3);el.textContent=fmt(to*p);if(p<1)requestAnimationFrame(step);})(t0);
+  });
+}
+const hdr=document.querySelector('header');
+function updHeader(){ hdr.classList.toggle('solid', cur!=='overview' || window.scrollY>60); }
+window.addEventListener('scroll',updHeader,{passive:true});
+function go(id){
+  cur=id;
+  document.querySelectorAll('nav.tabs button').forEach(b=>b.classList.toggle('on',b.dataset.id===id));
+  mainEl.innerHTML=`<section class="tab on">${V[id]}</section>`;
+  window.scrollTo({top:0});
+  updHeader();
+  if(id==='overview') requestAnimationFrame(animateCover);
+}
+tabsEl.addEventListener('click',e=>{const b=e.target.closest('button');if(b)go(b.dataset.id)});
+
+const themeBtn=document.getElementById('theme');
+function applyTheme(dark){
+  document.body.classList.toggle('dark',dark);
+  themeBtn.textContent=dark?'☀️':'🌙';
+  if(dark){C.ink='#F1F3F7';C.body='#BBC1CD';C.muted='#868D9C';C.line='#2A303C';}
+  else{C.ink='#0F1117';C.body='#4B515D';C.muted='#888F9E';C.line='#EBEDF3';}
+  try{localStorage.setItem('qbrTheme',dark?'dark':'light')}catch(e){}
+  go(cur);
+}
+themeBtn.onclick=()=>applyTheme(!document.body.classList.contains('dark'));
+let saved='light'; try{saved=localStorage.getItem('qbrTheme')||'light'}catch(e){}
+applyTheme(saved==='dark');
+</script>
+</body>
+</html>

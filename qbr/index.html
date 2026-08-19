@@ -225,18 +225,19 @@ body.presenting .app{grid-template-columns:1fr}
 body.presenting #presentexit{display:inline-flex;align-items:center;gap:6px}
 body.presenting .content .wrap{max-width:1120px;margin:0 auto;padding:52px 56px 24px}
 body.presenting .pagenav{max-width:1120px;margin:0 auto;padding:8px 56px 56px}
-body.presenting .sechdr{padding:13px 56px}
-body.presenting .sechdr .sh-n{font-size:13.5px}
-body.presenting .sechdr .sh-t{font-size:15px}
+body.presenting .sechdr{padding:16px 56px;background:var(--surface)}
+body.presenting .sechdr .sh-n{height:28px;font-size:13px}
+body.presenting .sechdr .sh-t{font-size:17.5px}
+@media(max-width:920px){.sechdr{padding-left:156px}body.presenting .sechdr{padding-left:56px}}
 body.presenting .lead{font-size:clamp(30px,3.6vw,42px)}
 @media(max-width:820px){body.presenting .content .wrap{padding:52px 22px 24px}body.presenting .pagenav{padding:8px 22px 44px}}
 /* unity logo + sticky section header */
 .ulogo{width:20px;height:20px;object-fit:contain;vertical-align:middle}
-.sechdr{position:sticky;top:0;z-index:90;background:rgba(245,246,248,.93);backdrop-filter:saturate(160%) blur(8px);border-bottom:1px solid var(--line);padding:11px 44px;display:none}
-.sechdr.show{display:block}
-.sh-n{color:var(--demand);font-weight:800;font-size:12.5px}
-.sh-t{color:var(--ink);font-weight:800;font-size:13px;margin-left:9px}
-.sh-sub{color:var(--muted);font-weight:600;font-size:12px;margin-left:10px}
+.sechdr{position:sticky;top:0;z-index:95;background:var(--surface);border-bottom:1px solid var(--line);padding:13px 44px;display:none;box-shadow:0 6px 16px -12px rgba(24,26,32,.35)}
+.sechdr.show{display:flex;align-items:center}
+.sh-n{display:inline-flex;align-items:center;justify-content:center;min-width:30px;height:24px;padding:0 8px;border-radius:7px;background:var(--demand);color:#fff;font-weight:800;font-size:12px;flex:none}
+.sh-t{color:var(--ink);font-weight:800;font-size:15px;margin-left:12px}
+.sh-sub{color:var(--muted);font-weight:500;font-size:12.5px;margin-left:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 /* welcome page */
 .wc-kick{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--demand)}
 .wc-title{font-size:clamp(34px,4.6vw,52px);font-weight:800;letter-spacing:-.03em;line-height:1.05;color:var(--ink);margin:16px 0 0}

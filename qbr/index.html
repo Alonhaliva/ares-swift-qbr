@@ -204,6 +204,11 @@ tr.tot td{border-top:2px solid var(--ink);font-weight:800}
 
 @media (max-width:820px){ .g2.kpis.kpis.five.intro.statband.heroInner{grid-template-columns:1fr} .statband .st{border-right:none;border-bottom:1px solid var(--lineSoft)} .hero h1{font-size:34px} .hper{display:none} }
 @media print{ header{position:static} nav.tabs{display:none} .tab{display:block!important} .card:hover.k:hover.intro .half:hover{transform:none} }
+/* per-page subsection nav */
+.pgtoc{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 4px}
+.pgtoc-lbl{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);align-self:center;margin-right:2px}
+.pgtoc-i{font-family:var(--font);font-size:12px;font-weight:700;color:var(--demandInk);background:var(--demandSoft);border:1px solid var(--demandBd);border-radius:20px;padding:7px 13px;cursor:pointer;transition:.14s}
+.pgtoc-i:hover{background:var(--demand);color:#fff;border-color:var(--demand)}
 /* free gold mockups */
 .fg-block{display:grid;grid-template-columns:196px 1fr;gap:30px;align-items:center;margin:16px 0;padding:22px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
 .fg-block img{width:100%;border-radius:16px;border:1px solid var(--line);box-shadow:0 3px 12px rgba(24,26,32,.10)}
@@ -1027,9 +1032,24 @@ function updNav(){
  else { sh.className='sechdr'; sh.innerHTML=''; }
 }
 function stepSlide(dir){ var i=ORDER.indexOf(cur); var n=i+dir; if(n>=0 && n<ORDER.length) go(ORDER[n]); }
+function injectToc(){
+ var heads=[...mainEl.querySelectorAll('.sec h3')];
+ if(heads.length<2) return;
+ var toc=document.createElement('div'); toc.className='pgtoc';
+ toc.innerHTML='<span class="pgtoc-lbl">On this page</span>';
+ heads.forEach(function(h,i){
+  h.id='sub'+i;
+  var a=document.createElement('button'); a.className='pgtoc-i'; a.textContent=h.textContent;
+  a.onclick=function(){ var y=h.getBoundingClientRect().top+window.scrollY-72; window.scrollTo({top:y,behavior:'smooth'}); };
+  toc.appendChild(a);
+ });
+ var anchor=mainEl.querySelector('.sublead')||mainEl.querySelector('.lead');
+ if(anchor) anchor.parentNode.insertBefore(toc, anchor.nextSibling);
+}
 function go(id){
  cur=id;
  mainEl.innerHTML=`<section class="tab on">${V[id]}</section>`;
+ injectToc();
  window.scrollTo({top:0}); updProg(); updNav();
  document.body.classList.remove('rail-open');
  if(id==='overview') requestAnimationFrame(animateCover);

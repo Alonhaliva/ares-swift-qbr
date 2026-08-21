@@ -330,7 +330,7 @@ body.on-welcome .cv-team{gap:clamp(28px,4vw,60px)}
 .op-i.on .op-dot{background:var(--demand);box-shadow:0 0 0 4px var(--demandSoft)}
 @media(max-width:1240px){.onpage{display:none}}
 @media(min-width:1241px){body.onpage-on #main{padding-right:262px}}
-body.presenting .onpage{display:none}
+body.presenting .onpage{right:18px;display:flex}
 .rl-home .rl-dot{border-color:var(--demand)}
 /* sidebar rail layout */
 #scrollprog{position:fixed;top:0;left:0;height:3px;background:var(--demand);width:0;z-index:200;transition:width .08s linear}
@@ -546,7 +546,7 @@ function mixbar(name,play,vp,vid){
  const seg=(v,c)=>v<=0?'':`<div title="${v}%" style="width:${v}%;background:${c};display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff">${v>=8?v+'%':''}</div>`;
  return `<div style="display:flex;align-items:center;gap:12px;margin:7px 0"><div style="width:130px;font-size:12px;color:var(--body);font-weight:600">${name}</div><div style="flex:1;display:flex;height:22px;border-radius:5px;overflow:hidden;background:var(--line)">${seg(play,'var(--demand)')}${seg(vp,'var(--supply)')}${seg(vid,'var(--accent)')}</div></div>`;
 }
-const SRC=[['VoodooAds',12.5,5.90],['Gamegou Ad',6.9,1.78],['advjy',6.0,7.76],['LEARNINGS CO.',5.4,8.53],['SAYGAMES',5.0,9.18],['Electronic Arts',4.8,12.10],['MobilityWare Ads',4.5,5.50],['Easybrain',3.6,7.70],['Crazy Labs',3.3,7.27],['BoomBit Games',2.8,4.99],['Tripledot',2.4,9.56],['Gamebasics',2.3,13.70]];
+const SRC=[['Hyper-casual & casual',27.7,5.63],['Other networks, mixed',11.4,8.12],['Sports & simulation',7.1,12.62],['Puzzle',6.0,8.44],['Card & solitaire',4.5,5.50],['Arcade',2.8,4.99]];
 const CRE=[['Overhaul Slugfest · Mid/Next HR, P-CID-1-16',42.7],['Overhaul Slugfest · Easy, P-CID-1-18',9.8],['Cal Raleigh · Base Single, P-CID-5-6',8.8],['Video 22 → P-CID-1-16',8.1],['Cal Raleigh · Multi-Replay, P-CID-5-4',3.1],['Video 37 (15s), P-CID-1-16',1.7],['Video 29, P-CID-1-18',1.4],['TWD · Farm Kill Count, P-CID-3-3',1.3]];
 
 function vectorHub(){
@@ -814,12 +814,12 @@ V.ua=`
  </div>
  </div>
 
- ${sec('Where we spent it, top sources','chart')}
+ ${sec('Where we spent it, by genre','chart')}
  <div class="card" style="padding:10px 0">
- <table class="t"><thead><tr><th style="padding-left:30px">Source app / network</th><th>Share of UA spend</th><th style="text-align:right;padding-right:30px">CPI</th></tr></thead><tbody>
- ${SRC.map(s=>`<tr><td class="lead2" style="padding-left:30px">${s[0]}</td><td>${sbar(s[1],12.5,130,C.demand)}<b style="color:var(--ink)">${s[1]}%</b></td><td class="n" style="padding-right:30px">$${s[2].toFixed(2)}</td></tr>`).join('')}
+ <table class="t"><thead><tr><th style="padding-left:30px">Genre</th><th>Share of UA spend</th><th style="text-align:right;padding-right:30px">CPI</th></tr></thead><tbody>
+ ${SRC.map(s=>`<tr><td class="lead2" style="padding-left:30px">${s[0]}</td><td>${sbar(s[1],30,130,C.demand)}<b style="color:var(--ink)">${s[1]}%</b></td><td class="n" style="padding-right:30px">$${s[2].toFixed(2)}</td></tr>`).join('')}
  </tbody></table>
- <p style="font-size:12px;color:var(--muted);padding:14px 30px 4px;line-height:1.7">55 sources in total; the top 12 shown are about 60% of spend. <b style="color:var(--ink)">Gamegou ($1.78 CPI)</b> and MobilityWare ($5.50) are the most efficient at scale, while Gamebasics ($13.70) and Electronic Arts ($12.10) run the priciest.</p>
+ <p style="font-size:12px;color:var(--muted);padding:14px 30px 4px;line-height:1.7">The sources we bought, grouped by genre. <b style="color:var(--ink)">Hyper-casual and casual</b> take the largest share at the lowest cost ($5.63 CPI), while <b style="color:var(--ink)">sports and simulation</b> are the priciest ($12.62). About 55 sources in total; the genres here cover roughly 60% of spend, the rest sits across a long tail of smaller sources.</p>
  </div>
 
  ${sec('Top creatives by spend','chart')}
@@ -847,6 +847,15 @@ V.ua=`
  <tr><td class="lead2" style="padding-left:30px">Android</td><td class="n">$12.28</td><td class="n">$5.78</td><td class="n" style="padding-right:30px"><span class="up">$4.44</span></td></tr>
  </tbody></table>
  <div class="cap" style="padding:8px 30px 4px">Both platforms drove CPI down into June as spend scaled: iOS $9.34 → $4.57, Android $12.28 → $4.44, converging near $4.50 at the quarter's highest volume. Baseball Hits only, by platform.</div>
+ </div>
+
+ ${sec('D7 vs. D28 campaigns, an early signal','star')}
+ <div class="card" style="padding:10px 0;overflow-x:auto">
+ <table class="t" style="min-width:520px"><thead><tr><th style="padding-left:30px">Baseball Hits campaign</th><th style="text-align:right">D0 IAP ROAS</th><th style="text-align:right">iOS</th><th style="text-align:right;padding-right:30px">Android</th></tr></thead><tbody>
+ <tr><td class="lead2" style="padding-left:30px">D7-optimized</td><td class="n"><b style="color:var(--ink)">8.1%</b></td><td class="n">5.9%</td><td class="n" style="padding-right:30px"><span class="up">10.2%</span></td></tr>
+ <tr><td class="lead2" style="padding-left:30px">D28-optimized</td><td class="n">4.2%</td><td class="n">5.0%</td><td class="n" style="padding-right:30px">2.3%</td></tr>
+ </tbody></table>
+ <div class="cap" style="padding:8px 30px 4px">Aug 17 to 19, day-0 IAP ROAS only, so read it as a first glance, not a verdict. Even this early the <b style="color:var(--ink)">D7-optimized campaigns are running about double the D28 ones on day-0 return</b>, and most of that edge is on Android (10.2% vs 2.3%). We will keep watching as the cohorts mature, and it backs standing up more D7 in the plan.</div>
  </div>
 
  ${sec('Baseball Hits, where we&rsquo;d push next','star')}

@@ -572,6 +572,7 @@ const V={};
 const AGENDA=[
   {id:'overview',t:'The quarter at a glance',d:'Demand, supply, installs and CPI in one view.',m:7,g:'Overview'},
   {id:'ahead',t:'Where we’re headed',d:'The targets and plans from our latest call.',m:7,g:'Overview'},
+  {id:'grow',t:'Growth priorities',d:'The moves with the most upside, up front.',m:5,g:'Overview'},
   {id:'qoq',t:'Quarter over quarter',d:'How every stream moved versus the prior window.',m:5,g:'Performance'},
   {id:'ua',t:'User acquisition',d:'Spend, efficiency and mature cohort performance.',m:8,g:'Performance'},
   {id:'owd',t:'TapJoy demand',d:'The Heroes vs. Hordes growth question.',m:8,g:'Performance'},
@@ -690,6 +691,23 @@ V.ahead=`
  <h4>Why this is in the QBR</h4>
  <p style="margin-bottom:0">This review covers last quarter, but on our Aug 17 call you shared where Ares is taking things next. Putting your targets and plans here keeps the review and the road ahead in one place, so we leave aligned on what good looks like and who owns the first moves.</p>
  </div>`;
+
+const GROW=[
+ ['Unity Ads','Scale Baseball Hits into the playoffs','Hold D7 ROAS above 20% while ramping daily spend from Sept 29.','Sustain the +193% scale'],
+ ['Offerwall','Lift Heroes vs. Hordes yield','Close the $72.71 to $479.73 supply eCPM gap with a demand-team review.','+30 to 50% supply revenue'],
+ ['Unity Ads','Launch Heroes vs. Hordes on Unity Ads','HvH buys only via TapJoy today, so open a new acquisition channel.','New UA channel for the flagship'],
+ ['Network','Add the ironSource network for Ares','Onboard ironSource demand on Ares to grow supply beyond TapJoy and Unity Ads.','More demand competition, incremental supply'],
+ ['TapJoy','Re-open Heroes vs. Hordes US','CPI billing closed alpha, MRCPE and new fraud protection de-risk the relaunch.','Re-open US demand'],
+ ['Unity Ads','Win back Swift Unity Ads supply','Reactivate idle rewarded and interstitial on HvH (down 34%).','Recover about $12k per period'],
+];
+function growCards(){ return GROW.map(function(g){ return '<div class="card" style="padding:15px 18px"><div style="margin-bottom:8px"><span class="pill sup" style="font-size:10px">'+g[0]+'</span></div><div style="font-size:15px;font-weight:800;color:var(--ink);line-height:1.25">'+g[1]+'</div><div style="font-size:12.5px;color:var(--body);margin-top:6px;line-height:1.5">'+g[2]+'</div><div style="font-size:11.5px;color:var(--pos);font-weight:800;margin-top:10px">↗ '+g[3]+'</div></div>'; }).join(''); }
+V.grow=`
+ <div class="ey">Where we'd grow</div>
+ <div class="lead">The growth priorities, up front</div>
+ <div class="sublead">The handful of moves with the most upside next quarter. Each one is detailed, with owners and first actions, in the Q3 plan.</div>
+ ${sec('Top growth priorities','star','n')}
+ <div class="grid g2">${growCards()}</div>
+ <div class="note-row">Previewed here so we lead with the upside, then walk the numbers behind each one through the rest of the review.</div>`;
 
 function delta(pct, good){const cls=good?'up':'down';const sign=pct>0?'+':'';return `<span class="${cls}">${sign}${pct}%</span>`}
 V.qoq=`
@@ -891,6 +909,10 @@ V.owd=`
  <tr><td class="lead2" style="padding-left:30px">${gimg('hvh',20)}Heroes vs. Hordes <span style="color:var(--muted);font-weight:400">· Swift</span></td><td class="n focus">$421.6k</td><td class="n">$120.7k</td><td class="n"><span class="up">+249%</span></td><td class="n">68,058</td><td class="n" style="padding-right:30px">0.11%</td></tr>
  <tr><td class="lead2" style="padding-left:30px">${gimg('bh',20)}Baseball Hits 26 <span style="color:var(--muted);font-weight:400">· Ares</span></td><td class="n focus">$48.7k</td><td class="n">$0</td><td class="n"><span class="up">new</span></td><td class="n">17,940</td><td class="n" style="padding-right:30px">1.01%</td></tr>
  </tbody></table>
+ </div>
+
+ <div style="margin-top:16px;background:#EAF4EE;border:1px solid var(--pos);border-left:4px solid var(--pos);border-radius:12px;padding:14px 20px">
+ <div style="font-size:14px;color:var(--body);line-height:1.55"><b style="color:var(--pos);text-transform:uppercase;letter-spacing:.05em;font-size:11px">New source · rolling out&nbsp;&nbsp;</b><b style="color:var(--ink)">Capital One</b> is rolling out as a major new <b style="color:var(--ink)">iOS</b> source in the offerwall, and early performance has been strong, a fresh, high-quality install stream feeding your TapJoy demand as it scales.</div>
  </div>
 
  ${sec('Heroes vs. Hordes, where the spend goes','chart')}
@@ -1137,6 +1159,7 @@ V.plan=`
  <tr><td class="lead2" style="padding-left:30px">Hold the June scale, defend ROAS</td><td class="indigo">Unity Ads</td><td>Keep Baseball Hits about $125k/mo; watch D7 ROAS as cohorts mature</td><td class="teal">Sustain +193% scale</td><td style="padding-right:30px">Protect the $4.76 CPI as you grow</td></tr>
  <tr><td class="lead2" style="padding-left:30px">Launch Heroes vs. Hordes on Unity Ads</td><td class="indigo">Unity Ads</td><td>Start with <b>D7 Hybrid</b>; layer in <b>D28 ROAS</b> once there's initial data, running in tandem</td><td class="teal">New UA channel for Swift's flagship</td><td style="padding-right:30px">HvH buys only via TapJoy today, Unity Ads UA is untapped</td></tr>
  <tr><td class="lead2" style="padding-left:30px">Lift Heroes vs. Hordes yield</td><td class="teal">Offerwall</td><td>Demand-team eCPM review, HvH $72.71 vs BH $479.73 supply eCPM</td><td class="teal">+30 to 50% supply revenue</td><td style="padding-right:30px">Largest single monetization gap</td></tr>
+ <tr><td class="lead2" style="padding-left:30px">Add the ironSource network for Ares</td><td class="teal">Network</td><td>Onboard ironSource demand on Ares (Baseball Hits) alongside TapJoy and Unity Ads</td><td class="teal">Incremental supply, more competition</td><td style="padding-right:30px">A new network widens the buyer pool on premium inventory</td></tr>
  <tr><td class="lead2" style="padding-left:30px">Win back Swift Unity Ads supply</td><td class="teal">Unity Ads</td><td>Reactivate rewarded + interstitial on HvH (down 34%)</td><td class="teal">Recover about $12k/period</td><td style="padding-right:30px">Unity Ads fell while offerwall held</td></tr>
  <tr><td class="lead2" style="padding-left:30px">Hold D7 ROAS above target as we scale</td><td class="indigo">Unity Ads</td><td>June cohorts matured at 22% D7, keep the new scale above the 20% goal</td><td class="teal">Protect the scaled return</td><td style="padding-right:30px">June D7 ROAS confirmed above target</td></tr>
  <tr><td class="lead2" style="padding-left:30px">Iterate &amp; scale TWD</td><td class="indigo">Unity Ads</td><td>Refresh creatives, recalibrate goal, then scale past $20k</td><td class="teal">Unlocks a third title</td><td style="padding-right:30px">Early test promising but small</td></tr>

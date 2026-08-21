@@ -1023,41 +1023,42 @@ V.supply=`
 V.m2e=`
  <div class="ey">New · Unity Ads feature</div>
  <div class="lead">M2E Dynamic Offerwall, a core offerwall channel for Heroes vs. Hordes</div>
- <div class="sublead">Unity's dynamic banner into the offerwall, live on Heroes vs. Hordes. It's now <b>about 47% of your daily offerwall reach</b>, rising month-over-month through this quarter, and <b>Unity's own network fills 81% of it</b>, a native way to grow the exact channel you're weighing a pullback on. May 1 to Jul 27, 2026.</div>
+ <div class="sublead">Unity's dynamic banner into the offerwall, live on Heroes vs. Hordes. Over the last 90 days it drove <b>38% of your daily offerwall reach</b> and is growing month over month, a Unity-native way to grow the exact channel you're weighing a pullback on. Swift Games · Jun 9 to Jul 30, 2026.</div>
  <div style="display:inline-flex;align-items:center;gap:0;background:var(--supplySoft);border:1px solid var(--line);border-radius:30px;padding:6px 16px 6px 6px;margin-top:18px;font-size:13px;font-weight:600;color:var(--supplyInk)">${gimg('hvh',24)}Heroes vs. Hordes · Swift Games</div>
 
  <div class="kpis" style="margin-top:26px">
- <div class="k sup"><div class="khead"><div class="kic">${ICON.coin}</div><div class="lab">M2E revenue</div></div><div class="val sup">$25.0k</div><div class="note">since May 1</div></div>
- <div class="k"><div class="khead"><div class="kic">${ICON.chart}</div><div class="lab">Impressions</div></div><div class="val">1.08M</div><div class="note">$23.10 rev eCPM</div></div>
- <div class="k sup"><div class="khead"><div class="kic">${ICON.gauge}</div><div class="lab">Share of OW reach</div></div><div class="val sup">about 47%</div><div class="note">of daily offerwall users</div></div>
- <div class="k"><div class="khead"><div class="kic">${ICON.star}</div><div class="lab">Unity network fill</div></div><div class="val">81%</div><div class="note">of M2E revenue (comet)</div></div>
+ <div class="k sup"><div class="khead"><div class="kic">${ICON.users}</div><div class="lab">Share of daily reach</div></div><div class="val sup">38%</div><div class="note">of offerwall visitors (DUV)</div></div>
+ <div class="k sup"><div class="khead"><div class="kic">${ICON.coin}</div><div class="lab">M2E payout</div></div><div class="val sup">$5,261</div><div class="note">14% of offerwall payout</div></div>
+ <div class="k"><div class="khead"><div class="kic">${ICON.chart}</div><div class="lab">Offer impressions</div></div><div class="val">1.73M</div><div class="note">36% of impressions</div></div>
+ <div class="k"><div class="khead"><div class="kic">${ICON.gauge}</div><div class="lab">Conversion rate</div></div><div class="val">3.8%</div><div class="note">vs 8.2% organic</div></div>
  </div>
 
- ${sec('Who fills the M2E offerwall, revenue by demand source','chart','s')}
- <div class="grid g2">
- <div class="card">${hbars([
- {label:'Unity network (comet)',v:20220,c:C.supply},
- {label:'Offerwall (M2E)',v:2826,c:C.supply},
- {label:'Liftoff',v:818,c:C.supplyL},
- {label:'Other · 54 DSPs',v:1138,c:C.supplyL},
- ],{max:23000,fmt:v=>'$'+(v>=1000?(v/1000).toFixed(1)+'k':v.toFixed(0))})}
- <div class="cap">Of 57 bidding DSPs, Unity's own network (comet) fills <b>81%</b>, $20.2k at a $24.06 eCPM.</div></div>
- <div class="card" style="padding:10px 0">
- <table class="t"><thead><tr><th style="padding-left:30px">Month</th><th style="text-align:right">Impressions</th><th style="text-align:right;padding-right:30px">Revenue</th></tr></thead><tbody>
- <tr><td class="lead2" style="padding-left:30px">May</td><td class="n">284k</td><td class="n" style="padding-right:30px">$6.7k</td></tr>
- <tr><td class="lead2" style="padding-left:30px">June</td><td class="n">348k</td><td class="n" style="padding-right:30px">$8.5k</td></tr>
- <tr class="tot"><td class="lead2" style="padding-left:30px">July*</td><td class="n">450k</td><td class="n" style="padding-right:30px"><span class="up">$9.8k</span></td></tr>
+ ${sec('M2E vs. Organic across the funnel','chart','s')}
+ <div class="card" style="padding:10px 0;overflow-x:auto">
+ <table class="t" style="min-width:560px"><thead><tr><th style="padding-left:30px">Stage</th><th style="text-align:right">M2E</th><th style="text-align:right">Organic</th><th style="text-align:right;padding-right:30px">M2E share</th></tr></thead><tbody>
+ <tr><td class="lead2" style="padding-left:30px">Daily visitors (DUV)</td><td class="n">103,038</td><td class="n">166,617</td><td class="n" style="padding-right:30px"><b style="color:var(--ink)">38%</b></td></tr>
+ <tr><td class="lead2" style="padding-left:30px">Offerwall opens</td><td class="n">157,137</td><td class="n">274,111</td><td class="n" style="padding-right:30px"><b style="color:var(--ink)">36%</b></td></tr>
+ <tr><td class="lead2" style="padding-left:30px">Offer impressions</td><td class="n">1.73M</td><td class="n">3.10M</td><td class="n" style="padding-right:30px"><b style="color:var(--ink)">36%</b></td></tr>
+ <tr><td class="lead2" style="padding-left:30px">Conversions</td><td class="n">7,024</td><td class="n">26,241</td><td class="n" style="padding-right:30px"><b style="color:var(--ink)">21%</b></td></tr>
+ <tr class="tot"><td class="lead2" style="padding-left:30px">Payout (Swift revenue)</td><td class="n">$5,261</td><td class="n">$32,360</td><td class="n" style="padding-right:30px"><b style="color:var(--ink)">14%</b></td></tr>
  </tbody></table>
- <p style="font-size:12px;color:var(--muted);padding:14px 30px 4px;line-height:1.7">*July is 27 days and already the biggest month, revenue has climbed month-over-month through the quarter.</p>
+ <div class="cap" style="padding:8px 30px 4px">M2E brings a big share of the reach, <b>38% of visitors and 36% of opens</b>, but a smaller share of payout (14%), because it converts at <b>3.8% vs 8.2% organic</b>. Closing that gap is the upside.</div>
  </div>
+
+ ${sec('Growing month over month','chart','s')}
+ <div class="card" style="padding:10px 0">
+ <table class="t" style="min-width:480px"><thead><tr><th style="padding-left:30px">Month</th><th style="text-align:right">Daily visitors</th><th style="text-align:right">Offerwall opens</th><th style="text-align:right;padding-right:30px">Payout</th></tr></thead><tbody>
+ <tr><td class="lead2" style="padding-left:30px">June (from the 9th)</td><td class="n">44,200</td><td class="n">66,874</td><td class="n" style="padding-right:30px">$2,046</td></tr>
+ <tr class="tot"><td class="lead2" style="padding-left:30px">July (to the 30th)</td><td class="n">58,838</td><td class="n">90,263</td><td class="n" style="padding-right:30px"><span class="up">$3,215</span></td></tr>
+ </tbody></table>
+ <p style="font-size:12px;color:var(--muted);padding:14px 30px 4px;line-height:1.7">Every part of the M2E channel grew from June to July, reach up about a third and <b style="color:var(--ink)">payout up 57%</b> ($2.0k to $3.2k), even with July a day short.</p>
  </div>
 
  ${sec('Why it matters, the Almedia answer','star')}
  <div class="callbox">
  <h4>Heroes vs. Hordes: a Unity-native growth engine</h4>
- <p>You're weighing shifting HvH budget toward Almedia and other rewarded channels. M2E dynamic offerwall is a Unity feature that is now <b>about half of your offerwall reach</b> (47% of daily unique viewers), rising month-over-month this quarter, and <b>contributing profit</b> (+$2.6k in the last 30 days).</p>
- <p><b>It's filled by Unity's own demand</b>, the Unity Ads network buys 81% of the inventory ($20.2k of $25.0k), so it scales on Unity demand rather than depending on outside networks.</p>
- <p><b>The upside lever is conversion:</b> M2E users convert at roughly half the organic rate today (3.9% vs 7.3%). <b>Our recommendation:</b> keep scaling M2E volume and tune the funnel toward the organic rate, a Unity-native way to grow the very channel you were about to pull back from.</p>
+ <p>You're weighing shifting HvH budget toward Almedia and other rewarded channels. M2E dynamic offerwall is a Unity feature that already drives <b>38% of your offerwall reach</b> and <b>14% of its payout</b>, and is growing month over month, so it grows the very channel you were about to pull back from, natively.</p>
+ <p><b>The upside lever is conversion.</b> M2E converts at roughly half the organic rate (3.8% vs 8.2%), and returning M2E users already earn more per visitor than new ones ($2.93 vs $1.55 ARPDUV). <b>Our recommendation:</b> keep scaling M2E volume and tune offer matching toward the organic conversion rate, which lifts M2E's payout share well above today's 14%.</p>
  </div>`;
 
 V.vector=`

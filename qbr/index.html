@@ -420,6 +420,8 @@ body.on-chapter .pgbtn:hover:not(:disabled){background:rgba(255,255,255,.16)}
 .ai-vid-play:hover{transform:scale(1.07)}
 .ai-vid.playing .ai-vid-play{opacity:0;pointer-events:none}
 @media(max-width:820px){.lp-notes{grid-template-columns:1fr}}
+.kl-v{font-size:19px;font-weight:800;color:var(--ink);line-height:1.1}
+.kl-l{font-size:11px;color:var(--muted);margin-top:2px}
 /* Agenda: 3-col grid, compact to fit one screen */
 .agenda-page{max-width:1160px;margin-top:0}
 .agenda-label{margin-bottom:8px}
@@ -569,6 +571,7 @@ const ICON={
 };
 
 function money(v){return v>=1000? '$'+(v/1000).toFixed(v>=100000?0:1)+'k' : '$'+v}
+function spark(vals,opts){opts=opts||{};var W=opts.w||320,H=opts.h||70,pad=7,col=opts.col||C.supply;var mn=Math.min.apply(null,vals),mx=Math.max.apply(null,vals);if(mx===mn){mx=mn+1;}var n=vals.length;function x(i){return pad+(W-2*pad)*(n<2?0:i/(n-1));}function y(v){return pad+(H-2*pad)*(1-(v-mn)/(mx-mn));}var pts=vals.map(function(v,i){return x(i).toFixed(1)+','+y(v).toFixed(1);});var line='M'+pts.join(' L');var area='M'+pad.toFixed(1)+','+(H-pad).toFixed(1)+' L'+pts.join(' L')+' L'+(W-pad).toFixed(1)+','+(H-pad).toFixed(1)+' Z';return '<svg viewBox="0 0 '+W+' '+H+'" width="100%" style="display:block;height:'+H+'px" preserveAspectRatio="none" role="img"><path d="'+area+'" fill="'+col+'" opacity="0.10"/><path d="'+line+'" fill="none" stroke="'+col+'" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="'+x(n-1).toFixed(1)+'" cy="'+y(vals[n-1]).toFixed(1)+'" r="3.6" fill="'+col+'"/></svg>'}
 function vbars(labels, series, opts={}){
  const W=560,H=280, pad={l:8,r:8,t:32,b:42}, p='v'+(SN++)+'_';
  const max=opts.max||Math.max(...series.flatMap(s=>s.v))*1.12;
@@ -1017,12 +1020,16 @@ const CREATIVES=[
  {chip:'Best playable, Cal Raleigh',name:'Cal Raleigh Batting, Base Single',code:'P-CID-5-6 · Playable',spend:'$22.8k',share:'14%',cpi:'$6.11',d0:'4.3%',
   playable:'https://dashboards-advertiser-assets-prd.storage.googleapis.com/assets/69e26dcd57705163e7aa2b82/e0fb2074-00d1-43bd-bb51-c80ba75b9bab.html',
   video:null,note:"A player-name hook that scaled hard on Android. Star power in the first frame."},
+ {chip:'Best video',name:'Video 30 on PF Batting',code:'V-CID-30-1 · Video',spend:'$16.0k',share:'10%',cpi:'$4.41',d0:'9.8%',
+  playable:null,
+  video:'assets/bh_vcid30.mp4',note:"Your top video cut, the lowest CPI on the account and the best D0 ROAS of the showcase. Proof that video converts harder than playables here."},
  {chip:'Overhaul Slugfest',name:'Batting Home Run, Overhaul Slugfest',code:'P-CID-1-16 · Playable + video',spend:'$36.0k',share:'21%',cpi:'$6.86',d0:'5.0%',
   playable:'https://dashboards-advertiser-assets-prd.storage.googleapis.com/assets/69b7a5f5a391378e2bbc117a/db81f51d-1dbb-4590-827f-245b695c4852.html',
   video:'assets/bh_overhaul.mp4',note:"The home-run slugfest hook, steady across both platforms and paired with a video cut."},
 ];
 function creativeCard(c){
- var ph='<figure class="phone-fig"><div class="phone"><button class="phone-cover" onclick="loadFrame(this,\''+c.playable+'\')"><span class="pc-ic">&#9658;</span>Play the playable<small>tap to load</small></button></div><figcaption>Playable · <a href="'+c.playable+'" target="_blank" rel="noopener">open in new tab &#8599;</a></figcaption></figure>';
+ var ph='';
+ if(c.playable){ ph+='<figure class="phone-fig"><div class="phone"><button class="phone-cover" onclick="loadFrame(this,\''+c.playable+'\')"><span class="pc-ic">&#9658;</span>Play the playable<small>tap to load</small></button></div><figcaption>Playable · <a href="'+c.playable+'" target="_blank" rel="noopener">open in new tab &#8599;</a></figcaption></figure>'; }
  if(c.video){ ph+='<figure class="phone-fig"><div class="phone"><button class="phone-cover vid" onclick="loadVideo(this,\''+c.video+'\')"><span class="pc-ic">&#9658;</span>Play the video<small>tap to play</small></button></div><figcaption>Video</figcaption></figure>'; }
  var st='<div class="cr-stats">'+
   '<div><span>Spend</span><b>'+c.spend+'</b></div>'+
@@ -1213,6 +1220,43 @@ V.supply=`
  <p style="font-size:12.5px;color:var(--supplyInk);font-style:italic;margin-top:14px">→ Swift's in-app revenue is sliding while its offerwall holds, worth reactivating idle inventory.</p>
  </div>
  </div>
+
+ ${sec('Unity Ads SDK, the BOLD 4.18.1 upgrade','star','s')}
+ <div class="grid g2">
+ <div class="card">
+  <div style="font-size:12px;font-weight:700;color:var(--supplyInk);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px">${gimg('hvh',20)}Heroes vs. Hordes · eCPM Revenue on 4.18.1</div>
+  ${spark([22.00,24.30,22.34,21.73,21.27,21.72,22.70,23.60],{col:C.supply,h:76})}
+  <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-top:5px"><span>wk of Jun 8</span><span>wk of Jul 27</span></div>
+  <div class="cap" style="padding-top:8px">Weekly eCPM Revenue on the new SDK, $22.00 up to $23.60.</div></div>
+ <div class="card" style="padding:12px 30px">${nlist([
+ ["Heroes vs. Hordes moved to BOLD SDK 4.18.1","the migration ran through June, and 4.18.1 now carries all of the title's Unity Ads impressions."],
+ ["eCPM Revenue held and then climbed","on the new SDK it rose from $22.00 (week of Jun 8) to $23.60 (week of Jul 27), even as volume scaled from 22K to 128K impressions a week."],
+ ["A clean yield win","4.18.1 earns more per thousand than the SDK it replaced, $22.41 vs $21.58, so the upgrade lifted eCPM, not just moved volume."],
+ ])}</div>
+ </div>
+
+ ${sec('Ares titles on Unity Ads, the monetization ramp','chart','s')}
+ <div class="grid g2">
+ <div class="card">
+  <div style="font-size:12px;font-weight:700;color:var(--supplyInk);margin-bottom:8px">${gimg('bh',20)}Baseball Hits 26 · impressions a week</div>
+  ${spark([24182,30030,31777,27928,24350,21983,21764,45962,73859,60158,69176,73039,73742,91258,78432,80474,81484,70702],{col:C.supply,h:76})}
+  <div class="klite" style="display:flex;gap:22px;margin-top:12px">
+   <div><div class="kl-v">980K</div><div class="kl-l">impressions</div></div>
+   <div><div class="kl-v">$52.1k</div><div class="kl-l">revenue</div></div>
+   <div><div class="kl-v">$53.16</div><div class="kl-l">eCPM Revenue</div></div>
+  </div>
+  <div class="cap" style="padding-top:10px">A step up the week of May 22, daily impressions about 3.7K to 11K, and eCPM Revenue held right through it, $50.75 to $53.79.</div></div>
+ <div class="card">
+  <div style="font-size:12px;font-weight:700;color:var(--supplyInk);margin-bottom:8px">${gimg('twd',20)}The Walking Dead: Aftermath · impressions a week</div>
+  ${spark([6562,40801,362508,681930,493834],{col:C.supply,h:76})}
+  <div class="klite" style="display:flex;gap:22px;margin-top:12px">
+   <div><div class="kl-v">1.88M</div><div class="kl-l">impressions</div></div>
+   <div><div class="kl-v">$72.0k</div><div class="kl-l">revenue</div></div>
+   <div><div class="kl-v">$38.27</div><div class="kl-l">eCPM Revenue</div></div>
+  </div>
+  <div class="cap" style="padding-top:10px">SDK 4.19.0 launched July 2 and scaled to about 90K to 110K impressions a day by late July, now the largest Unity Ads earner across the Ares titles.</div></div>
+ </div>
+ <div class="note-row" style="margin-top:14px">Unity Ads publisher monetization, Mar 30 to Jul 31, 2026. Revenue and eCPM Revenue only.</div>
 
  ${sec('Growing the offerwall, from our supply review','plan','s')}
  <div class="callbox" style="margin-bottom:18px">

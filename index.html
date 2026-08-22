@@ -349,7 +349,7 @@ body.on-chapter .pgbtn:hover:not(:disabled){background:rgba(255,255,255,.16)}
 .cr-code{font-size:12px;color:var(--muted);margin-bottom:16px}
 .cr-stats{display:grid;grid-template-columns:repeat(4,auto);gap:22px;margin-bottom:14px}
 .cr-stats div{display:flex;flex-direction:column}
-.cr-stats span{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.cr-stats span{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
 .cr-stats b{font-size:21px;font-weight:850;color:var(--ink);margin-top:2px}
 .cr-note{font-size:13px;color:var(--body);line-height:1.55;max-width:60ch}
 @media(max-width:900px){.cr-card{flex-direction:column;align-items:flex-start}.cr-stats{grid-template-columns:repeat(2,auto)}}
@@ -976,9 +976,9 @@ function creativeCard(c){
  if(c.video){ ph+='<figure class="phone-fig"><div class="phone"><button class="phone-cover vid" onclick="loadVideo(this,\''+c.video+'\')"><span class="pc-ic">&#9658;</span>Play the video<small>tap to play</small></button></div><figcaption>Video</figcaption></figure>'; }
  var st='<div class="cr-stats">'+
   '<div><span>Spend</span><b>'+c.spend+'</b></div>'+
-  '<div><span>Share of UA</span><b>'+c.share+'</b></div>'+
+  '<div><span>UA share</span><b>'+c.share+'</b></div>'+
   '<div><span>CPI</span><b>'+c.cpi+'</b></div>'+
-  '<div><span>D0 IAP ROAS</span><b>'+c.d0+'</b></div></div>';
+  '<div><span>D0 ROAS</span><b>'+c.d0+'</b></div></div>';
  return '<div class="cr-card"><div class="cr-phones">'+ph+'</div><div class="cr-info"><span class="cr-chip">'+c.chip+'</span><div class="cr-name">'+c.name+'</div><div class="cr-code">'+c.code+'</div>'+st+'<div class="cr-note">'+c.note+'</div></div></div>';
 }
 const CBRK=[
@@ -1007,7 +1007,7 @@ V.creatives=`
  <div class="cap" style="padding:8px 30px 4px">The three biggest creatives are all <b style="color:var(--ink)">playables</b>, and they carry the volume. But the <b style="color:var(--ink)">video</b> cuts are converting better early, 9 to 11% D0 IAP ROAS at a lower CPI, versus 5 to 6% on the big playables. More reason to widen the video mix.</div>
  </div>
 
- ${sec('Creative mix, Baseball Hits vs. the sports category','chart')}
+ ${sec('Creative mix','chart')}
  <div class="card" style="padding:16px 30px 20px">
  <div class="cap" style="padding:0 0 12px">Share of network spend by ad format. Baseball Hits leans almost entirely on playables; peers put the majority behind video plus playable.</div>
  ${mixbar('Baseball Hits 26',77,23,0)}

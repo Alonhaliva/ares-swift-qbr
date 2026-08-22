@@ -370,6 +370,56 @@ body.on-chapter .pgbtn:hover:not(:disabled){background:rgba(255,255,255,.16)}
 .opp h4{margin:5px 0 6px;font-size:15.5px;color:var(--ink);font-weight:800;line-height:1.25}
 .opp p{font-size:13px;color:var(--body);margin:0;line-height:1.5}
 @media(max-width:820px){.opps{grid-template-columns:1fr}}
+/* Vector tab (Atlas style) */
+.strip{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
+.st{border:1px solid var(--line);border-radius:14px;padding:16px 20px;background:var(--surface)}
+.st .lbl{font-size:12px;color:var(--muted);margin-bottom:8px}
+.st .val{font-size:26px;font-weight:850;color:var(--ink);letter-spacing:-.01em;line-height:1}
+.st .note{font-size:11.5px;color:var(--muted);margin-top:6px}
+.chart-wrap{border:1px solid var(--line);border-radius:14px;padding:18px 22px;background:var(--surface)}
+.chk-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+.chk{border:1px solid var(--line);border-radius:14px;padding:16px 20px;background:var(--surface)}
+.chk.locked{background:var(--demandSoft);border-color:var(--demand)}
+.chk h4{font-size:14px;margin:0 0 10px;color:var(--ink);font-weight:800}
+.chk-item{display:flex;gap:10px;padding:9px 0;border-top:1px solid var(--line);font-size:12.5px}
+.chk.locked .chk-item{border-top-color:rgba(91,80,214,.18)}
+.chk-item .cic{flex:none;font-size:13px;line-height:1.4}
+.chk-item b{display:block;color:var(--ink)}
+.chk-item span{color:var(--body);line-height:1.45}
+.reco{border:1px solid var(--pos);background:#EAF4EE;border-radius:12px;padding:14px 18px;margin-top:16px;font-size:13.5px;color:var(--body);line-height:1.55}
+.reco b{color:var(--pos)}
+.roadmap{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:8px}
+.rq h4{font-size:15px;padding-bottom:10px;border-bottom:2px solid var(--ink);margin:0 0 4px}
+.r-item{border-bottom:1px solid var(--line);padding:11px 2px 10px}
+.r-top{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.r-item b{font-weight:700;color:var(--ink);font-size:12.5px;line-height:1.35}
+.r-st{font-size:9.5px;font-weight:800;letter-spacing:.13em;white-space:nowrap}
+.r-st.live{color:var(--pos)}
+.r-st.alpha{color:#C026D3}
+.r-why{font-size:11px;color:var(--demandInk);font-weight:600;margin-top:4px}
+.ai-peek{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--surface);margin-top:6px}
+.ai-head{display:flex;align-items:center;gap:10px;background:linear-gradient(100deg,var(--demand),#C026D3);color:#fff;padding:12px 18px;font-weight:800;font-size:15px}
+.ai-badge{margin-left:auto;font-size:10px;font-weight:800;letter-spacing:.1em;background:rgba(255,255,255,.22);border-radius:20px;padding:4px 11px}
+.ai-thread{padding:20px}
+.ai-msg{max-width:72%;padding:12px 16px;border-radius:14px;font-size:14px;line-height:1.5;margin-bottom:10px}
+.ai-msg.user{background:var(--demandSoft);color:var(--ink);margin-left:auto;border-bottom-right-radius:4px}
+.ai-msg.bot{background:var(--lineSoft);color:var(--body);border-bottom-left-radius:4px}
+@media(max-width:900px){.strip,.chk-grid,.roadmap{grid-template-columns:1fr}.ai-msg{max-width:90%}}
+/* LevelPlay */
+.lp-notes{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:6px}
+.lp-note{border:1px solid var(--line);border-radius:14px;padding:16px 18px;background:var(--surface)}
+.lp-note h4{font-size:15px;margin:10px 0 6px;color:var(--ink);font-weight:800}
+.lp-note p{font-size:12.5px;color:var(--body);line-height:1.5;margin:0}
+.lp-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:99px}
+.lp-badge.live{background:#E6F7EF;color:#0F7A4D}
+.lp-badge.ea{background:var(--demandSoft);color:var(--demandInk)}
+.lp-badge.soon{background:var(--lineSoft);color:var(--muted)}
+.ai-vid{position:relative;width:100%;max-width:360px;margin-top:8px;border-radius:16px;overflow:hidden;background:#0B0B12;box-shadow:0 12px 38px rgba(60,20,120,.16);border:1px solid var(--line)}
+.ai-vid-el{display:block;width:100%;height:auto;background:#0B0B12}
+.ai-vid-play{position:absolute;inset:0;margin:auto;width:64px;height:64px;border-radius:50%;border:none;background:rgba(91,80,214,.92);color:#fff;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;padding-left:4px;box-shadow:0 6px 20px rgba(0,0,0,.35);transition:transform .15s,opacity .2s}
+.ai-vid-play:hover{transform:scale(1.07)}
+.ai-vid.playing .ai-vid-play{opacity:0;pointer-events:none}
+@media(max-width:820px){.lp-notes{grid-template-columns:1fr}}
 /* Agenda: 3-col grid, compact to fit one screen */
 .agenda-page{max-width:1160px;margin-top:0}
 .agenda-label{margin-bottom:8px}
@@ -1261,58 +1311,120 @@ V.m2e=`
 
 V.vector=`
  <div class="ey">Optimization engine</div>
- <div class="lead">Unity Vector, the engine behind your UA</div>
- <div class="sublead">The signals feeding Unity's optimization model, the outcomes they drove, and the ones we'd unlock next to make it smarter.</div>
+ <div class="lead">Unity Vector, the engine behind your campaigns</div>
+ <div class="sublead">A continuously learning model stack optimizing UA and monetization on signals from across the gaming ecosystem.</div>
 
- ${sec('Signal flow','flow','n')}
- <div class="card" style="padding:24px 22px">${vectorHub()}
- <div class="cap" style="padding-top:16px"><b style="color:var(--demandInk)">●</b> Enabled signal &nbsp;·&nbsp; <b style="color:var(--faint)">▢</b> 🔒 Locked, the unlock &nbsp;·&nbsp; <b style="color:var(--supplyInk)">→</b> Outcome</div>
+ <div class="takeaway" style="margin-top:22px"><span class="tk-ic">★</span><p>Every campaign runs on Vector. Sharing more first-party signal gives it a fuller view of player value and sharpens optimization over time, closing the gap between what Unity can observe and your full downstream value.</p></div>
+
+ <div class="strip">
+  <div class="st"><div class="lbl">Network spend growth since Vector</div><div class="val">×2.5</div><div class="note">Feb '25 to May '26, network-wide</div></div>
+  <div class="st"><div class="lbl">Your D28 optimizers</div><div class="val">Open Beta</div><div class="note">D28 IAP + Ad/Hybrid, Baseball Hits runs D28 IAP</div></div>
+  <div class="st"><div class="lbl">Payer optimization</div><div class="val">Live</div><div class="note">already running on Baseball Hits iOS</div></div>
+ </div>
+ <div class="callbox" style="margin-top:14px"><p style="margin:0"><b>Vector's momentum.</b> Unity's Grow revenue grew about <b>50% year over year in Q1 2026</b>, then another <b>23% quarter over quarter in Q2</b>, crossing a <b>$1B annual run rate two quarters ahead of plan</b>. Q2 was Unity's best quarter as a public company, so you're scaling on a platform that keeps compounding.</p></div>
+
+ ${sec('Your data activation status','flow')}
+ <div class="chart-wrap">
+ <svg viewBox="0 0 1000 410" width="100%" role="img" aria-label="Signals flowing into Unity Vector and the outcomes that improve">
+  <defs><marker id="varr" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="var(--pos)"/></marker></defs>
+  <text x="30" y="26" style="font-size:11px;font-weight:700;fill:var(--muted);letter-spacing:2px">SIGNALS IN</text>
+  <text x="760" y="26" style="font-size:11px;font-weight:700;fill:var(--muted);letter-spacing:2px">WHAT IMPROVES</text>
+  <rect x="30" y="46" width="215" height="38" rx="10" fill="var(--demandSoft)" stroke="var(--demand)" stroke-width="1"/><text x="46" y="70" style="font-size:12.5px;font-weight:600;fill:var(--ink)">✓ MMP + SKAN attribution</text>
+  <rect x="30" y="104" width="215" height="38" rx="10" fill="var(--demandSoft)" stroke="var(--demand)" stroke-width="1"/><text x="46" y="128" style="font-size:12.5px;font-weight:600;fill:var(--ink)">✓ IAP events (D28)</text>
+  <rect x="30" y="162" width="215" height="38" rx="10" fill="var(--demandSoft)" stroke="var(--demand)" stroke-width="1"/><text x="46" y="186" style="font-size:12.5px;font-weight:600;fill:var(--ink)">✓ D7 / D28 ROAS goals</text>
+  <rect x="30" y="238" width="215" height="38" rx="10" fill="var(--surface)" stroke="#C7CBD3" stroke-width="1.2" stroke-dasharray="5 4"/><text x="46" y="262" style="font-size:12.5px;font-weight:600;fill:var(--body)">🔒 GA4 analytics linking</text>
+  <rect x="30" y="296" width="215" height="38" rx="10" fill="var(--surface)" stroke="#C7CBD3" stroke-width="1.2" stroke-dasharray="5 4"/><text x="46" y="320" style="font-size:12.5px;font-weight:600;fill:var(--body)">🔒 Ad-revenue events</text>
+  <rect x="30" y="354" width="215" height="38" rx="10" fill="var(--surface)" stroke="#C7CBD3" stroke-width="1.2" stroke-dasharray="5 4"/><text x="46" y="378" style="font-size:12.5px;font-weight:600;fill:var(--body)">🔒 TapJoy MRCPE events</text>
+  <g fill="none" stroke="var(--demand)" stroke-width="2"><path d="M247,65 C 340,65 380,205 448,205"/><path d="M247,123 C 340,123 380,208 448,208"/><path d="M247,181 C 340,181 380,212 448,212"/></g>
+  <g fill="none" stroke="#C7CBD3" stroke-width="2" stroke-dasharray="6 5"><path d="M247,257 C 340,257 380,224 448,224"/><path d="M247,315 C 340,315 380,228 448,228"/><path d="M247,373 C 340,373 380,232 448,232"/></g>
+  <g fill="var(--demand)"><circle cx="247" cy="65" r="4"/><circle cx="247" cy="123" r="4"/><circle cx="247" cy="181" r="4"/></g>
+  <g fill="#C7CBD3"><circle cx="247" cy="257" r="4"/><circle cx="247" cy="315" r="4"/><circle cx="247" cy="373" r="4"/></g>
+  <circle cx="512" cy="215" r="80" fill="var(--demandSoft)" opacity=".7"/><circle cx="512" cy="215" r="62" fill="var(--demand)"/>
+  <text x="512" y="208" text-anchor="middle" style="font-size:16px;font-weight:800;fill:#fff">Unity</text><text x="512" y="228" text-anchor="middle" style="font-size:16px;font-weight:800;fill:#fff">Vector</text>
+  <text x="512" y="316" text-anchor="middle" style="font-size:11px;fill:var(--muted);font-style:italic">learns continuously from every signal</text>
+  <g fill="none" stroke="var(--pos)" stroke-width="2" marker-end="url(#varr)"><path d="M576,196 C 650,170 680,110 752,95"/><path d="M578,215 C 650,215 680,205 752,205"/><path d="M576,234 C 650,260 680,300 752,315"/></g>
+  <rect x="758" y="76" width="212" height="38" rx="10" fill="#EAF4EE" stroke="var(--pos)" stroke-width="1"/><text x="774" y="100" style="font-size:12.5px;font-weight:600;fill:var(--ink)">Higher-LTV players</text>
+  <rect x="758" y="186" width="212" height="38" rx="10" fill="#EAF4EE" stroke="var(--pos)" stroke-width="1"/><text x="774" y="210" style="font-size:12.5px;font-weight:600;fill:var(--ink)">More scale confidence</text>
+  <rect x="758" y="296" width="212" height="38" rx="10" fill="#EAF4EE" stroke="var(--pos)" stroke-width="1"/><text x="774" y="320" style="font-size:12.5px;font-weight:600;fill:var(--ink)">Better conversion quality</text>
+ </svg>
+ <div style="font-size:11.5px;color:var(--muted);text-align:center;margin-top:6px"><span style="color:var(--demand);font-weight:700">━</span> flowing today &ensp;·&ensp; <span style="font-weight:700;color:#98A2B3">╌╌</span> locked, connect next</div>
  </div>
 
- ${sec('Enabled today vs. the unlock','star')}
- <div class="grid g2">
- <div class="card" style="padding:12px 30px">
- <div style="font-weight:800;color:var(--ink);padding:10px 0 2px;font-size:15px">✅ Feeding Vector today</div>
- ${nlist([
- ["In-app purchase events (D28).","Powering the D28-IAP campaigns and ROAS optimization."],
- ["D7 / D28 ROAS goals.","Vector optimizes bids to your target return windows."],
- ["MMP + SKAN attribution.","Install and post-install signal across iOS and Android."],
- ])}
+ <div class="chk-grid">
+  <div class="chk">
+   <h4>✅ Feeding Vector today</h4>
+   <div class="chk-item"><span class="cic">✔️</span><div><b>MMP + SKAN attribution</b><span>Install, conversion and player-value signal across iOS and Android.</span></div></div>
+   <div class="chk-item"><span class="cic">✔️</span><div><b>IAP events (D28)</b><span>Powers the D28 IAP campaigns and ROAS optimization.</span></div></div>
+   <div class="chk-item"><span class="cic">✔️</span><div><b>D7 / D28 ROAS goals</b><span>Vector optimizes bids to your target return windows.</span></div></div>
+  </div>
+  <div class="chk locked">
+   <h4>🔒 The unlock, connect next</h4>
+   <div class="chk-item"><span class="cic">◻</span><div><b>GA4 / analytics linking</b><span>Behavioral and engagement context attribution alone can't provide. <a href="https://alonhaliva.github.io/unity-ga-linking-guide/" target="_blank" rel="noopener" style="color:var(--demandInk);font-weight:700">Step-by-step guide ↗</a></span></div></div>
+   <div class="chk-item"><span class="cic">◻</span><div><b>Ad-revenue events</b><span>So Vector optimizes to hybrid (IAP + ad) ROAS, not IAP alone.</span></div></div>
+   <div class="chk-item"><span class="cic">◻</span><div><b>TapJoy MRCPE events</b><span>Power the TWD launch funnel and the Heroes vs. Hordes US re-open.</span></div></div>
+  </div>
  </div>
- <div class="card" style="padding:12px 30px;background:var(--demandSoft);border:1px solid var(--demand)">
- <div style="font-weight:800;color:var(--demandInk);padding:10px 0 2px;font-size:15px">🔒 The unlock, connect next</div>
- ${nlist([
- ["GA4 / analytics linking.","Richer engagement and quality signals for Vector to optimize on."],
- ["Ad-revenue events.","So Vector optimizes to hybrid (IAP + ad) ROAS, not IAP alone."],
- ["TapJoy MRCPE events.","Power the TWD launch funnel and the Heroes vs. Hordes US re-open."],
- ])}
+ <div class="reco"><b>The ask:</b> one dashboard consent, GA4 linking, and ad-revenue events. Each signal enabled gives Vector a fuller view of player value and sharpens optimization. GA linking takes about 10 minutes with the <a href="https://alonhaliva.github.io/unity-ga-linking-guide/" target="_blank" rel="noopener" style="color:var(--pos);font-weight:700">walkthrough we prepared ↗</a>.</div>
+
+ ${sec('Sneak peek, Campaign Assistant','star')}
+ <div class="ai-peek">
+  <div class="ai-head"><span>✦</span>Campaign Assistant<span class="ai-badge">COMING SOON</span></div>
+  <div class="ai-thread">
+   <div class="ai-msg user">How should we scale Baseball Hits into the playoffs?</div>
+   <div class="ai-msg bot">Ramp the optimizer you already trust and keep your top playables running. Read at four to six weeks on D7 ROAS, hold D28 discipline as volume climbs, and lean video in as you widen the mix.</div>
+  </div>
  </div>
+ <div class="note-row">AI built into Unity Ads, ask in plain language. Swift and Ares are in the cohort getting it soon, starting with best-practice guidance. It never changes anything without your sign-off.</div>
+
+ ${sec('2026 roadmap, live and coming','chart')}
+ <div class="roadmap">
+  <div class="rq"><h4>Q1</h4>
+   <div class="r-item"><div class="r-top"><b>D28 IAP ROAS Campaign</b><span class="r-st live">LIVE</span></div><div class="r-why">Powers your Baseball Hits D28 lines</div></div>
+   <div class="r-item"><div class="r-top"><b>Simplified ROAS Onboarding</b><span class="r-st live">LIVE</span></div></div>
+  </div>
+  <div class="rq"><h4>Q2</h4>
+   <div class="r-item"><div class="r-top"><b>D28 Ad Revenue &amp; Hybrid ROAS</b><span class="r-st live">LIVE</span></div><div class="r-why">The hybrid re-test we're proposing</div></div>
+   <div class="r-item"><div class="r-top"><b>CPE Retention Optimization</b><span class="r-st live">LIVE</span></div></div>
+   <div class="r-item"><div class="r-top"><b>CPE Payer Campaign Optimization</b><span class="r-st live">LIVE</span></div><div class="r-why">Baseball Hits already runs this</div></div>
+   <div class="r-item"><div class="r-top"><b>Multi-Country Budget</b><span class="r-st live">LIVE</span></div><div class="r-why">For the HvH US re-open and next geos</div></div>
+  </div>
+  <div class="rq"><h4>Q3</h4>
+   <div class="r-item"><div class="r-top"><b>CPE Custom Event Optimization</b><span class="r-st alpha">ALPHA</span></div></div>
+   <div class="r-item"><div class="r-top"><b>Unified Creative Library</b><span class="r-st alpha">ALPHA</span></div></div>
+   <div class="r-item"><div class="r-top"><b>Campaign Assistant</b><span class="r-st alpha">ALPHA</span></div></div>
+   <div class="r-item"><div class="r-top"><b>Unity Ads MCP</b><span class="r-st alpha">ALPHA</span></div><div class="r-why">The creative automation you asked about</div></div>
+  </div>
+  <div class="rq"><h4>Q4</h4>
+   <div class="r-item"><div class="r-top"><b>AI Creative Generation</b><span class="r-st alpha">ALPHA</span></div><div class="r-why">Feeds the creative refresh cadence</div></div>
+   <div class="r-item"><div class="r-top"><b>Dynamic Creative Optimization</b><span class="r-st alpha">ALPHA</span></div></div>
+   <div class="r-item"><div class="r-top"><b>Creative Insights</b><span class="r-st alpha">ALPHA</span></div></div>
+  </div>
  </div>`;
 
 V.levelplay=`
  <div class="ey">Product · mediation</div>
- <div class="lead">LevelPlay, Q3 2026: three to know</div>
- <div class="sublead">Straight from the LevelPlay roadmap · Intelligent Management, Competitive Demand, and Publisher Ad Controls.</div>
+ <div class="lead">LevelPlay</div>
+ <div class="sublead">Where Unity's mediation stack is headed, and the conversation for Swift when the timing is right.</div>
 
- ${sec('Three highlights from the Q3 roadmap','star','n')}
- <div class="grid g3">
-  <div class="card"><span class="pill sup" style="font-size:10px">Q3 · Live</span>
-   <div style="font-size:16px;font-weight:800;color:var(--ink);margin:11px 0 8px">AI-assistance integration</div>
-   <p class="prose">Ask the Unity AI Assistant to monetize your game and it integrates LevelPlay for you, from package install to a live ad in one guided session. There is also a public LevelPlay skill for Claude Code.</p></div>
-  <div class="card"><span class="pill sup" style="font-size:10px">Q3 · Early access</span>
-   <div style="font-size:16px;font-weight:800;color:var(--ink);margin:11px 0 8px">Dynamic bid floors</div>
-   <p class="prose">Floors that adjust automatically to live auction conditions, pushing the auction to surface higher-value demand on every impression.</p></div>
-  <div class="card"><span class="pill sup" style="font-size:10px">Live · Early access</span>
-   <div style="font-size:16px;font-weight:800;color:var(--ink);margin:11px 0 8px">Ad UX control</div>
-   <p class="prose">A retention-optimized ad experience applied only to your most ad-sensitive users, measured with LevelPlay A/B testing.</p></div>
+ <div class="takeaway" style="margin-top:22px"><span class="tk-ic">★</span><p>Three highlights from the LevelPlay Q3 2026 roadmap, and the AI-assisted integration in action.</p></div>
+
+ ${sec('LevelPlay Q3 2026, three to know','star')}
+ <div class="lp-notes">
+  <div class="lp-note"><span class="lp-badge live">Q3 · Live</span><h4>AI-assistance integration</h4><p>Ask the Unity AI Assistant to monetize your game and it integrates LevelPlay for you, from package install to a live ad in one guided session. There is also a public LevelPlay skill for Claude Code.</p></div>
+  <div class="lp-note"><span class="lp-badge ea">Q3 · Early access</span><h4>Dynamic bid floors</h4><p>Floors that adjust automatically to live auction conditions, pushing the auction to surface higher-value demand on every impression.</p></div>
+  <div class="lp-note"><span class="lp-badge soon">Live · early access</span><h4>Ad UX control</h4><p>A retention-optimized ad experience applied only to your most ad-sensitive users, measured with LevelPlay A/B testing.</p></div>
  </div>
 
- ${sec('What it means for Swift &amp; Ares','star','n')}
- <div class="callbox">
-  <h4>The mediation conversation, when you're ready</h4>
-  <p>ATK ad-quality tooling is not yet integrated on the Swift titles, and full access runs through LevelPlay. These roadmap items, AI-assisted setup, dynamic floors and per-user ad UX, are what a move to LevelPlay would unlock.</p>
-  <p style="margin-bottom:0">We'll keep this as a future conversation and bring the full LevelPlay review when the timing is right.</p>
- </div>`;
+ ${sec('See it in action, AI-assisted integration','chart')}
+ <div class="note-row" style="margin-bottom:12px">The Unity Assistant wires up LevelPlay for a developer in plain language: "I want to put ads in my game" becomes a working integration.</div>
+ <div class="ai-vid">
+  <video class="ai-vid-el" src="assets/levelplay_assistant.mp4" poster="assets/levelplay_poster.jpg" preload="metadata" playsinline controls></video>
+  <button class="ai-vid-play" type="button" aria-label="Play" onclick="var v=this.previousElementSibling; v.play(); this.parentNode.classList.add('playing');">&#9654;</button>
+ </div>
+ <div class="cap" style="padding-top:10px">Unity Assistant (Beta), shown for context, the same AI direction behind Campaign Assistant.</div>
+
+ ${sec('The mediation conversation, when you&rsquo;re ready','star')}
+ <div class="callbox"><p style="margin:0">If and when Swift wants to revisit mediation, LevelPlay is the natural path, the same Unity relationship with these roadmap gains landing through the year. No change is needed today, it's here when the timing is right.</p></div>`;
 
 V.plan=`
  <div class="ey">Looking ahead</div>

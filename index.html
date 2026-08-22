@@ -331,6 +331,45 @@ body.on-chapter .pagenav{position:fixed;left:0;right:0;bottom:14px;justify-conte
 body.on-chapter .pgpos{color:#9aa0b2}
 body.on-chapter .pgbtn{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.18)}
 body.on-chapter .pgbtn:hover:not(:disabled){background:rgba(255,255,255,.16)}
+/* Creatives tab */
+.cr-list{display:flex;flex-direction:column;gap:18px}
+.cr-card{display:flex;gap:26px;align-items:center;border:1px solid var(--line);border-radius:16px;padding:20px 24px;background:var(--surface)}
+.cr-phones{display:flex;gap:16px;flex:none}
+.phone-fig{margin:0;text-align:center}
+.phone-fig figcaption{font-size:11px;font-weight:700;color:var(--muted);margin-top:8px;letter-spacing:.04em}
+.phone{position:relative;width:210px;height:436px;background:#111;border-radius:32px;padding:8px;box-shadow:0 16px 36px rgba(18,20,28,.22)}
+.phone iframe,.phone video{width:100%;height:100%;border:none;border-radius:25px;background:#000;display:block;object-fit:cover}
+.phone-cover{position:absolute;inset:8px;border-radius:25px;border:none;cursor:pointer;background:linear-gradient(160deg,#4C1D95,#6D28D9 55%,#7C3AED);color:#fff;font-family:var(--font);font-size:14px;font-weight:700;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}
+.phone-cover.vid{background:linear-gradient(160deg,#1e2330,#2c3444 55%,#3a4356)}
+.phone-cover .pc-ic{width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.22);display:flex;align-items:center;justify-content:center;font-size:18px}
+.phone-cover small{font-weight:400;font-size:11px;opacity:.85}
+.cr-info{flex:1;min-width:0}
+.cr-chip{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--demandInk);background:var(--demandSoft);border-radius:20px;padding:5px 12px}
+.cr-name{font-size:19px;font-weight:850;color:var(--ink);margin:12px 0 3px;line-height:1.2}
+.cr-code{font-size:12px;color:var(--muted);margin-bottom:16px}
+.cr-stats{display:grid;grid-template-columns:repeat(4,auto);gap:22px;margin-bottom:14px}
+.cr-stats div{display:flex;flex-direction:column}
+.cr-stats span{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.cr-stats b{font-size:21px;font-weight:850;color:var(--ink);margin-top:2px}
+.cr-note{font-size:13px;color:var(--body);line-height:1.55;max-width:60ch}
+@media(max-width:900px){.cr-card{flex-direction:column;align-items:flex-start}.cr-stats{grid-template-columns:repeat(2,auto)}}
+/* Growth opportunities (Atlas style) */
+.takeaway{display:flex;gap:12px;align-items:flex-start;background:var(--demandSoft);border:1px solid var(--demand);border-radius:14px;padding:15px 20px;margin-bottom:18px}
+.tk-ic{font-size:16px;color:var(--demand);line-height:1.5}
+.takeaway p{font-size:14px;color:var(--body);margin:0;line-height:1.55}
+.opp-hero{border:2px solid var(--demand);border-radius:16px;padding:22px 26px;background:linear-gradient(180deg,var(--demandSoft),var(--surface) 62%);margin-bottom:16px}
+.opp-hero .tag{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--demandInk)}
+.opp-hero h3{font-size:20px;margin:7px 0 8px;color:var(--ink);font-weight:850;letter-spacing:-.01em}
+.opp-hero>p{font-size:14px;color:var(--body);max-width:76ch;margin:0;line-height:1.6}
+.opp-terms{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+.opp-term{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:9px 14px;font-size:12px;color:var(--muted);line-height:1.35}
+.opp-term b{display:block;font-size:14.5px;color:var(--ink);font-weight:800}
+.opps{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.opp{border:1px solid var(--line);border-radius:14px;padding:16px 18px;background:var(--surface)}
+.opp .onum{font-size:11px;font-weight:800;color:var(--demand);letter-spacing:.08em}
+.opp h4{margin:5px 0 6px;font-size:15.5px;color:var(--ink);font-weight:800;line-height:1.25}
+.opp p{font-size:13px;color:var(--body);margin:0;line-height:1.5}
+@media(max-width:820px){.opps{grid-template-columns:1fr}}
 /* Agenda: 3-col grid, compact to fit one screen */
 .agenda-page{max-width:1160px;margin-top:0}
 .agenda-label{margin-bottom:8px}
@@ -618,6 +657,7 @@ const AGENDA=[
   {id:'grow',t:'Growth priorities',d:'The moves with the most upside, up front.',m:5,g:'Overview'},
   {id:'qoq',t:'Quarter over quarter',d:'How every stream moved versus the prior window.',m:5,g:'Performance'},
   {id:'ua',t:'User acquisition',d:'Spend, efficiency and mature cohort performance.',m:8,g:'Performance'},
+  {id:'creatives',t:'Creatives',d:'The top performers, live and by the numbers.',m:6,g:'Performance'},
   {id:'owd',t:'TapJoy demand',d:'The Heroes vs. Hordes growth question.',m:8,g:'Performance'},
   {id:'supply',t:'Monetization',d:'Offerwall and Unity Ads publisher earnings.',m:8,g:'Performance'},
   {id:'m2e',t:'M2E Offerwall',d:'A Unity-native offerwall channel, and who fills it.',m:6,g:'Product'},
@@ -738,22 +778,45 @@ V.ahead=`
  <p style="margin-bottom:0">This review covers last quarter, but on our Aug 17 call you shared where Ares is taking things next. Putting your targets and plans here keeps the review and the road ahead in one place, so we leave aligned on what good looks like and who owns the first moves.</p>
  </div>`;
 
-const GROW=[
- ['Unity Ads','Scale Baseball Hits into the playoffs','Hold D7 ROAS above 20% while ramping daily spend from Sept 29.','Sustain the +193% scale'],
- ['Offerwall','Lift Heroes vs. Hordes yield','Close the $72.71 to $479.73 supply eCPM gap with a demand-team review.','+30 to 50% supply revenue'],
- ['Unity Ads','Launch Heroes vs. Hordes on Unity Ads','HvH buys only via TapJoy today, so open a new acquisition channel.','New UA channel for the flagship'],
- ['Network','Add the ironSource network for Ares','Onboard ironSource demand on Ares to grow supply beyond TapJoy and Unity Ads.','More demand competition, incremental supply'],
- ['TapJoy','Re-open Heroes vs. Hordes US','CPI billing closed alpha, MRCPE and new fraud protection de-risk the relaunch.','Re-open US demand'],
- ['Unity Ads','Win back Swift Unity Ads supply','Reactivate idle rewarded and interstitial on HvH (down 34%).','Recover about $12k per period'],
+const OPPS=[
+ ['Launch Heroes vs. Hordes on Unity Ads UA','HvH buys only via TapJoy today. Open a new acquisition channel, starting with D7 Hybrid and layering in D28 once there is data.'],
+ ['Add the ironSource network for Ares','Onboard ironSource demand on Baseball Hits alongside TapJoy and Unity Ads to widen the buyer pool and add competition.'],
+ ['Re-open Heroes vs. Hordes US','CPI billing (DR-CPE closed alpha), MRCPE tROAS and the new fraud protection together de-risk the US relaunch.'],
+ ['Win back Swift Unity Ads supply','Reactivate the idle rewarded and interstitial inventory on HvH, down 34% while the offerwall held, about $12k a period.'],
 ];
-function growCards(){ return GROW.map(function(g){ return '<div class="card" style="padding:15px 18px"><div style="margin-bottom:8px"><span class="pill sup" style="font-size:10px">'+g[0]+'</span></div><div style="font-size:15px;font-weight:800;color:var(--ink);line-height:1.25">'+g[1]+'</div><div style="font-size:12.5px;color:var(--body);margin-top:6px;line-height:1.5">'+g[2]+'</div><div style="font-size:11.5px;color:var(--pos);font-weight:800;margin-top:10px">↗ '+g[3]+'</div></div>'; }).join(''); }
+function oppCards(){ return OPPS.map(function(o,i){ return '<div class="opp"><div class="onum">0'+(i+3)+'</div><h4>'+o[0]+'</h4><p>'+o[1]+'</p></div>'; }).join(''); }
 V.grow=`
  <div class="ey">Where we'd grow</div>
- <div class="lead">The growth priorities, up front</div>
- <div class="sublead">The handful of moves with the most upside next quarter. Each one is detailed, with owners and first actions, in the Q3 plan.</div>
- ${sec('Top growth priorities','star','n')}
- <div class="grid g2">${growCards()}</div>
- <div class="note-row">Previewed here so we lead with the upside, then walk the numbers behind each one through the rest of the review.</div>`;
+ <div class="lead">Growth priorities, up front</div>
+ <div class="sublead">The moves with the most upside next quarter. Full detail, owners and timing sit in the Q3 plan.</div>
+
+ <div class="takeaway"><span class="tk-ic">★</span><p>Two bets carry most of the upside this quarter: <b>scale Baseball Hits into the playoffs</b>, and <b>lift Heroes vs. Hordes yield</b>. The rest are supporting moves.</p></div>
+
+ <div class="opp-hero">
+  <div class="tag">Biggest bet · user acquisition</div>
+  <h3>01 · Scale Baseball Hits into the playoffs</h3>
+  <p>Ramp from Sept 29, roughly doubling daily spend over six weeks, with room toward $10k/day once ROAS is solid. The engine is proven: June matured at 22% D7, above your 20% goal, at the lowest CPI of the quarter.</p>
+  <div class="opp-terms">
+   <div class="opp-term"><b>Ramp Sept 29</b>about 2x daily spend over 6 weeks</div>
+   <div class="opp-term"><b>Ceiling ~$10k/day</b>once ROAS is solid</div>
+   <div class="opp-term"><b>Hold above 20% D7</b>June matured at 22%</div>
+   <div class="opp-term"><b>Early edge</b>D7 campaigns about 2x D28 on day-0</div>
+  </div>
+ </div>
+
+ <div class="opp-hero">
+  <div class="tag">Biggest supply lever · offerwall</div>
+  <h3>02 · Lift Heroes vs. Hordes yield</h3>
+  <p>Heroes vs. Hordes earns a sixth of Baseball Hits' offerwall yield ($72.71 vs $479.73 supply eCPM) on 1.4x the impressions. A demand-team eCPM review is the single biggest monetization lever on the account.</p>
+  <div class="opp-terms">
+   <div class="opp-term"><b>$72.71 to $479.73</b>the eCPM gap to close</div>
+   <div class="opp-term"><b>+30 to 50%</b>supply revenue upside</div>
+   <div class="opp-term"><b>Demand-team review</b>the first action</div>
+   <div class="opp-term"><b>Largest gap</b>on the account</div>
+  </div>
+ </div>
+
+ <div class="opps">${oppCards()}</div>`;
 
 function delta(pct, good){const cls=good?'up':'down';const sign=pct>0?'+':'';return `<span class="${cls}">${sign}${pct}%</span>`}
 V.qoq=`
@@ -847,14 +910,6 @@ V.ua=`
  <p style="font-size:12px;color:var(--muted);padding:14px 30px 4px;line-height:1.7">The sources we bought, grouped by SensorTower genre. <b style="color:var(--ink)">Puzzle</b> takes the largest share of spend at 37%, and <b style="color:var(--ink)">tabletop and card games</b> came in the most efficient at scale ($6.67 CPI). Simulation ran the priciest ($9.51). A cleaner, competitor-safe way to see where the budget lands.</p>
  </div>
 
- ${sec('Top creatives by spend','chart')}
- <div class="card" style="padding:10px 0">
- <table class="t"><thead><tr><th style="padding-left:30px">Creative pack</th><th style="padding-right:30px">Share of UA spend</th></tr></thead><tbody>
- ${CRE.map(c=>`<tr><td class="lead2" style="padding-left:30px">${c[0]}</td><td style="padding-right:30px">${sbar(c[1],42.7,150,C.demand)}<b style="color:var(--ink)">${c[1]}%</b></td></tr>`).join('')}
- </tbody></table>
- <div style="margin:14px 30px 4px;padding:11px 15px;background:var(--accentSoft);border:1px solid var(--accent);border-radius:10px;display:flex;gap:10px;align-items:flex-start"><div style="font-size:12.5px;color:var(--body);line-height:1.55"><b style="color:var(--accent);text-transform:uppercase;letter-spacing:.06em;font-size:11px">Concentration risk&nbsp;&nbsp;</b>One creative, <b style="color:var(--ink)">Overhaul Slugfest (P-CID-1-16)</b>, carries <b style="color:var(--ink)">43%</b> of all UA spend. Diversifying the winner protects against fatigue as we scale.</div></div>
- </div>
-
  ${sec('Monthly spend &amp; D7 ROAS','chart')}
  <div class="grid g2">
  <div class="card">${combo(['Apr','May','Jun'],[92234,67913,125643],[24,26,22])}<div class="cap">June was the quarter's biggest and most efficient month, $125.6k at a $4.76 CPI, and its D7 ROAS matured to 22%, above your 20% goal.</div></div>
@@ -900,9 +955,61 @@ V.ua=`
  ])}</div>
  </div>
 
- <div class="card" style="margin-top:16px;padding:16px 30px 20px">
- <div style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:2px">Creative mix, Baseball Hits vs. the sports category</div>
- <div class="cap" style="padding:0 0 12px">Share of network spend by ad format. Baseball Hits leans almost entirely on playables; peers put the majority behind video + playable.</div>
+ ${sec('TWD: Aftermath, early test','star')}
+ <div class="card"><p class="prose"><b>about $20.5k combined</b> (iOS $9.3k · Android $11.2k). A small, deliberate test alongside the Baseball Hits scale-up. We'll refresh creatives and recalibrate the ROAS goal before committing larger budget, worth a second test together, not a pause. <b>Ares' other titles remain paused</b> for now.</p></div>`;
+
+function loadFrame(btn,url){ btn.parentNode.innerHTML='<iframe src="'+url+'" allow="autoplay; fullscreen" loading="lazy"></iframe>'; }
+function loadVideo(btn,src){ btn.parentNode.innerHTML='<video src="'+src+'" autoplay controls playsinline></video>'; }
+const CREATIVES=[
+ {chip:'Top spender',name:'PF Batting, Medium',code:'P-CID-7-2 · Playable',spend:'$51.6k',share:'31%',cpi:'$5.01',d0:'5.9%',
+  playable:'https://dashboards-advertiser-assets-prd.storage.googleapis.com/assets/6a11050b85b5bf859117ea0e/dd88b9a6-5931-4104-9fb0-a502ec696475.html',
+  video:'assets/bh_pfbatting.mp4',note:"Your single biggest creative, close to a third of UA spend at the lowest CPI on the account."},
+ {chip:'Best playable, Cal Raleigh',name:'Cal Raleigh Batting, Base Single',code:'P-CID-5-6 · Playable',spend:'$22.8k',share:'14%',cpi:'$6.11',d0:'4.3%',
+  playable:'https://dashboards-advertiser-assets-prd.storage.googleapis.com/assets/69e26dcd57705163e7aa2b82/e0fb2074-00d1-43bd-bb51-c80ba75b9bab.html',
+  video:null,note:"A player-name hook that scaled hard on Android. Star power in the first frame."},
+ {chip:'Overhaul Slugfest',name:'Batting Home Run, Overhaul Slugfest',code:'P-CID-1-16 · Playable + video',spend:'$36.0k',share:'21%',cpi:'$6.86',d0:'5.0%',
+  playable:'https://dashboards-advertiser-assets-prd.storage.googleapis.com/assets/69b7a5f5a391378e2bbc117a/db81f51d-1dbb-4590-827f-245b695c4852.html',
+  video:'assets/bh_overhaul.mp4',note:"The home-run slugfest hook, steady across both platforms and paired with a video cut."},
+];
+function creativeCard(c){
+ var ph='<figure class="phone-fig"><div class="phone"><button class="phone-cover" onclick="loadFrame(this,\''+c.playable+'\')"><span class="pc-ic">&#9658;</span>Play the playable<small>tap to load</small></button></div><figcaption>Playable</figcaption></figure>';
+ if(c.video){ ph+='<figure class="phone-fig"><div class="phone"><button class="phone-cover vid" onclick="loadVideo(this,\''+c.video+'\')"><span class="pc-ic">&#9658;</span>Play the video<small>tap to play</small></button></div><figcaption>Video</figcaption></figure>'; }
+ var st='<div class="cr-stats">'+
+  '<div><span>Spend</span><b>'+c.spend+'</b></div>'+
+  '<div><span>Share of UA</span><b>'+c.share+'</b></div>'+
+  '<div><span>CPI</span><b>'+c.cpi+'</b></div>'+
+  '<div><span>D0 IAP ROAS</span><b>'+c.d0+'</b></div></div>';
+ return '<div class="cr-card"><div class="cr-phones">'+ph+'</div><div class="cr-info"><span class="cr-chip">'+c.chip+'</span><div class="cr-name">'+c.name+'</div><div class="cr-code">'+c.code+'</div>'+st+'<div class="cr-note">'+c.note+'</div></div></div>';
+}
+const CBRK=[
+ ['PF Batting, Medium','P-CID-7-2','Playable',51.6,'$5.01','5.9%'],
+ ['Batting Home Run, Overhaul Slugfest','P-CID-1-16','Playable',36.0,'$6.86','5.0%'],
+ ['Cal Raleigh, Base Single','P-CID-5-6','Playable',22.8,'$6.11','4.3%'],
+ ['Video 30 on PF Batting','V-CID-30-1','Video',16.0,'$4.41','9.8%'],
+ ['Video 22 on Overhaul','V-CID-22-1','Video',5.6,'$7.61','10.2%'],
+ ['Video 35 on PF Batting','V-CID-35-2','Video',4.8,'$5.26','11.1%'],
+ ['Cal Raleigh, Multi-Replay','P-CID-5-4','Playable',4.7,'$11.26','6.7%'],
+ ['Video 37 on PF Batting','V-CID-37-2','Video',4.6,'$5.67','8.1%'],
+];
+V.creatives=`
+ <div class="ey">Demand · creative</div>
+ <div class="lead">Creatives, the top performers</div>
+ <div class="sublead">The creatives behind the Baseball Hits scale, live to click through, and the numbers behind them · Mar 30 to Jun 30, 2026.</div>
+
+ ${sec('Your top three, live','star')}
+ <div class="cr-list">${CREATIVES.map(creativeCard).join('')}</div>
+
+ ${sec('All creatives, by spend','chart')}
+ <div class="card" style="padding:10px 0;overflow-x:auto">
+ <table class="t" style="min-width:640px"><thead><tr><th style="padding-left:30px">Creative</th><th>Format</th><th style="text-align:right">Share of UA</th><th style="text-align:right">CPI</th><th style="text-align:right;padding-right:30px">D0 IAP ROAS</th></tr></thead><tbody>
+ ${CBRK.map(c=>`<tr><td class="lead2" style="padding-left:30px">${c[0]} <span style="color:var(--muted);font-weight:400">· ${c[1]}</span></td><td>${c[2]==='Video'?'<span class="pill sup" style="font-size:9px">Video</span>':'<span class="pill dem" style="font-size:9px">Playable</span>'}</td><td class="n">${c[3]}%</td><td class="n">${c[4]}</td><td class="n" style="padding-right:30px">${c[5]}</td></tr>`).join('')}
+ </tbody></table>
+ <div class="cap" style="padding:8px 30px 4px">The three biggest creatives are all <b style="color:var(--ink)">playables</b>, and they carry the volume. But the <b style="color:var(--ink)">video</b> cuts are converting better early, 9 to 11% D0 IAP ROAS at a lower CPI, versus 5 to 6% on the big playables. More reason to widen the video mix.</div>
+ </div>
+
+ ${sec('Creative mix, Baseball Hits vs. the sports category','chart')}
+ <div class="card" style="padding:16px 30px 20px">
+ <div class="cap" style="padding:0 0 12px">Share of network spend by ad format. Baseball Hits leans almost entirely on playables; peers put the majority behind video plus playable.</div>
  ${mixbar('Baseball Hits 26',77,23,0)}
  ${mixbar('Sports category',35,56,9)}
  <div style="display:flex;gap:18px;margin-top:12px;font-size:11px;color:var(--muted)">
@@ -912,8 +1019,6 @@ V.ua=`
  </div>
  </div>
 
- ${sec('TWD: Aftermath, early test','star')}
- <div class="card"><p class="prose"><b>about $20.5k combined</b> (iOS $9.3k · Android $11.2k). A small, deliberate test alongside the Baseball Hits scale-up. We'll refresh creatives and recalibrate the ROAS goal before committing larger budget, worth a second test together, not a pause. <b>Ares' other titles remain paused</b> for now.</p></div>
 
  ${sec('Creative benchmarks vs genre','chart')}
  <div class="note-row" style="margin-bottom:14px">You asked us to benchmark your creative against the genre, so here it is. Unity aggregate data, May 1 to Aug 17, 2026. CTR = click rate, CTI = click to install, IPM = installs per thousand impressions, completion = video view completion. Hook rate was not in this pull, we used completion rate as the closest proxy.</div>
@@ -939,7 +1044,8 @@ V.ua=`
  <tr><td class="lead2" style="padding-left:30px">AU · Android</td><td class="n">7.49</td><td class="n" style="padding-right:30px">19.08</td></tr>
  </tbody></table>
  <div class="cap" style="padding:8px 30px 4px">IPM sits below genre across geos, but the <b style="color:var(--ink)">hook is strong</b>: TWD runs 87 to 95% CTR and 66 to 80% completion. Attention is not the gap, install conversion is, so the next iteration should target the end card and store step. This lines up with the refresh and recalibrate plan for TWD, with room to widen the geo split.</div>
- </div>`;
+ </div>
+ `;
 
 V.owd=`
  <div class="ey">Demand · TapJoy · your focus area</div>

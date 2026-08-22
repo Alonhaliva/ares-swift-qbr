@@ -972,7 +972,7 @@ const CREATIVES=[
   video:'assets/bh_overhaul.mp4',note:"The home-run slugfest hook, steady across both platforms and paired with a video cut."},
 ];
 function creativeCard(c){
- var ph='<figure class="phone-fig"><div class="phone"><button class="phone-cover" onclick="loadFrame(this,\''+c.playable+'\')"><span class="pc-ic">&#9658;</span>Play the playable<small>tap to load</small></button></div><figcaption>Playable</figcaption></figure>';
+ var ph='<figure class="phone-fig"><div class="phone"><button class="phone-cover" onclick="loadFrame(this,\''+c.playable+'\')"><span class="pc-ic">&#9658;</span>Play the playable<small>tap to load</small></button></div><figcaption>Playable · <a href="'+c.playable+'" target="_blank" rel="noopener">open in new tab &#8599;</a></figcaption></figure>';
  if(c.video){ ph+='<figure class="phone-fig"><div class="phone"><button class="phone-cover vid" onclick="loadVideo(this,\''+c.video+'\')"><span class="pc-ic">&#9658;</span>Play the video<small>tap to play</small></button></div><figcaption>Video</figcaption></figure>'; }
  var st='<div class="cr-stats">'+
   '<div><span>Spend</span><b>'+c.spend+'</b></div>'+

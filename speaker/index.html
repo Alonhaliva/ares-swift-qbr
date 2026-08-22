@@ -425,6 +425,19 @@ body.on-chapter .pgbtn:hover:not(:disabled){background:rgba(255,255,255,.16)}
 .sdk-chip{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.02em;padding:4px 10px;border-radius:99px;font-variant-numeric:tabular-nums}
 .sdk-chip.old{background:var(--lineSoft);color:var(--muted)}
 .sdk-chip.new{background:var(--supplySoft);color:var(--supplyInk);border:1px solid var(--supplyBd)}
+/* Creative optimization (Atlas-style) */
+.copt-cta{display:flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:space-between;border:1px solid var(--line);border-left:3px solid var(--demand);border-radius:14px;padding:16px 20px;background:linear-gradient(120deg,var(--demandSoft),transparent 60%);margin-top:28px}
+.copt-cta p{margin:0;font-size:13.5px;color:var(--body);max-width:72ch;line-height:1.55}
+.copt-cta a{flex-shrink:0;white-space:nowrap;padding:11px 18px;border-radius:99px;background:var(--demand);color:#fff;font-weight:700;font-size:13.5px;text-decoration:none}
+.copt-mnote{background:var(--demandSoft);border:1px solid var(--line);border-radius:12px;padding:13px 18px;font-size:13px;color:var(--body);line-height:1.55;margin-top:6px}
+.copt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:14px}
+.copt-col{border:1px solid var(--line);border-radius:14px;padding:16px 20px;background:var(--surface)}
+.copt-col h4{font-size:14px;margin:0 0 10px;color:var(--ink);font-weight:800}
+.copt-col ul{margin:0;padding-left:18px;display:grid;gap:8px}
+.copt-col li{font-size:12.5px;color:var(--body);line-height:1.5}
+.copt-need{margin:12px 0 0;padding-left:18px;display:grid;gap:10px}
+.copt-need li{font-size:13.5px;color:var(--body);line-height:1.5}
+@media(max-width:900px){.copt-grid{grid-template-columns:1fr}}
 /* Agenda: 3-col grid, compact to fit one screen */
 .agenda-page{max-width:1160px;margin-top:0}
 .agenda-label{margin-bottom:8px}
@@ -1140,6 +1153,41 @@ V.creatives=`
  </tbody></table>
  <div class="cap" style="padding:8px 30px 4px">IPM sits below genre across geos, but the <b style="color:var(--ink)">hook is strong</b>: TWD runs 87 to 95% CTR and 66 to 80% completion. Attention is not the gap, install conversion is, so the next iteration should target the end card and store step. This lines up with the refresh and recalibrate plan for TWD, with room to widen the geo split.</div>
  </div>
+
+ <div class="copt-cta">
+  <p>Long-form video (60 to 90 seconds) holds attention as well as short and roughly doubles its value from day 7 to day 28, so it earns a spot in the next creative batch.</p>
+  <a href="https://unity-long-videos.github.io/" target="_blank" rel="noopener">Is longer video worth it? 🎬 &rarr;</a>
+ </div>
+
+ ${sec('How we run creative optimization','chart')}
+ <div class="copt-mnote">🎮 <b>Video and playables are your best converting formats.</b> Playables lead, top videos pair as end cards. Send a fresh playable batch every few weeks and we handle the rest.</div>
+ <div class="copt-grid">
+  <div class="copt-col"><h4>Refresh cadence</h4>
+   <ul>
+    <li>New <b>concept batch every 4 to 6 weeks</b> per platform (2 to 3 concepts + size/hook variants)</li>
+    <li>Variant refreshes (hooks, end cards, CTA) in between, every 2 weeks</li>
+    <li>Always-on: at least one test cell live in every major campaign</li>
+   </ul></div>
+  <div class="copt-col"><h4>Benchmarks we grade against</h4>
+   <ul>
+    <li><b>CVR vs campaign average</b>, remove below 80% after a minimum test spend</li>
+    <li><b>D1/D7 ROAS per creative</b>, high CVR that buys non-payers doesn't survive</li>
+    <li><b>Hard floor</b>, creatives at 1 to 2% ROAS are removed to protect the blend</li>
+   </ul></div>
+  <div class="copt-col"><h4>Test protocol</h4>
+   <ul>
+    <li>Each new asset is loaded <b>paired with winning interactive end-cards</b></li>
+    <li>Top winning creatives are kept while non-winners are rotated out for new creatives</li>
+    <li>Localized creatives are added to geo-specific campaigns</li>
+   </ul></div>
+ </div>
+ <div style="font-weight:800;font-size:15px;color:var(--ink);margin:22px 0 2px">Where we need you</div>
+ <ul class="copt-need">
+  <li>A fresh playable batch every few weeks. This is the highest-impact ask.</li>
+  <li>Two new iOS creative tests.</li>
+  <li>DE/IT localized variants (text + voiceover).</li>
+  <li>A rotation calendar set up with your new creative lead.</li>
+ </ul>
  `;
 
 V.owd=`

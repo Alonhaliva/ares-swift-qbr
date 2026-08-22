@@ -1015,22 +1015,38 @@ V.ua=`
  ])}</div>
  </div>
 
- ${sec('TWD: Aftermath, early test','star')}
- <div class="note-row" style="margin-bottom:14px">A deliberate soft-launch test alongside the Baseball Hits scale-up, <b style="color:var(--ink)">about $20.5k combined</b> (iOS $9.3k, Android $11.2k). The performance gap here is partly maturity and partly a measurement mismatch worth fixing together.</div>
- <div class="grid g2">
+ ${sec('TWD: Aftermath, goals vs where we are','star')}
+ <div class="note-row" style="margin-bottom:14px">TWD is in US soft launch. Here are your <b style="color:var(--ink)">net ROAS goals</b> next to the current Unity read (Aug 12 to 18), so we are looking at the same picture.</div>
+
  <div class="card" style="padding:10px 0;overflow-x:auto">
-  <table class="t" style="min-width:460px"><thead><tr><th style="padding-left:30px">D28 campaign</th><th style="text-align:right;padding-right:30px">Target set in dashboard</th></tr></thead><tbody>
-  <tr><td class="lead2" style="padding-left:30px">TWD-Unity-Android-US-ROAS-D28</td><td class="n" style="padding-right:30px">40%</td></tr>
-  <tr><td class="lead2" style="padding-left:30px">TWD-Unity-iOS-US-ROAS-D28</td><td class="n" style="padding-right:30px">40%</td></tr>
+  <div style="font-size:12px;font-weight:800;color:var(--demandInk);padding:8px 30px 2px;text-transform:uppercase;letter-spacing:.04em">Your goals, the net ROAS curve (US)</div>
+  <table class="t" style="min-width:640px"><thead><tr><th style="padding-left:30px">Platform</th><th style="text-align:right">D1</th><th style="text-align:right">D7</th><th style="text-align:right">D30</th><th style="text-align:right">D90</th><th style="text-align:right;padding-right:30px">Break-even CPI</th></tr></thead><tbody>
+  <tr><td class="lead2" style="padding-left:30px">Android</td><td class="n">20%</td><td class="n">38%</td><td class="n">68%</td><td class="n">100%</td><td class="n" style="padding-right:30px">$4.39</td></tr>
+  <tr><td class="lead2" style="padding-left:30px">iOS</td><td class="n">17%</td><td class="n">35%</td><td class="n">66%</td><td class="n">100%</td><td class="n" style="padding-right:30px">$6.25</td></tr>
   </tbody></table>
-  <div class="cap" style="padding:8px 30px 4px">Both D28 goals are configured as <b>gross</b> ROAS. Your early D1 aims were 20% Android and 17% iOS.</div></div>
+  <div class="cap" style="padding:8px 30px 4px">Net pLTV curve, D90 = full payback. These are the goals in your doc.</div></div>
+
+ <div class="card" style="padding:10px 0;overflow-x:auto;margin-top:18px">
+  <div style="font-size:12px;font-weight:800;color:var(--supplyInk);padding:8px 30px 2px;text-transform:uppercase;letter-spacing:.04em">Where we are now, Unity US (Aug 12 to 18)</div>
+  <table class="t" style="min-width:720px"><thead><tr><th style="padding-left:30px">Platform</th><th style="text-align:right">Spend</th><th style="text-align:right">Installs</th><th style="text-align:right">CPI</th><th style="text-align:right">D0 ROAS</th><th style="text-align:right">D1 ROAS</th><th style="text-align:right;padding-right:30px">D1 goal</th></tr></thead><tbody>
+  <tr><td class="lead2" style="padding-left:30px">Android</td><td class="n">$12.3k</td><td class="n">1,164</td><td class="n">$10.54</td><td class="n">5.0%</td><td class="n">8.7%</td><td class="n" style="padding-right:30px">20%</td></tr>
+  <tr><td class="lead2" style="padding-left:30px">iOS</td><td class="n">$6.3k</td><td class="n">474</td><td class="n">$13.24</td><td class="n">5.1%</td><td class="n">9.5%</td><td class="n" style="padding-right:30px">17%</td></tr>
+  </tbody></table>
+  <div class="cap" style="padding:8px 30px 4px">D7 and D28 campaigns combined. You paused the Android D28 line on Aug 19.</div></div>
+
+ <div class="grid g2" style="margin-top:18px">
  <div class="card" style="padding:12px 30px">${nlist([
-  ["Gross vs net is the first thing to align.","Your goals doc is stated <b>net</b>. Net strips store fees, so it sits well below gross for the same campaign. A 40% gross target and a 40% net goal are not the same bar, which is a big part of why performance looks softer against your doc."],
-  ["You paused the Android D28 campaign.","Fair while it read under goal. We would re-open it once we set the dashboard to the agreed basis."],
-  ["Longer-form video is the next lever.","The early set is short. On this genre the 30s+ cuts are where we see the most upside, and on mature data we are already seeing 25%+ D7, tracking toward 40%+ by D28."],
+  ["D1 is about half your goal, but it is early.","Android D1 is 8.7% against 20%, iOS 9.5% against 17%. Your own curve puts most of the payback at D30 and beyond, so a soft D1 is expected this early, not a verdict."],
+  ["Gross vs net is muddying the read.","Your goals are net. The D28 dashboard targets are set at 40% gross. Same number is not the same bar, so let's set the dashboard to the net basis you manage to."],
+  ["CPI is the real lever.","At $10.54 Android and $13.24 iOS you are well above your break-even CPI of $4.39 and $6.25. Bringing CPI down is what carries the curve to D90 payback."],
+ ])}</div>
+ <div class="card" style="padding:12px 30px">${nlist([
+  ["You paused the Android D28 campaign.","Fair while it read under goal. We'd re-open it once targets are on the net basis."],
+  ["Longer-form video next.","The early set is short. 30s+ cuts are where we see the most upside on this genre, and they tend to lower CPI too."],
+  ["Give D28 its cohort.","D28 needs a full maturity window before it reads true. We'll track it against your D30 and D90 milestones, not a single early day."],
  ])}</div>
  </div>
- <div class="callbox" style="margin-top:16px"><h4>The next step, a short optimization call</h4><p style="margin-bottom:0">Let's line up gross vs net so we are measuring the same thing, reset the dashboard targets to the agreed basis, re-open the paused Android campaign, add the longer-form videos, and give D28 the time it needs to mature. We'll read it against your D30 numbers on the other networks. <b>Ares' other titles remain paused</b> for now.</p></div>`;
+ <div class="callbox" style="margin-top:16px"><h4>The next step, a short optimization call</h4><p style="margin-bottom:0">Align gross vs net, reset the D28 targets to your net curve, re-open Android, and push CPI toward break-even with longer video and tighter sources. We'll read it against your D30 and D90 milestones, not day one. <b>Ares' other titles remain paused</b> for now.</p></div>`;
 
 function loadFrame(btn,url){ btn.parentNode.innerHTML='<iframe src="'+url+'" allow="autoplay; fullscreen" loading="lazy"></iframe>'; }
 function loadVideo(btn,src){ btn.parentNode.innerHTML='<video src="'+src+'" autoplay controls playsinline></video>'; }
@@ -1594,9 +1610,9 @@ const NOTES={
   "Baseball Hits is clearing the 50% D28 ROAS target on both platforms, 56% iOS and 57% Android.",
   "Be honest about the shape: May cohorts were exceptional (74/71%), June normalized to about 47% as weekly spend tripled. That is healthy, not a red flag.",
   "Early signal: D7-optimized campaigns are running about 2x the D28 ones on day-0 return, mostly on Android.",
-  "TWD, lead with gross vs net: his dashboard D28 targets are 40% gross on both platforms, but his goals doc is stated NET. Net sits well below gross, so a 40% gross target is not a 40% net goal, that mismatch is most of why it looks soft. Align the basis first.",
-  "TWD actions: he paused D28 Android. On mature data we already see 25%+ D7, tracking to 40%+ D28. Next lever is longer 30s+ video. Book the optimization call."],
-  n:"BH 56/57% D28. TWD 40% gross vs his net goals",ask:"Align one Android goal to 50%. On TWD, align gross vs net, reset targets, re-open Android, add longer video."},
+  "TWD: put his net goal curve next to the current read. Goal D1 is 20% Android / 17% iOS; current D1 is 8.7% / 9.5%, about half, but his own curve back-loads payback to D30+ (D30 68/66%, D90 100%), so a soft D1 is expected, not a verdict.",
+  "TWD, the two real levers: (1) gross vs net, his goals are net but the dashboard D28 targets are 40% gross, set the dashboard to net; (2) CPI, $10.54 Android / $13.24 iOS is well above his break-even CPI of $4.39 / $6.25, so lowering CPI is what carries the curve to D90 payback. He paused D28 Android. Book the optimization call."],
+  n:"TWD D1 8.7/9.5% vs 20/17% goal; CPI 2x break-even",ask:"BH: align one Android goal to 50%. TWD: align gross vs net, reset targets, re-open Android, drive CPI down with longer video."},
  creatives:{t:"Creatives",b:[
   "Your three biggest creatives are playables and they carry the volume.",
   "But video converts harder early: 9 to 11% D0 ROAS versus 5 to 6% on the big playables, at a lower CPI.",

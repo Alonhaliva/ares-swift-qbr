@@ -438,6 +438,16 @@ body.on-chapter .pgbtn:hover:not(:disabled){background:rgba(255,255,255,.16)}
 .copt-need{margin:12px 0 0;padding-left:18px;display:grid;gap:10px}
 .copt-need li{font-size:13.5px;color:var(--body);line-height:1.5}
 @media(max-width:900px){.copt-grid{grid-template-columns:1fr}}
+/* Category benchmark diagrams */
+.bmk-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:18px;margin-top:14px}
+.bmk-card{border:1px solid var(--line);border-radius:14px;padding:14px 20px 10px;background:var(--surface)}
+.bmk-h{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:2px 2px 4px}
+.bmk-h b{font-size:14px;font-weight:800;color:var(--ink)}
+.bmk-h span{font-size:10.5px;font-weight:600;color:var(--muted);white-space:nowrap}
+.bmk-read{font-size:12px;color:var(--body);line-height:1.5;padding:6px 2px 2px}
+.bmk-read.win{color:var(--pos);font-weight:600}
+.bmk-legend{display:flex;gap:18px;font-size:11.5px;color:var(--muted);margin:10px 2px 0;font-weight:500}
+.bmk-legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:6px;vertical-align:-1px}
 /* Agenda: 3-col grid, compact to fit one screen */
 .agenda-page{max-width:1160px;margin-top:0}
 .agenda-label{margin-bottom:8px}
@@ -1026,6 +1036,32 @@ V.ua=`
  ["Re-test Hybrid ROAS.","With D28 ad-rev share up (iOS 1.7%→5.7%, Android 4.6%→6.6% since April), hybrid is worth another run. Did something change on monetization in early May?"],
  ["Refresh the creative, lean into video.","Your <b style=\"color:var(--ink)\">video+playable already out-earns playable</b> (0.245 vs 0.204 D7) but is only 23% of spend. Baseball Hits runs <b style=\"color:var(--ink)\">0% pure video</b> (77% playable, 23% video+playable) while the sports category puts about 65% behind video. No new packs since May 22, add video, test 45s+ (60s+ if possible)."],
  ])}</div>
+ </div>
+
+ ${sec('Category benchmark, Baseball Hits vs the top spenders','star')}
+ <div class="takeaway"><span class="tk-ic">★</span><p>Against the biggest spenders in your category, Baseball Hits leads where it compounds: the <b>lowest CPI</b> and the <b>best D7 retention</b>. Rivals buy more raw volume, you keep more of what you buy.</p></div>
+ <div class="note-row" style="margin-bottom:6px">iOS · US · Apr 1 to Jun 30. Competitors anonymized and ranked by ad spend. Category average is the SensorTower advertiser benchmark.</div>
+ <div class="bmk-legend"><span><i style="background:${C.demand}"></i>Baseball Hits 26</span><span><i style="background:${C.supplyL}"></i>Top competitors (anonymized)</span></div>
+ <div class="bmk-grid">
+  <div class="bmk-card"><div class="bmk-h"><b>Cost per install</b><span>lower is better · cat avg $4.10</span></div>${hbars([
+   {label:'Baseball Hits 26',v:4.51,c:C.demand},{label:'Competitor A',v:5.50,c:C.supplyL},{label:'Competitor B',v:5.26,c:C.supplyL},{label:'Competitor C',v:9.05,c:C.supplyL},
+  ],{fmt:v=>'$'+v.toFixed(2),lblW:196,rh:40})}<div class="bmk-read win">Lowest CPI of the group, you buy installs cheaper than every top peer.</div></div>
+
+  <div class="bmk-card"><div class="bmk-h"><b>D7 retention</b><span>higher is better · cat avg 13.4%</span></div>${hbars([
+   {label:'Baseball Hits 26',v:23.16,c:C.demand},{label:'Competitor A',v:7.26,c:C.supplyL},{label:'Competitor B',v:22.18,c:C.supplyL},{label:'Competitor C',v:12.42,c:C.supplyL},
+  ],{fmt:v=>v.toFixed(1)+'%',lblW:196,rh:40})}<div class="bmk-read win">Best D7 retention in the group and nearly 2x the category. This is your durable edge.</div></div>
+
+  <div class="bmk-card"><div class="bmk-h"><b>Installs per mille (IPM)</b><span>higher is better · cat avg 15.7</span></div>${hbars([
+   {label:'Baseball Hits 26',v:16.70,c:C.demand},{label:'Competitor A',v:28.20,c:C.supplyL},{label:'Competitor B',v:8.48,c:C.supplyL},{label:'Competitor C',v:12.45,c:C.supplyL},
+  ],{fmt:v=>v.toFixed(1),lblW:196,rh:40})}<div class="bmk-read">Strong install efficiency, second only to Competitor A and above the category.</div></div>
+
+  <div class="bmk-card"><div class="bmk-h"><b>Install rate (installs/clicks)</b><span>higher is better · cat avg 1.79%</span></div>${hbars([
+   {label:'Baseball Hits 26',v:1.95,c:C.demand},{label:'Competitor A',v:3.04,c:C.supplyL},{label:'Competitor B',v:0.94,c:C.supplyL},{label:'Competitor C',v:1.33,c:C.supplyL},
+  ],{fmt:v=>v.toFixed(2)+'%',lblW:196,rh:40})}<div class="bmk-read">Second-best click-to-install rate, comfortably ahead of two of the three.</div></div>
+
+  <div class="bmk-card"><div class="bmk-h"><b>Average eCPM</b><span>lower is cheaper media · cat avg $64</span></div>${hbars([
+   {label:'Baseball Hits 26',v:75.22,c:C.demand},{label:'Competitor A',v:154.97,c:C.supplyL},{label:'Competitor B',v:44.62,c:C.supplyL},{label:'Competitor C',v:112.68,c:C.supplyL},
+  ],{fmt:v=>'$'+Math.round(v),lblW:196,rh:40})}<div class="bmk-read">Moderate media cost, well below Competitor A and C. Paired with strong IPM, that is what keeps your CPI lowest.</div></div>
  </div>
 
  ${sec('TWD: Aftermath, goals vs where we are','star')}

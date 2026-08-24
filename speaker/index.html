@@ -1095,7 +1095,33 @@ V.ua=`
   ["Give D28 its cohort.","D28 needs a full maturity window before it reads true. We'll track it against your D30 and D90 milestones, not a single early day."],
  ])}</div>
  </div>
- <div class="callbox" style="margin-top:16px"><h4>The next step, a short optimization call</h4><p style="margin-bottom:0">Align gross vs net, reset the D28 targets to your net curve, re-open Android, and push CPI toward break-even with longer video and tighter sources. We'll read it against your D30 and D90 milestones, not day one. <b>Ares' other titles remain paused</b> for now.</p></div>`;
+ <div class="callbox" style="margin-top:16px"><h4>The next step, a short optimization call</h4><p style="margin-bottom:0">Align gross vs net, reset the D28 targets to your net curve, re-open Android, and push CPI toward break-even with longer video and tighter sources. We'll read it against your D30 and D90 milestones, not day one. <b>Ares' other titles remain paused</b> for now.</p></div>
+
+ ${sec('Category benchmark, The Walking Dead vs the top spenders','star')}
+ <div class="takeaway"><span class="tk-ic">★</span><p>Against the biggest spenders in the category, TWD's edge is <b>retention</b>, D7 sits above the category and second in the group. The gap is <b>install efficiency</b>, the highest CPI and lowest IPM here, which points to the store and end-card step, the conversion fix already in the plan, not the audience.</p></div>
+ <div class="note-row" style="margin-bottom:6px">iOS · US · Aug 1 to 15 (recent read). Competitors anonymized and ranked by ad spend. Category average is the SensorTower advertiser benchmark.</div>
+ <div class="bmk-legend"><span><i style="background:${C.demand}"></i>The Walking Dead</span><span><i style="background:${C.supplyL}"></i>Top competitors (anonymized)</span></div>
+ <div class="bmk-grid">
+  <div class="bmk-card"><div class="bmk-h"><b>D7 retention</b><span>higher is better · cat avg 9.4%</span></div>${hbars([
+   {label:'The Walking Dead',v:22.27,c:C.demand},{label:'Competitor A',v:21.11,c:C.supplyL},{label:'Competitor B',v:1.90,c:C.supplyL},{label:'Competitor C',v:48.45,c:C.supplyL},
+  ],{fmt:v=>v.toFixed(1)+'%',lblW:200,rh:40})}<div class="bmk-read win">Above the category and second in the group, the audience quality is real.</div></div>
+
+  <div class="bmk-card"><div class="bmk-h"><b>Cost per install</b><span>lower is better · cat avg $3.38</span></div>${hbars([
+   {label:'The Walking Dead',v:15.49,c:C.demand},{label:'Competitor A',v:10.23,c:C.supplyL},{label:'Competitor B',v:8.48,c:C.supplyL},{label:'Competitor C',v:10.22,c:C.supplyL},
+  ],{fmt:v=>'$'+v.toFixed(2),lblW:200,rh:40})}<div class="bmk-read">Highest CPI in the group, the soft-launch conversion gap shows up here.</div></div>
+
+  <div class="bmk-card"><div class="bmk-h"><b>Installs per mille (IPM)</b><span>higher is better · cat avg 19.5</span></div>${hbars([
+   {label:'The Walking Dead',v:6.64,c:C.demand},{label:'Competitor A',v:12.33,c:C.supplyL},{label:'Competitor B',v:12.64,c:C.supplyL},{label:'Competitor C',v:7.62,c:C.supplyL},
+  ],{fmt:v=>v.toFixed(1),lblW:200,rh:40})}<div class="bmk-read">Lowest IPM here, install conversion is the gap, not the hook.</div></div>
+
+  <div class="bmk-card"><div class="bmk-h"><b>Install rate (installs/clicks)</b><span>higher is better · cat avg 2.24%</span></div>${hbars([
+   {label:'The Walking Dead',v:0.70,c:C.demand},{label:'Competitor A',v:1.39,c:C.supplyL},{label:'Competitor B',v:1.44,c:C.supplyL},{label:'Competitor C',v:0.80,c:C.supplyL},
+  ],{fmt:v=>v.toFixed(2)+'%',lblW:200,rh:40})}<div class="bmk-read">Lowest click-to-install rate, the store and end-card step is where to focus.</div></div>
+
+  <div class="bmk-card"><div class="bmk-h"><b>Average eCPM</b><span>lower is cheaper media · cat avg $66</span></div>${hbars([
+   {label:'The Walking Dead',v:102.86,c:C.demand},{label:'Competitor A',v:126.24,c:C.supplyL},{label:'Competitor B',v:107.24,c:C.supplyL},{label:'Competitor C',v:77.95,c:C.supplyL},
+  ],{fmt:v=>'$'+Math.round(v),lblW:200,rh:40})}<div class="bmk-read">Media cost below the two priciest peers, in line with a fresh launch.</div></div>
+ </div>`;
 
 function loadFrame(btn,url){ btn.parentNode.innerHTML='<iframe src="'+url+'" allow="autoplay; fullscreen" loading="lazy"></iframe>'; }
 function loadVideo(btn,src){ btn.parentNode.innerHTML='<video src="'+src+'" autoplay controls playsinline></video>'; }
@@ -1720,7 +1746,8 @@ const NOTES={
   "Category benchmark (SensorTower, iOS US): against the top spenders, BH is #1 on lowest CPI ($4.51) and #1 on D7 retention (23.2%, nearly 2x the category), and a strong #2 on IPM and install rate. Rivals buy more volume, you keep more of it. Competitors are anonymized, do not name them.",
   "Early signal: D7-optimized campaigns are running about 2x the D28 ones on day-0 return, mostly on Android.",
   "TWD: put his net goal curve next to the current read. Goal D1 is 20% Android / 17% iOS; current D1 is 8.7% / 9.5%, about half, but his own curve back-loads payback to D30+ (D30 68/66%, D90 100%), so a soft D1 is expected, not a verdict.",
-  "TWD, the two real levers: (1) gross vs net, his goals are net but the dashboard D28 targets are 40% gross, set the dashboard to net; (2) CPI, $10.54 Android / $13.24 iOS is well above his break-even CPI of $4.39 / $6.25, so lowering CPI is what carries the curve to D90 payback. He paused D28 Android. Book the optimization call."],
+  "TWD, the two real levers: (1) gross vs net, his goals are net but the dashboard D28 targets are 40% gross, set the dashboard to net; (2) CPI, $10.54 Android / $13.24 iOS is well above his break-even CPI of $4.39 / $6.25, so lowering CPI is what carries the curve to D90 payback. He paused D28 Android. Book the optimization call.",
+  "TWD category benchmark (SensorTower iOS US, Aug 1-15): honest read, retention is the one win (D7 22.3%, above the 9.4% category, #2 in group), but install efficiency is worst-in-group (highest CPI $15.49, lowest IPM 6.64, lowest install rate 0.70%). Frame it as: the audience is good, the store/end-card conversion step is the fix, same as the plan. Do not name competitors."],
   n:"TWD D1 8.7/9.5% vs 20/17% goal; CPI 2x break-even",ask:"BH: align one Android goal to 50%. TWD: align gross vs net, reset targets, re-open Android, drive CPI down with longer video."},
  creatives:{t:"Creatives",b:[
   "Your three biggest creatives are playables and they carry the volume.",
